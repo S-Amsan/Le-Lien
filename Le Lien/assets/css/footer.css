@@ -24,6 +24,10 @@ footer{
         text-decoration: none;
         font-size: 1vw;
     }
+    a:hover {
+        color: #4493F8;
+        text-decoration: underline;
+    }
     p{
         font-size: 1vw;
         font-family: 'Inria Sans', sans-serif;
@@ -103,7 +107,6 @@ footer{
     margin-left : 8px;
 }
 
-
 .footerBas{
     width : 100%;
     height : 5vw;
@@ -133,11 +136,15 @@ footer{
 }
 .cookie{
     float: right;
-    margin-top: -10vh;
+    margin-top: -9vh;
     img{
-        width : 50%;
-        height : 50%;
+        width : 55%;
+        height : 55%;
     }
+    transition: transform 0.3s ease;
+}
 
+.cookie:hover{
+    transform: scale(1.4);
 }
 
