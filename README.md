@@ -4,7 +4,7 @@
 
 ---
 
-## Languages de programmation utilisés :
+## Langages de programmation utilisés :
 - <b>HTML</b>
 - <b>CSS</b>
 - <b>JavaScript</b>
