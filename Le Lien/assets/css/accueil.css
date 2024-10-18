@@ -1,0 +1,16 @@
+.espaceCollaborateur{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#texteCollaborateurs{
+    text-align: center;
+    font-size: 3em;
+}
+
+.imagesCollaborateurs{
+    display : flex;
+    justify-content: center;
+}
