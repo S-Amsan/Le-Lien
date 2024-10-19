@@ -62,8 +62,9 @@ body {
     flex-wrap: wrap;
 }
 #texteContact {
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-right: 1.5em;
+    line-height: 150%;
 }
 .boutonContact {
     width: 15.5em;
@@ -75,8 +76,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 .rectangleContact a {
     text-decoration: none;
