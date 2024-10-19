@@ -1,16 +1,40 @@
 .espaceCollaborateur{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
 }
 
 #texteCollaborateurs{
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
+    font-weight: 500;
+    font-family: Poppins;
 }
 
 .imagesCollaborateurs{
     display : flex;
     justify-content: center;
+    margin-left : 7em;
+    gap: 85px;
+}
+
+.imageFranceAssos img{
+    margin-top: 3em;
+    width : 75%;
+    height : auto;
+    transition: transform 0.3s ease;
+}
+
+
+.imageHeral img{
+    width : 80%;
+    height : auto;
+    margin-top: 5.5em;
+    transition: transform 0.3s ease;
+}
+
+.imageFranceAssos img:hover{
+    transform: scale(1.1);
+}
+
+.imageHeral img:hover{
+    transform: scale(1.1);
 }
