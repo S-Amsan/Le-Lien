@@ -1,150 +1,141 @@
-body {
+* {
     margin: 0;
     padding: 0;
-}
-.footerHaut {
-    padding-top: 1vh;
-    width: 100%;
-    height: 10vh;
-    background-color: #323232;
-
+    box-sizing: border-box;
 }
 
-.footerBas {
-    width: 100%;
-    height: 0vh;
-    background-color: #272727;
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+.contenu{
+    flex : 1 0 auto;
+}
 
 footer{
-    color: white;
+    flex-shrink: 0;
     a{
-        color: white;
+        color: #f8f8f8;
         text-decoration: none;
         font-size: 1vw;
     }
-    a:hover {
+    a[href]:hover {
         color: #4493F8;
         text-decoration: underline;
     }
-    p{
-        font-size: 1vw;
-        font-family: 'Inria Sans', sans-serif;
-    }
-    margin: 0;
-    padding: 0;
 }
+
 .footerHaut{
-    width : 100%;
-    height : 12vw;
     background-color : #323232;
 }
 
-.titresFooterHaut{
-    font-family: 'Inter', sans-serif;
-    display : flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.leLien{
-    justify-content: left;
-    align-items: center;
-    display : flex;
-    font-family: 'Inter', sans-serif;
-    font-size : 0.5vw;
-    color : #EFC033;
-
-}
-.titres{
-    font-family: 'Inter', sans-serif;
+.contenuHautFooter{
     display : flex;
     justify-content: center;
-    align-items: center;
-    gap : 15vw;
-    margin-top: -4vh;
-    h1{
-        font-size : 1.5vw;
+    padding: 0 0 10px;
+    margin-top: -35px;
+    p{
+        font-size: 1vw;
+        font-family: 'Inria Sans', sans-serif;
+        margin: 15px;
+        text-align: center;
+    }
+}
+
+.leLien{
+    img{
+        width : 3vw;
+        height : auto;
+        vertical-align: middle;
+        margin-right: 0.5vw;
+    }
+    p{
+        margin-top: 5vh;
+        padding-top: 1vh;
+        padding-left: 0.5vw;
+    }
+    a{
+        color: #edbe33;
+        font-family: 'Inter', sans-serif;
         font-weight: 700;
     }
+
 }
-#localisationTitre,
-#lienTitre{
-    color : #006EB6
-}
-#contactTitre{
-    color : #EFC033
-}
-.contenu {
-    display: flex;
-    justify-content: center;
-    gap: 20vw;
-    width: 100%;
-}
-.localisation {
-    display: flex;
-    position: relative;
-    left: -10vw;
-}
-.contact{
-    margin-left: -20vw;
-}
-.tel, .mail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.blockFooter{
+    width : 25%;
+    text-align: center;
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 10px 0;
+    }
     img{
-        display : block;
-        margin-right: 8px;
+        width : 1.25vw;
+        height : auto;
+        vertical-align: middle;
     }
-}
-.lien {
-    p{
-        margin-bottom: -1vh;
+    h3{
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-size : 1.5vw;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 15px;
     }
-}
-#parisBristol{
-    margin-left : 8px;
+    #localisationTitre,
+    #liensTitre{
+        color : #006EB6
+    }
+    #contactTitre{
+        color : #EFC033
+    }
 }
 
 .footerBas{
-    width : 100%;
-    height : 5vw;
-    background-color : #272727;
-    padding-bottom: 2vh;
+    background-color: #272727;
+    padding: 5px 0 10px;
+    position: relative;
+    p{
+        color: #f8f8f8;
+    }
+    overflow: hidden;
 }
-
-.titresFooterBas{
-    font-family: 'Inter', sans-serif;
+.mentionEtCondidentialite, .copyright, .cookie {
     display : flex;
     justify-content: center;
-}
-
-#mentionLegale{
-    margin-right : 2vw;
-}
-
-#politiqueConfidentialite{
     margin-left: 4vw;
 }
 
-.copyright{
-    font-size: 14vw;
-    font-family: 'Inter', sans-serif;
-    display : flex;
-    justify-content: center;
+
+.mentionEtCondidentialite{
+    gap : 1.5vw;
 }
+
+.copyright{
+    font-size: 0.8vw;
+    font-family: 'Inter', sans-serif;
+    margin-top: 10px;
+}
+
 .cookie{
-    float: right;
-    margin-top: -9vh;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
     img{
-        width : 55%;
-        height : 55%;
+        width : 2.5vw;
+        height : auto;
+        vertical-align: middle;
     }
     transition: transform 0.3s ease;
 }
 
 .cookie:hover{
-    transform: scale(1.4);
-}
+    transform: scale(1.3);
 
+}
