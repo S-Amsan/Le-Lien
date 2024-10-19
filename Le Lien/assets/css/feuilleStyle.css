@@ -55,11 +55,15 @@ body {
     width: 26.563em;
     height: 13em;
     background-color: rgba(249, 13, 13, 0.20);
-    border-radius: 1.25em;
+    border-radius: 0.75em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+#texteContact {
+    margin-top: 2em;
+    margin-right: 1.5em;
 }
 .boutonContact {
     width: 15.5em;
@@ -67,18 +71,22 @@ body {
     background-color: white;
     border-radius: 6.25em;
     border:1px solid #0E5482;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
-}
 
+
+}
+.rectangleContact a {
+    text-decoration: none;
+    color: #0E5482; /* Couleur du texte */
+    font-weight: bold;
+}
 .rectangleContact p {
     font-size: 1.5em;
-    color: #0E5482; /* Couleur du texte */
-    margin: 0; /* Supprime les marges par défaut */
+    color: #0E5482;
     font-family: Inter, sans-serif;
-    margin-right:2em ;
 }
 .rectangleContact a {
     text-decoration: none;
