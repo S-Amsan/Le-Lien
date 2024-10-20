@@ -12,6 +12,7 @@ body {
     flex : 1 0 auto;
 }
 footer{
+    position: relative;
     flex-shrink: 0;
     a{
         color: #f8f8f8;
@@ -25,16 +26,14 @@ footer{
 }
 .footerHaut{
     background-color : #323232;
-    height : 12vh;
-    max-height: 100px;
+    height : 110px;
     overflow: hidden;
 }
 .footerBas{
     background-color: #272727;
     padding: 5px 0 10px;
     position: relative;
-    height : 4vh;
-    max-height: 40px;
+    height : 45px;
     p{
         color: #f8f8f8;
     }
@@ -61,19 +60,14 @@ footer{
     display : flex;
     justify-content: center;
     padding: 0 0 10px;
-    margin-top: -35px;
-    p{
-        font-family: 'Inria Sans', sans-serif;
-        margin: 5px;
-        text-align: center;
-    }
+    margin-top: -2%;
 }
 .blockFooter{
     width : 15%;
     text-align: center;
     li {
         list-style-type: none;
-        margin: 10px 0;
+        margin: 5px;
     }
     img{
         width : 0.7vw;
@@ -83,10 +77,15 @@ footer{
     h3{
         text-align: center;
         font-family: 'Inter', sans-serif;
-        font-size : 1em;
+        font-size : 1vw;
         font-weight: 700;
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+    p{
+        font-family: 'Inria Sans', sans-serif;
+        margin: 5px;
+        text-align: center;
     }
     #localisationTitre,
     #liensTitre{
@@ -122,4 +121,75 @@ footer{
 }
 .cookie:hover{
     transform: scale(1.3);
+}
+
+@media screen and (max-width: 1300px){
+    .footerHaut{
+        height : 90px;
+    }
+    .contenuHautFooter{
+        p{
+            margin: 1px;
+        }
+        li{
+            margin: 1px;
+        }
+    }
+    .blockFooter{
+        h3{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .footerHaut{
+        height : 75px;
+    }
+    .contenuHautFooter{
+        margin-top: -3%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    footer{
+        a{
+            font-size : 1vw;
+        }
+    }
+    .footerHaut{
+        height: 200px;
+    }
+    .contenuHautFooter{
+        flex-direction: column;
+        align-items: center;
+        margin-top: -4%;
+    }
+    .cookie{
+        img{
+            width : 4vw;
+            height : auto;
+        }
+    }
+    .blockFooter{
+        h3{
+            font-size : 1.5vw;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        p{
+            margin: -1px;
+        }
+        img{
+            width : 1vw;
+            height : auto;
+        }
+    }
+    .leLien{
+        img{
+            width : 5vw;
+            height : auto;
+        }
+    }
+
 }
