@@ -96,13 +96,15 @@ body {
     color: #0E5482; /* Couleur du texte */
     font-weight : 700;
     font-family: Inter, sans-serif;
-    font-size: 4em;
+    /*font-size: 4em;*/
+    font-size: 2.5vw;
 }
 #textIntro p {
     color: #0E5482; /* Couleur du texte */
     font-weight : 540;
     font-family: Inter, sans-serif;
-    font-size: 1.5em;
+    /*font-size: 1.5em;*/
+    font-size: 1vw;
     line-height: 150%;
 }
 .texte2023 {
@@ -205,7 +207,7 @@ article{
     height: auto;
     padding-left: 5em;
 }
-#imagePrésentation{
+#imagePresentation{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,4 +231,82 @@ article{
 .logo {
     margin-top: 5em;
     margin-left: 10em;
+}
+
+@media screen and (max-width: 1440px){
+    #textIntro p{
+        font-size: 1.4vw;
+    }
+    #textIntro {
+        padding-left: 5vw;
+    }
+    .logo {
+        margin-top: 0;
+        margin-left: 0;
+        img{
+            width: 27vw;
+            height: auto;
+            margin-right: 8vw;
+            margin-top: 5vw;
+        }
+    }
+    body {
+        background-size: 100% 40em;
+    }
+    .rectangle1 {
+        width: 18.7vw;  /* Largeur du rectangle */
+        height: 33.5vw; /* 12.6cm */
+        img {
+            width: 18vw;
+            height: auto;
+        }
+        p {
+            font-size: 1.5vw;
+        }
+    }
+    .rectangle2 {
+        width: 23vw;
+        height: 40vw;
+        img {
+            width: 19vw;
+            height: auto;
+        }
+        p {
+            font-size: 1.5vw;
+        }
+    }
+    #imagePresentation{
+        column-gap: 5vw;
+    }
+    .texte2023 {
+        font-size: 1.8vw;
+    }
+    .rondBleu {
+        width: 12vw;
+        height: 12vw;
+    }
+    .rondBeige {
+        width: 15vw;
+        height: 15vw;
+    }
+    #basdepage {
+        column-gap: 8vw;
+
+    }
+    #textOutro{
+        font-size: 1.4vw;
+    }
+    .rectangleContact{
+        width: 25vw;
+        height: 13vw;
+        p{
+            font-size: 1.4vw;
+        }
+
+    }
+    .auteur{
+        padding-left: 40vw;
+        padding-top: 1.5vw;
+        font-style: italic;
+    }
 }
