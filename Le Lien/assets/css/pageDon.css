@@ -1,0 +1,229 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*permet de mettre un espace entre les containers du logo et des boutons de la nav*/
+    background: linear-gradient(to right,
+    rgba(249, 190, 13, 0.25)10%,
+    rgba(214, 226, 234, 1) 30%,
+    rgba(0, 110, 182, 0.37) 100%); /* pour dégréader*/
+    padding: 0 2.5em;
+}
+
+.navbar-gauche {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0.5em 0;
+}
+
+.navbar-droite {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.logo {
+    height: 3em;
+    width: auto;
+}
+
+.navbar a {
+    color: #0E5482;
+    text-decoration: none;
+    padding: 0 1.3em;
+    font-size: 0.90em;
+    font-family: Inter, sans-serif;
+}
+
+.accident{
+    font-weight: bold;
+}
+.boutons-navbar {
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+    margin-left: 0.5em
+}
+
+.bouton-aider {
+    background-color: #EFC033;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    padding: 0.70em 1.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.bouton-recherche {
+
+    background: none;
+    border: 0.25em solid white;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.90em;
+    padding: 0.5em 1.7em 0.5em 1em ;
+    border-radius: 1.2em;
+}
+
+.logo-recherche{
+    height: 1.2em; /* Utilise une unité relative à la taille du texte */
+    width: 1.3em;
+    margin-right: 0.15em; /* Ajoute de l'espace entre l'icône et le texte */
+    vertical-align: middle; /* Aligne correctement avec le texte */
+
+}
+.bouton:hover {
+    opacity: 0.8; /* mettre de l'opacité lors du survol mais pas sûr de le garder*/
+}
+
+
+.menu-burger, .menu-mobile{
+    display: none; /* c'est pour cacher */
+}
+
+
+#container-don{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 25em;
+    background-image: url('../images/photo-don.jpg');
+    background-size: cover;  /* L'image couvre tout le container */
+    background-position: center;  /* Positionne l'image au centre */
+    background-repeat: no-repeat;  /* Empêche la répétition de l'image */;
+}
+
+#container-don h1{
+    padding: 0 0 0 1.5em;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: normal;
+    text-shadow: -5px 4px 5px rgba(0,0,0,0.35);
+    font-family: Bowlby One, sans-serif;
+    margin-bottom: 0;
+}
+
+#container-don p{
+    padding: 0 22em 0 9.5em;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    max-width: 24em;
+}
+
+#container-don button{
+    background-color: #EFC033;
+    color: white;
+    box-shadow: -5px 4px 5px rgba(0,0,0,0.35);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 15px;
+    font-weight: bold;
+    padding: 1.1em 1.6em;
+    margin-left: 9em;
+}
+
+#container-texteAdherent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container-texteAdherent h1{
+        font-size: 1.7em;
+        font-family: Bowlby One, sans-serif;
+        font-weight: normal;
+        margin-bottom: 0;
+        color : #4CAFCE;
+}
+
+#container-texteAdherent p{
+    font-size: 1em;
+    font-family: Bowlby One, sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+    margin-left: 38em;
+    color : #4CAFCE;
+}
+@media screen and (max-width: 1093px) {
+    .navbar-droite {
+        display: none; /* Du coup là on cache la navbar de base */
+    }
+
+    /* Afficher le menu burger */
+    .menu-burger {
+        width: 5em;
+        height: 5em;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    /* Styles pour le menu mobile */
+    .menu-mobile {
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 110, 182, 0.37);
+        top: 4em;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-mobile a{
+        color: #0E5482;
+        text-decoration: none;
+        font-size: 2em;
+        font-family: Inter, sans-serif;
+        position: relative;
+    }
+
+    .menu-mobile a, .menu-mobile .bouton {
+        margin: 1em 0;
+    }
+
+    .menu-mobile a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #0E5482;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .menu-mobile a:hover::after {
+        width: 100%;
+    }
+
+    .menu-mobile .bouton-aider, .bouton-recherche {
+        width: 10em;
+        height: 2.5em;
+        font-size: 2.2em;
+    }
+    .menu-mobile .bouton-aider{
+        border-radius: 0.9em;
+    }
+
+}
+@media screen and (min-width: 1093px) {
+    .menu-mobile a, .menu-mobile button{
+        display: none;
+    }
+}
