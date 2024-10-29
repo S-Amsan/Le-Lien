@@ -157,6 +157,53 @@ body, html {
     margin-left: 38em;
     color : #4CAFCE;
 }
+
+#titre-benevole{
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+    padding-right: 30em;
+    padding-left: 2em;
+    color: #1B4570;
+    font-family: Bowlby One, sans-serif;
+    font-weight: lighter;
+    font-size: 1.3em;
+}
+
+
+#container-pourquoiAdherent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 2em;
+}
+
+#partieBenevole-gauche{
+    height: 20em;
+    width: 40em;
+    margin-left: 2em;
+}
+#partieBenevole-gauche p:first-child{
+    margin-bottom: 3em;
+    width: 33em;
+}
+#partieBenevole-gauche p, #partieBenevole-gauche ul{
+    font-family: Inter,sans-serif;
+    font-size: 1em;
+    color: #1B4570;
+}
+
+#partieBenevole-gauche ul{
+    width: 30em;
+}
+#imageBenevoles{
+    height: 20em;
+    width: 30em;
+    border-radius: 1em;
+
+}
 @media screen and (max-width: 1093px) {
     .navbar-droite {
         display: none; /* Du coup là on cache la navbar de base */
