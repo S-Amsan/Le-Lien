@@ -2,90 +2,10 @@ body, html {
     margin: 0;
     padding: 0;
 }
-.navbar {
-    height: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /*permet de mettre un espace entre les containers du logo et des boutons de la nav*/
-    background: linear-gradient(to right,
-    rgba(249, 190, 13, 0.25)10%,
-    rgba(214, 226, 234, 1) 30%,
-    rgba(0, 110, 182, 0.37) 100%); /* pour dégréader*/
-    padding: 0 2.5em;
-}
 
-.navbar-gauche {
-    display: flex;
-    align-items: center;
-    padding: 0 0 0.5em 0;
-}
-
-.navbar-droite {
-    display: flex;
-    align-items: center;
-    margin-right: 1em;
-}
-
-.logo {
-    height: 3em;
-    width: auto;
-}
-
-.navbar a {
-    color: #0E5482;
-    text-decoration: none;
-    padding: 0 1.3em;
-    font-size: 0.90em;
-    font-family: Inter, sans-serif;
-}
 
 .accident{
     font-weight: bold;
-}
-.boutons-navbar {
-    display: flex;
-    align-items: baseline;
-    gap: 1em;
-    margin-left: 0.5em
-}
-
-.bouton-aider {
-    background-color: #EFC033;
-    color: white;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-    padding: 0.70em 1.5em;
-    border: none;
-    cursor: pointer;
-    font-size: 0.90em;
-    border-radius: 15px;
-    font-weight: bold;
-}
-.bouton-recherche {
-
-    background: none;
-    border: 0.25em solid white;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.90em;
-    padding: 0.5em 1.7em 0.5em 1em ;
-    border-radius: 1.2em;
-}
-
-.logo-recherche{
-    height: 1.2em; /* Utilise une unité relative à la taille du texte */
-    width: 1.3em;
-    margin-right: 0.15em; /* Ajoute de l'espace entre l'icône et le texte */
-    vertical-align: middle; /* Aligne correctement avec le texte */
-
-}
-.bouton:hover {
-    opacity: 0.8; /* mettre de l'opacité lors du survol mais pas sûr de le garder*/
-}
-
-
-.menu-burger, .menu-mobile{
-    display: none; /* c'est pour cacher */
 }
 
 
