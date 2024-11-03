@@ -5,7 +5,11 @@
     width: 100%;
 }
 
-
+body {
+    background-image: url("../images/image de fond1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 40vw;
+}
 
 
 .rectangle1 {
