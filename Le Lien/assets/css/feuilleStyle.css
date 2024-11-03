@@ -1,26 +1,29 @@
-body {
-    background-image: url("../images/image de fond1.png");
-    background-repeat: no-repeat;
-    background-size: 100% 40vw;
+.bg_head{
+    position: absolute;
+    z-index: -1;
+    top: -5%;
+    width: 100%;
 }
+
+
+
+
 .rectangle1 {
-    width: 16vw;  /* Largeur du rectangle */
-    height: 28vw; /* Hauteur du rectangle */
+    width: 250px;  /* Largeur du rectangle */
+    height: 440px; /* Hauteur du rectangle */
     background-color: rgba(0, 110, 182, 0.19); /* Couleur de fond */
-    border-radius: 1.563em;
+    border-radius: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease;
-
     img {
-        width: 15vw;
-        height: 15vw;
+        width: 90%;
     }
     p {
-        font-size: 1.2vw;
+        font-size: 20px;
         color: #0E5482; /* Couleur du texte */
         font-family: Inter, sans-serif;
         margin-bottom: auto;
@@ -31,27 +34,26 @@ body {
     transform: scale(1.05);
 }
 
+
 .rectangle2 {
-    width: 20vw;  /* Largeur du rectangle */
-    height: 35vw; /* Hauteur du rectangle */
+    width: 300px;  /* Largeur du rectangle */
+    height: 540px; /* Hauteur du rectangle */
     background-color: rgba(249, 190, 13, 0.14); /* Couleur de fond */
-    border-radius: 1.563em;
-    padding: 0.625em; /* Espacement interne */
+    border-radius: 30px;
+    padding: 20px; /* Espacement interne */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease;
-
     img {
-        width: 16vw;
-        height: 16vw;
+        width: 90%;
         display: flex;
         justify-content: center;
     }
     p {
-        font-size: 1.2vw;
+        font-size: 22px;
         color: #0E5482; /* Couleur du texte */
         font-family: Inter, sans-serif;
         line-height: 150%;
@@ -64,27 +66,37 @@ body {
 
 #texteContact {
     margin-top: 1.6vw;
-    margin-right: 1.5vw;
     line-height: 150%;
 }
+
 .boutonContact {
     width: 65%;
     height: 23%;
     background-color: white;
-    border-radius: 6.25em;
-    border:1px solid #0E5482;
-
+    border-radius: 100px;
+    border: 1px solid #0E5482;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
+    font-size: 16px;
+    color: #0E5482;
+    cursor: pointer;
+    transition:  color 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
+
 .boutonContact:hover{
-    transform: scale(1.05);
+    transform: scale(1.05); 
+
+
+        
 }
+
+
+
 .rectangleContact{
-    width: 22vw;
-    height: 11vw;
+    width: 250px;
+    height: 150px;
     background-color: rgba(249, 13, 13, 0.20);
     border-radius: 0.75em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -92,7 +104,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     p {
-        font-size: 1.3vw;
+        font-size: 18px;
         color: #0E5482;
         font-family: Inter, sans-serif;
     }
@@ -101,28 +113,36 @@ body {
         color: #0E5482; /* Couleur du texte */
         font-weight: bold;
     }
-
 }
+
+#textIntro{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 #textIntro h1 {
+    
     color: #0E5482; /* Couleur du texte */
     font-weight : 700;
     font-family: Inter, sans-serif;
     /*font-size: 4em;*/
-    font-size: 2.5vw;
+    font-size: 40px;
+    margin-bottom: 20px;
+    
 }
 #textIntro p {
     color: #0E5482; /* Couleur du texte */
     font-weight : 540;
     font-family: Inter, sans-serif;
-    /*font-size: 1.5em;*/
-    font-size: 1vw;
+    font-size: 20px;
     line-height: 150%;
+    max-width: 800px;
 }
 .texte2023 {
     color: #0E5482; /* Couleur du texte */
     font-weight : bold;
     font-family: Inter, sans-serif;
-    font-size: 1.6vw;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     margin-top: 8vw;
@@ -135,26 +155,26 @@ article{
     gap: 3.5vw;
 }
 .rondBleu {
-    width: 11vw;
-    height: 11vw;
+    width: 140px;
+    height: 140px;
     /*background-color: rgba(0, 110, 182, 0.14);*/
     background-image: linear-gradient(to bottom, rgba(0, 110, 182, 0.14) 80%, white 97%);
     border-radius: 50%;
     p {
-        font-size: 1.2vw;
+        font-size: 100%;
         color: #0E5482; /* Couleur du texte */
         margin: 0; /* Supprime les marges par défaut */
         font-family: Inter, sans-serif;
     }
 }
 .rondBeige {
-    width: 13vw;
-    height: 13vw;
+    width: 160px;
+    height: 160px;
     /*background-color: rgba(249, 190, 13, 0.14);*/
     background-image: linear-gradient(to bottom, rgba(249, 190, 13, 0.14) 80%, white 97%);
     border-radius: 50%;
     p {
-        font-size: 1.2vw;
+        font-size: 98%;
         color: #0E5482; /* Couleur du texte */
         margin: 0; /* Supprime les marges par défaut */
         font-family: Inter, sans-serif;
@@ -194,7 +214,8 @@ article{
 }
 
 #textOutro {
-    font-size: 1.2vw;
+    margin-left: 50px;
+    font-size: 16px;
     color: #0E5482;
     font-family: Inter, sans-serif;
     line-height: 150%;
@@ -211,6 +232,7 @@ article{
 .auteur {
     padding-left: 35vw;
     padding-top: 1.5vw;
+
     font-style: italic;
     a {
         font-size: 0.85em;
@@ -224,7 +246,10 @@ article{
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 4.5vw;
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 50px;
+
 }
 #basdepage {
     display: flex;
@@ -250,4 +275,140 @@ article{
         padding-left: 4vw;
     }
 }
+@media (min-width: 1500px){
+    #textOutro{
+        p{
+            font-size: 1.1vw;
+            line-height: 150%;
+        }
+    }
+}
 
+@media (min-width : 1700px){
+    .logo{
+        margin-top: 4vw;
+        margin-left: 10vw;
+
+        img{
+            width: 20vw;
+            height: auto;
+
+        }
+
+    }
+    #textIntro{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 100px;
+
+        h1{
+            font-size: 2.3vw;
+        }
+        p{
+            font-size: 1.2vw;
+        }
+    }
+    .rectangle1{
+        width: 15vw;  /* Largeur du rectangle */
+        height: 25.5vw;
+
+        p{
+            font-size: 1.2vw;
+        }
+    }
+    .rectangle2{
+        width: 18vw;  /* Largeur du rectangle */
+        height: 32vw;
+        p{
+            font-size: 1.2vw;
+        }
+    }
+    #haut{
+        padding-top: 12vw;
+    }
+    .texte2023{
+        p{
+            font-size: 1.7vw;
+        }
+    }
+    .rondBleu{
+        width: 8vw;
+        height: 8vw;
+        p{
+            font-size: 0.95vw;
+        }
+    }
+    .rondBeige{
+        width: 10vw;
+        height: 10vw;
+        p{
+            font-size: 0.9vw;
+        }
+    }
+    .rectangleContact{
+        width: 15vw;
+        height: 9vw;
+        p{
+            font-size: 1.1vw;
+        }
+    }
+
+}
+@media (min-width: 2000px){
+    #textIntro{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 100px;
+
+        h1{
+            font-size: 45px;
+        }
+        p{
+            font-size: 24px;
+        }
+    }
+    #imagePresentation{
+        gap: 3vw;
+    }
+    .texte2023{
+        p{
+            font-size: 35px;
+        }
+    }
+}
+@media (min-width: 2200px){
+    .rectangle1{
+        width: 330px;  /* Largeur du rectangle */
+        height: 570px;
+        p{
+            font-size: 26px;
+        }
+    }
+    .rectangle2{
+        width: 410px;  /* Largeur du rectangle */
+        height: 720px;
+        p{
+            font-size: 26px;
+        }
+    }
+    .rondBleu{
+        width: 180px;
+        height: 180px;
+        p{
+            font-size: 21px;
+        }
+    }
+    .rondBeige{
+        width: 220px;
+        height: 220px;
+        p{
+            font-size: 21px;
+        }
+    }
+    #textOutro{
+        p{
+            font-size: 25px;
+            line-height: 150%;
+        }
+    }
+}
