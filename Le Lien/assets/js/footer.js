@@ -1,14 +1,17 @@
-let chemin = "";
-if (document.title == "Page d'accueil"){ //Car la page d'acceuil n'est pas au meme emplacement que les autres.
-    chemin = "assets/images/";
-}
-else{
-    chemin = "../assets/images/";
+import {pagesData} from "./data.js";
+const pages = JSON.parse(JSON.stringify(pagesData));
+let pageActuel = pages.accueil
+
+for (const page of Object.values(pages)) {
+    if(document.title === page.title){
+        pageActuel = page;
+    }
 }
 document.querySelector('footer').innerHTML = `
        <div class="footerHaut">
             <div class="leLien">
-                <p><a><img src="${chemin}logoFooter.png"/>LE LIEN</a></p>
+                <img src="${pageActuel.srcImg}/logoFooter.png"/>
+                <p>LE LIEN</p>
             </div>
             <div class="contenuHautFooter">
                 <div class="blockFooter">
@@ -18,8 +21,8 @@ document.querySelector('footer').innerHTML = `
                 </div>
                 <div class="blockFooter">
                     <h3 id="contactTitre">NOUS CONTACTER</h3>
-                    <p><a><img src="${chemin}tel.png"/> 06 22 60 22 28</a></p>
-                    <p><a><img src="${chemin}mail.png"/> reseausante@hotmail.fr</a></p>
+                    <p><a><img src="${pageActuel.srcImg}/tel.png"/> 06 22 60 22 28</a></p>
+                    <p><a><img src="${pageActuel.srcImg}/mail.png"/> reseausante@hotmail.fr</a></p>
                 </div>
                 <div class="blockFooter">
                     <h3 id="liensTitre">LES LIENS DU LIEN</h3>
@@ -29,7 +32,7 @@ document.querySelector('footer').innerHTML = `
                     </ul>
                 </div>
                 <div class ="cookie">
-                    <img src="${chemin}cookie.png" alt="Cookie footer">
+                    <img src="${pageActuel.srcImg}/cookie.png" alt="Cookie footer">
                 </div>
             </div>
         </div>

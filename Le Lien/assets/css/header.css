@@ -20,6 +20,13 @@
     display: flex;
     align-items: center;
     margin-right: 1em;
+    a[href]:hover {
+        color: aliceblue;
+    }
+    .active{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
 }
 
 .logo {
@@ -34,6 +41,7 @@
     font-size: 0.90em;
     font-family: Inter, sans-serif;
 }
+
 
 .boutons-navbar {
     display: flex;
@@ -63,6 +71,10 @@
     font-size: 0.90em;
     padding: 0.5em 1.7em 0.5em 1em ;
     border-radius: 1.2em;
+}
+
+#accident{
+    font-weight: bold;
 }
 
 .logo-recherche{
