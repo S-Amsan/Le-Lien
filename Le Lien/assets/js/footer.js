@@ -40,7 +40,7 @@ document.querySelector('footer').innerHTML = `
             <div class="contenuBasFooter">
                 <div class = "mentionEtCondidentialite">
                     <p id = "mentionLegale"><a href="https://lelien-association.fr/asso/?mentions-legales" target="_blank">Mentions légales</a></p>
-                    <p id = "politiqueConfidentialite"><a href="https://lelien-association.fr/asso/?mentions-legales" target="_blank">Politique de confidentialité</a></p>
+                    <p id = "politiqueConfidentialite"><a href="#" target="_blank">Politique de confidentialité</a></p>
                 </div>
                 <div class = "copyright">
                     <p>© Années 1999-2024 - Association “le Lien” spécialisée dans la traite des erreurs médicales</p>
