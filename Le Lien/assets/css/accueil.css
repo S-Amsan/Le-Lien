@@ -1,4 +1,102 @@
-p{
+#titredeChiffre{
+    text-align:center;
+}
+
+#titreChiffre{
+    font-weight: 620;
+    color: #004383;
+    font-family: Poppins;
+    border-bottom: 5px solid #fdd868;
+    display: inline-block;
+
+}
+
+#info1, #info2, #info3, #info4, #info5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    border: 4px solid #004383;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: rgba(107, 198, 176, 0.07);
+}
+
+#info1:hover, #info2:hover,#info3:hover,#info4:hover,#info5:hover {
+    transform: scale(1.01);
+}
+
+.ChiffresCles img {
+    width: 7vw;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.ChiffresCles h3 {
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 2.5em;
+    color: #004383;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.ChiffresCles p {
+    margin: 5px 0;
+    padding-bottom: 70px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #004383;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+}
+
+.chiffresPartieHaute {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chiffresPartieBasse{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+#litHopital{
+    width: 7vw;
+    padding-top: 40px;
+}
+
+#virus{
+    width:6vw;
+    padding-top: 70px;
+}
+
+#tombe{
+    width: 5.5vw;
+    padding-top: 85px;
+}
+
+#prescription{
+    width: 5.5vw;
+    padding-top: 75px;
+}
+
+#medecin{
+    width: 5.5vw;
+    padding-top: 95px;
+}
+
+.espaceDonEtAdherer p{
     text-align: center;
     font-size: 1.2em;
     font-weight: 500;
@@ -15,6 +113,7 @@ h2{
 
 #titreEspaceDonAdherer{
     text-align: center;
+    padding-top: 1.6em;
 }
 
 .espaceDonEtAdherer{
@@ -28,54 +127,77 @@ h2{
     display: grid;
     align-items: center;
     text-align: center;
-    padding-left: 400px;
+    padding-left: 250px;
+    font-size: 1.3em;
 }
 
 .espaceAdherer {
     display: grid;
     align-items: center;
     text-align: center;
-    padding-right: 400px;
+    padding-right: 250px;
+    font-size: 1.3em;
 }
 
 .LigneSeparatrice {
     width: 4px;
-    height: 500px;
+    height: 70vh;
     background-color: #fdd868;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-bottom:20px;
 }
 
 #coeur{
-    width: 7vw;
+    width: 8vw;
     justify-self: center;
 }
 
 #main{
-    width: 7vw;
+    width: 8vw;
     justify-self: center;
 }
 
-button {
+#btnDon {
+    background-color: #007bff;
     padding: 10px;
-    margin:20px;
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
-#btnDon {
-    background-color: #007bff;
+#btnDon:hover {
+    background-color: #0056b3;
 }
+
 
 #btnAdherent {
     background-color: #f8bd12;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
+
+#btnAdherent:hover {
+    background-color: #d4a00e;
+}
+
 
 button:hover {
     opacity: 0.9;
