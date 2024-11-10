@@ -1,17 +1,180 @@
-#titredeChiffre{
-    text-align:center;
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
-#titreChiffre{
+.Menu {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+#btnNousAider {
+    background-color: #007bff;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.main-content1 {
+    position: relative;
+    z-index: 0;
+    padding-top:100px;
+}
+
+.main-content1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #DFE7FF 0%, #045DB0 100%);
+    opacity: 0.65;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.main-content2 {
+    position: relative;
+    z-index: 0;
+}
+
+.main-content2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #FFFFFF 0%, #DAF3FF 19%, #DFE7FF 29%);
+    opacity: 0.65;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.Presentation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.FondPresentation {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.15);
+    border-radius: 20px;
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.presentation-content, .presentation-image {
+    position: relative;
+    z-index: 1;
+}
+
+.presentation-content {
+    max-width: 42%;
+    padding-left:21em;
+}
+
+.presentation-content h3 {
+    color: white;
+    font-size: 3em; /* Augmente la taille */
+    font-weight: 800;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Renforce l'ombre */
+    margin-bottom: 20px; /* Ajoute de l'espacement */
+    padding-bottom: 30px;
+    margin-top:1px;
+}
+
+.presentation-content p {
+    color: white;
+    font-size: 1.7em; /* Augmente la taille de la police */
+    font-weight: 600;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Renforce l'ombre */
+    line-height: 1.7; /* Augmente l'espacement entre lignes */
+    margin-bottom: 20px; /* Ajoute de l'espacement */
+    padding-bottom:25px;
+}
+
+#btnPresentation {
+    background-color: #0046ad; /* Couleur ajustée pour correspondre à la seconde image */
+    padding: 12px 25px; /* Augmente la taille du bouton */
+    font-size: 1.2em; /* Augmente la taille de la police */
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Renforce l'ombre du bouton */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajoute une transition pour le hover */
+    margin-top: 30px; /* Ajoute un espace en haut du bouton */
+}
+
+#btnPresentation:hover {
+    background-color: #003580; /* Couleur plus foncée pour l'effet de hover */
+    transform: translateY(-2px); /* Légère élévation au hover */
+}
+
+#fichePresentation {
+    position: absolute;
+    top: -3em; /* Ajuste cette valeur pour placer l'image plus bas */
+    right: 12em; /* Ajuste pour rapprocher l'image de l'autre côté */
+    z-index: 1;
+    width: 24em;
+}
+
+#docteurPresentation {
+    position: absolute;
+    top: -22em; /* Ajuste cette valeur pour placer l'image plus haut */
+    right: 20em; /* Ajuste pour positionner l'image plus près de la fiche */
+    z-index: 2; /* Docteur doit rester devant */
+    width: 24em;
+}
+
+.ChiffresCles{
+    padding-top: 7em;
+}
+
+#titredeChiffre {
+    text-align: center;
+}
+
+#titreChiffre {
     font-weight: 620;
     color: #004383;
     font-family: Poppins;
     border-bottom: 5px solid #fdd868;
     display: inline-block;
-
 }
 
-#info1, #info2, #info3, #info4, #info5{
+#info1, #info2, #info3, #info4, #info5 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,8 +189,8 @@
     background-color: rgba(107, 198, 176, 0.07);
 }
 
-#info1:hover, #info2:hover,#info3:hover,#info4:hover,#info5:hover {
-    transform: scale(1.01);
+#info1:hover, #info2:hover, #info3:hover, #info4:hover, #info5:hover {
+    transform: translateY(-2px); /* Légère élévation au hover */
 }
 
 .ChiffresCles img {
@@ -44,7 +207,6 @@
     color: #004383;
     font-weight: 800;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Poppins', sans-serif;
 }
 
 .ChiffresCles p {
@@ -54,7 +216,6 @@
     font-size: 1.1em;
     font-weight: 500;
     color: #004383;
-    font-family: 'Poppins', sans-serif;
     line-height: 1.2;
 }
 
@@ -64,63 +225,61 @@
     gap: 10px;
 }
 
-.chiffresPartieBasse{
+.chiffresPartieBasse {
     display: flex;
     justify-content: center;
     gap: 10px;
     padding-top: 10px;
 }
 
-#litHopital{
+#litHopital {
     width: 7vw;
     padding-top: 40px;
 }
 
-#virus{
-    width:6vw;
+#virus {
+    width: 6vw;
     padding-top: 70px;
 }
 
-#tombe{
+#tombe {
     width: 5.5vw;
     padding-top: 85px;
 }
 
-#prescription{
+#prescription {
     width: 5.5vw;
     padding-top: 75px;
 }
 
-#medecin{
+#medecin {
     width: 5.5vw;
     padding-top: 95px;
 }
 
-.espaceDonEtAdherer p{
+.espaceDonEtAdherer p {
     text-align: center;
     font-size: 1.2em;
     font-weight: 500;
-    font-family: Poppins;
 }
 
-h2{
+h2 {
     text-align: center;
     font-size: 2em;
     font-weight: 500;
-    font-family: Poppins;
 }
 
-
-#titreEspaceDonAdherer{
+#titreEspaceDonAdherer {
     text-align: center;
     padding-top: 1.6em;
 }
 
-.espaceDonEtAdherer{
-    display:flex;
+.espaceDonEtAdherer {
+    display: flex;
     justify-content: space-around;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 100px;
+    padding-left:1em;
 }
 
 .espaceDon {
@@ -144,15 +303,15 @@ h2{
     height: 70vh;
     background-color: #fdd868;
     margin: 0 auto;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
-#coeur{
+#coeur {
     width: 8vw;
     justify-self: center;
 }
 
-#main{
+#main {
     width: 8vw;
     justify-self: center;
 }
@@ -170,13 +329,11 @@ h2{
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    font-family: 'Poppins', sans-serif;
 }
 
 #btnDon:hover {
     background-color: #0056b3;
 }
-
 
 #btnAdherent {
     background-color: #f8bd12;
@@ -191,54 +348,50 @@ h2{
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    font-family: 'Poppins', sans-serif;
 }
 
 #btnAdherent:hover {
     background-color: #d4a00e;
 }
 
-
 button:hover {
     opacity: 0.9;
 }
 
-.espaceCollaborateur{
+.espaceCollaborateur {}
 
-}
-
-#texteCollaborateurs{
+#texteCollaborateurs {
     text-align: center;
     font-size: 2em;
     font-weight: 500;
-    font-family: Poppins;
 }
 
-.imagesCollaborateurs{
-    display : flex;
+.imagesCollaborateurs {
+    display: flex;
     justify-content: center;
-    margin-left : 7em;
+    margin-left: 7em;
     gap: 80px;
+    padding-bottom: 2em;
 }
 
-.imageFranceAssos img{
+.imageFranceAssos img {
     margin-top: 3em;
-    width : 75%;
-    height : auto;
+    width: 75%;
+    height: auto;
     transition: transform 0.3s ease;
 }
 
-.imageHeral img{
-    width : 80%;
-    height : auto;
+.imageHeral img {
+    width: 80%;
+    height: auto;
     margin-top: 5.5em;
     transition: transform 0.3s ease;
 }
 
-.imageFranceAssos img:hover{
+.imageFranceAssos img:hover {
     transform: scale(1.1);
 }
 
-.imageHeral img:hover{
+.imageHeral img:hover {
     transform: scale(1.1);
 }
