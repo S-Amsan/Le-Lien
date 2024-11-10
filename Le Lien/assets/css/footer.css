@@ -12,7 +12,6 @@ main{
     flex : 1 0 auto;
 }
 footer{
-    margin-top: 50px;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;

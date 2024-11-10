@@ -1,46 +1,205 @@
-main{
+main {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #006EB6;
 }
 
-#quiSommeNous{
-    display:flex;
-    img{
+/* Section Qui sommes-nous? */
+#quiSommeNous {
+    display: flex;
+    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%);
+    img {
         margin-left: 50px;
         margin-top: 150px;
-        height:40em;
-        width:auto;
+        height: 40em;
+        width: auto;
     }
-    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%); /*Fond dégradé */
-}
-
-.contenuQuiSommeNous{
-    margin-top: 6em;
-    padding-bottom: 20em;
-    h1{
+    .contenu {
+        margin-top: 6em;
+        padding-bottom: 20em;
+    }
+    h1 {
         font-size: 6em;
     }
-    p{
-        font-size: 1.2em;
-        margin-left: 7em;
-        padding-right: 4em;
-        margin-bottom: 2em;
-        text-align: justify;
+    p {
+    font-size: 1.2em;
+    margin-left: 7em;
+    padding-right: 4em;
+    margin-bottom: 2em;
+    text-align: justify;
     }
 }
 
-#nosMissions{
+/* Section Nos missions */
+#nosMissions {
     text-align: center;
+    h1 {
+        font-size: 3em;
+        display: inline;
+        position: relative;
+    }
+    h1::after { /* Soulignement du titre h1 avec une ombre */
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #FFDA69;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .contenu {
+        display: flex;
+        gap: 5em;
+        justify-content: center;
+    }
+    article {
+        margin-top: 6em;
+        padding-bottom: 10em;
+        border-radius: 20px; /* Coins arrondis */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+        flex-basis: 30%;
+        height: 20em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        li, p {
+            text-align: left;
+            margin-left: 2em;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            font-weight: 300;
+            padding-right: 3em;
+            .instance{
+                color: #006EB6;
+            }
+        }
+    }
+    .versNosActions{
+        margin-top: 6em;
+        p{
+            color: #FFDA69;
+        }
+        button {
+            padding: 0.50em 0.5em;
+            border-radius: 20px;
+            border-color: #FFDA69;
+            font-size: 1.5em;
+            background: linear-gradient(to right, #D3DEFE 0%, #BBF4FF 100%);
+            font-weight: 800;
+            color: #006EB6;
+        }
+        button:hover {
+            color: aliceblue;
+
+        }
+
+    }
 }
 
-#nosMissions h1 {
+#mission1{
+    margin-left: 8em;
+    background-color: #56CBF9;
+}
+#mission2 {
+    background-color: #BAF2BB;
+}
+
+#mission1, #mission2{
+    p{
+        margin-top: 3em;
+    }
+    li{
+        padding: 0.5em;
+    }
+}
+#mission3 {
+    margin-right: 8em;
+    background-color: #F2BAC9;
+    p {
+        margin-top: 1.2em;
+    }
+    li{
+        padding: 0.3em;
+    }
+}
+
+/* Section Notre Équipe */
+
+#notreEquipe{
+    margin-top: 6em;
+    padding-left: 2em;
+    padding-bottom: 10em;
+    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%);
+    .titre{
+        display: flex;
+        align-items: center;
+        img{
+            width: 5em;
+            height: 5em;
+        }
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    h2 {
+        font-size: 1.8em;
+        display: inline;
+        position: relative;
+    }
+    h2::after { /* Soulignement du titre h1 avec une ombre */
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #FFDA69;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+}
+
+#notreEquipe .Apropos p{
+    font-size: 1.2em;
+}
+
+/*Carrousel*/
+
+.carrousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carrousel .contenu {
+    width: 900px;
+    height: 657px;
+    background: #ffffff;
+    text-align: center;
+    margin-top: 6em;
+    margin-bottom: 6em;
+    padding-top: 5em;
+
+}
+
+.carrousel .contenu h3{
     font-size: 3em;
     display: inline;
     position: relative;
 }
-
-#nosMissions h1::after { /* Permet de crée un soulignement avec de l'ombre */
+.carrousel .contenu h3::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -50,3 +209,43 @@ main{
     background-color: #FFDA69;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.carrousel .contenu .personnes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 7em;
+    text-align: center;
+}
+
+.carrousel .personne img{
+        width: 10em;
+        height: auto;
+}
+
+.carrousel .personne p{
+    color: #000000;
+}
+
+.carrousel .personne .description{
+    font-size: 0.8em;
+    margin-left: 3em;
+    margin-right: 3em;
+
+}
+
+
+button.fleche {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button.fleche img {
+    width: 50%;
+    height: auto;
+}
+
+
+
+
+
