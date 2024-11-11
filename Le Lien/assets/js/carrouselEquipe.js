@@ -29,6 +29,8 @@ function actualiserCarrousel(){
     document.querySelector('.carrousel .contenu').innerHTML = contenuCarrousel[id];
 }
 
+document.addEventListener('DOMContentLoaded', () => {
 boutonDroite.addEventListener('click', flecheDroiteClick);
 boutonGauche.addEventListener('click', flecheGaucheClick);
-actualiserCarrousel()
+actualiserCarrousel();
+});
