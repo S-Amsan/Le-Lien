@@ -7,7 +7,7 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    height: 90vh; /* Prend toute la hauteur de la vue */
+    height: 90vh; 
 }
 
 .Menu::before {
@@ -17,8 +17,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.3); /* Couche blanche avec opacité de 70% */
-    z-index: 1; /* Place la superposition au-dessus de l'image de fond */
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
 }
 
 .background-image {
@@ -29,8 +29,8 @@ body {
     height: 100%;
     object-fit: cover;
     filter: blur(2px);
-    opacity: 0.25; /* Réduit l'opacité de l'image de fond */
-    z-index: -1; /* Place l'image derrière le contenu */
+    opacity: 0.25;
+    z-index: -1;
 }
 
 .ContenuMenu, .ImageMenu {
@@ -43,7 +43,7 @@ body {
     color: #004383;
     font-size: 3em;
     font-weight: 1000;
-    font-style: italic; /* Rend le titre en italique */
+    font-style: italic;
     margin-bottom: 1.2em;
     padding-left: 3em;
 }
@@ -62,9 +62,9 @@ body {
 }
 
 #btnNousAider {
-    background-color: #0046ad; /* Couleur ajustée pour correspondre à la seconde image */
-    padding: 12px 25px; /* Augmente la taille du bouton */
-    font-size: 1.2em; /* Augmente la taille de la police */
+    background-color: #0046ad;
+    padding: 12px 25px;
+    font-size: 1.2em;
     font-weight: 600;
     color: white;
     border: none;
@@ -72,15 +72,15 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Renforce l'ombre du bouton */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-left: 7.2em;
     margin-top:3em;
 }
 
 #btnNousAider:hover{
-    background-color: #003580; /* Couleur plus foncée pour l'effet de hover */
-    transform: translateY(-2px); /* Légère élévation au hover */
+    background-color: #003580;
+    transform: translateY(-2px);
 }
 
 .main-content1 {
@@ -153,28 +153,28 @@ body {
 
 .presentation-content h3 {
     color: white;
-    font-size: 3em; /* Augmente la taille */
+    font-size: 3em;
     font-weight: 800;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Renforce l'ombre */
-    margin-bottom: 20px; /* Ajoute de l'espacement */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
     padding-bottom: 30px;
     margin-top:1px;
 }
 
 .presentation-content p {
     color: white;
-    font-size: 1.7em; /* Augmente la taille de la police */
+    font-size: 1.7em;
     font-weight: 600;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Renforce l'ombre */
-    line-height: 1.7; /* Augmente l'espacement entre lignes */
-    margin-bottom: 20px; /* Ajoute de l'espacement */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    line-height: 1.7;
+    margin-bottom: 20px;
     padding-bottom:25px;
 }
 
 #btnPresentation {
-    background-color: #0046ad; /* Couleur ajustée pour correspondre à la seconde image */
-    padding: 12px 25px; /* Augmente la taille du bouton */
-    font-size: 1.2em; /* Augmente la taille de la police */
+    background-color: #0046ad;
+    padding: 12px 25px;
+    font-size: 1.2em;
     font-weight: 600;
     color: white;
     border: none;
@@ -182,34 +182,34 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Renforce l'ombre du bouton */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Ajoute une transition pour le hover */
-    margin-top: 30px; /* Ajoute un espace en haut du bouton */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
 }
 
 #btnPresentation:hover {
-    background-color: #003580; /* Couleur plus foncée pour l'effet de hover */
-    transform: translateY(-2px); /* Légère élévation au hover */
+    background-color: #003580;
+    transform: translateY(-2px);
 }
 
 #fichePresentation {
     position: absolute;
-    top: -3em; /* Ajuste cette valeur pour placer l'image plus bas */
-    right: 12em; /* Ajuste pour rapprocher l'image de l'autre côté */
+    top: -3em;
+    right: 12em;
     z-index: 1;
     width: 24em;
 }
 
 #docteurPresentation {
     position: absolute;
-    top: -22em; /* Ajuste cette valeur pour placer l'image plus haut */
-    right: 20em; /* Ajuste pour positionner l'image plus près de la fiche */
-    z-index: 2; /* Docteur doit rester devant */
+    top: -22em;
+    right: 20em;
+    z-index: 2;
     width: 24em;
 }
 
 .ChiffresCles{
-    padding-top: 7em;
+    padding-top: 4.5em;
 }
 
 #titredeChiffre {
@@ -242,7 +242,7 @@ body {
 }
 
 #info1:hover, #info2:hover, #info3:hover, #info4:hover, #info5:hover {
-    transform: translateY(-2px); /* Légère élévation au hover */
+    transform: translateY(-2px);
 }
 
 .ChiffresCles img {
