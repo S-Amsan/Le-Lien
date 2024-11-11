@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 import {pagesData} from "./data.js";
 const pages = JSON.parse(JSON.stringify(pagesData));
 let pageActuel = pages.accueil
@@ -50,3 +51,4 @@ document.querySelector('header').innerHTML = `
         <button class="bouton bouton-recherche">Rechercher</button>
     </div>       
 `
+});
