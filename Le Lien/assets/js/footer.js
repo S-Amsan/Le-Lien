@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
 import {pagesData} from "./data.js";
 const pages = JSON.parse(JSON.stringify(pagesData));
 let pageActuel = pages.accueil
@@ -50,4 +49,3 @@ document.querySelector('footer').innerHTML = `
             </div>
         </div>
 `
-});
