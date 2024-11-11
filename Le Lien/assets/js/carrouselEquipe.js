@@ -1,6 +1,7 @@
 import {contenuCarrouselData} from "./data.js";
 const contenuCarrousel = JSON.parse(JSON.stringify(contenuCarrouselData));
 
+document.addEventListener('DOMContentLoaded', () => {
 //affectation des boutons
 const boutonDroite = document.getElementById('Droite');
 const boutonGauche = document.getElementById('Gauche');
@@ -29,7 +30,6 @@ function actualiserCarrousel(){
     document.querySelector('.carrousel .contenu').innerHTML = contenuCarrousel[id];
 }
 
-document.addEventListener('DOMContentLoaded', () => {
 boutonDroite.addEventListener('click', flecheDroiteClick);
 boutonGauche.addEventListener('click', flecheGaucheClick);
 actualiserCarrousel();
