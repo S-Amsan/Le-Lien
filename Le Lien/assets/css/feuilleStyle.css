@@ -8,7 +8,7 @@
 body {
     background-image: url("../images/image de fond1.png");
     background-repeat: no-repeat;
-    background-size: 100% 40vw;
+    background-size: 100% 50vw;
 }
 
 
@@ -270,7 +270,7 @@ article{
     justify-content: center;
     padding-bottom: 12vw;
 }
-.logo {
+.logoWarning {
     margin-top: 4vw;
     margin-left: 8.5vw;
     img{
@@ -289,7 +289,7 @@ article{
 }
 
 @media (min-width : 1700px){
-    .logo{
+    .logoWarning{
         margin-top: 4vw;
         margin-left: 10vw;
 
