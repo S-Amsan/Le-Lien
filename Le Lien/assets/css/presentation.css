@@ -1,251 +1,250 @@
-main {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    color: #006EB6;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Section Qui sommes-nous? */
+main {
+    font-family: 'Poppins', sans-serif;
+    color: #006EB6;
+    font-weight: bold;
+}
+h2, h3{
+    text-align: center;
+}
+/* 1. Section Qui sommes-nous? */
 #quiSommeNous {
     display: flex;
-    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%);
-    img {
-        margin-left: 50px;
-        margin-top: 150px;
-        height: 40em;
-        width: auto;
-    }
-    .contenu {
-        margin-top: 6em;
-        padding-bottom: 20em;
-    }
-    h1 {
-        font-size: 6em;
-    }
-    p {
+    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%); /* Fond dégradé*/
+}
+#quiSommeNous img {
+    margin-left: 50px;
+    margin-top: 150px;
+    height: 40em;
+    width: auto;
+}
+#quiSommeNous .contenu {
+    margin-top: 6em;
+    padding-bottom: 20em;
+}
+#quiSommeNous h1 {
+    font-size: 6em;
+}
+#quiSommeNous p {
     font-size: 1.2em;
+    font-weight: 600;
     margin-left: 7em;
     padding-right: 4em;
     margin-bottom: 2em;
     text-align: justify;
-    }
 }
-
-/* Section Nos missions */
-#nosMissions {
-    text-align: center;
-    h1 {
-        font-size: 3em;
-        display: inline;
-        position: relative;
-    }
-    h1::after { /* Soulignement du titre h1 avec une ombre */
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background-color: #FFDA69;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-    .contenu {
-        display: flex;
-        gap: 5em;
-        justify-content: center;
-    }
-    article {
-        margin-top: 6em;
-        padding-bottom: 10em;
-        border-radius: 20px; /* Coins arrondis */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
-        flex-basis: 30%;
-        height: 20em;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-        }
-
-        li, p {
-            text-align: left;
-            margin-left: 2em;
-            color: black;
-            font-family: 'Arial', sans-serif;
-            font-weight: 300;
-            padding-right: 3em;
-            .instance{
-                color: #006EB6;
-            }
-        }
-    }
-    .versNosActions{
-        margin-top: 6em;
-        p{
-            color: #FFDA69;
-        }
-        button {
-            padding: 0.50em 0.5em;
-            border-radius: 20px;
-            border-color: #FFDA69;
-            font-size: 1.5em;
-            background: linear-gradient(to right, #D3DEFE 0%, #BBF4FF 100%);
-            font-weight: 800;
-            color: #006EB6;
-        }
-        button:hover {
-            color: aliceblue;
-
-        }
-
-    }
+/* 2. Section Nos missions */
+#nosMissions .contenu{
+    padding-top: 0.1em;
+    margin-left: 2.5%;
+    width: 95%;
+    background: linear-gradient(to bottom, #006EB6 0%, #82ccef 100%);
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-#mission1{
-    margin-left: 8em;
-    background-color: #56CBF9;
-}
-#mission2 {
-    background-color: #BAF2BB;
-}
-
-#mission1, #mission2{
-    p{
-        margin-top: 3em;
-    }
-    li{
-        padding: 0.5em;
-    }
-}
-#mission3 {
-    margin-right: 8em;
-    background-color: #F2BAC9;
-    p {
-        margin-top: 1.2em;
-    }
-    li{
-        padding: 0.3em;
-    }
-}
-
-/* Section Notre Équipe */
-
-#notreEquipe{
-    margin-top: 6em;
-    padding-left: 2em;
-    padding-bottom: 10em;
-    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%);
-    .titre{
-        display: flex;
-        align-items: center;
-        img{
-            width: 5em;
-            height: 5em;
-        }
-        h1 {
-            font-size: 3em;
-        }
-    }
-
-    h2 {
-        font-size: 1.8em;
-        display: inline;
-        position: relative;
-    }
-    h2::after { /* Soulignement du titre h1 avec une ombre */
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background-color: #FFDA69;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-}
-
-#notreEquipe .Apropos p{
-    font-size: 1.2em;
-}
-
-/*Carrousel*/
-
-.carrousel {
-    position: relative;
+#nosMissions .blocks{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
+    gap: 3em;
+    margin-left: 5em;
+    margin-right: 5em;
 }
-
-.carrousel .contenu {
-    width: 900px;
-    height: 657px;
-    background: #ffffff;
-    text-align: center;
-    margin-top: 6em;
-    margin-bottom: 6em;
-    padding-top: 5em;
+#nosMissions h2{
+    font-size: 4em;
+}
+#nosMissions h3{
+    font-size: 1.8em;
+    padding-bottom: 1em;
 
 }
-
-.carrousel .contenu h3{
-    font-size: 3em;
-    display: inline;
+#nosMissions li{
+    padding-top: 2em;
+}
+#nosMissions article {
     position: relative;
+    width: 33.333%;
+    margin-bottom: 3em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 0;
+    color: #D0D3D4;
 }
-.carrousel .contenu h3::after {
+#nosMissions h2,#nosMissions article h3{
+    color: #FFFFFF;
+}
+#nosMissions h2,#nosMissions article h3, #nosMissions article p, #nosMissions article li {
+    position: relative;
+    z-index: 1;
+    -webkit-text-stroke: 0.5px black;
+}
+/* met en fond des missions une image flou et transparente*/
+#nosMissions article::before {
     content: '';
     position: absolute;
-    bottom: -5px;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #FFDA69;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    opacity: 0.75;
+    z-index: -1;
+    filter: blur(5px);
 }
-.carrousel .contenu .personnes{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding-top: 7em;
+#mission1::before {
+    background-image: url('../images/Accompagnement.jpeg');
+}
+#mission2::before {
+    background-image: url('../images/Représentation.jpeg');
+}
+.instance {
+    color: #FFDA69;
+}
+#mission3::before {
+    background-image: url('../images/Promotion.jpeg');
+}
+/* redirection vers la page nos action */
+.versNosActions{
+    display: flex;
+    color: #727272;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+
+}
+.versNosActions button {
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+}
+.versNosActions button img{
+    width: 30px;
+    height: auto;
+}
+.versNosActions button:hover{
+    transform: scale(1.3);
+}
+
+
+
+/* 4. Section Equipe*/
+
+#equipe{
+    margin-top: 10em;
+}
+#equipe .titre {
     text-align: center;
 }
-
-.carrousel .personne img{
-        width: 10em;
-        height: auto;
+#equipe .titre h2{
+    font-size: 2em;
+}
+#equipe .titre h3 {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    background: #006db5;
+    color: #FFFFFF;
 }
 
-.carrousel .personne p{
-    color: #000000;
-}
-
-.carrousel .personne .description{
-    font-size: 0.8em;
-    margin-left: 3em;
-    margin-right: 3em;
-
-}
-
-
-button.fleche {
+/* 4.1 Carousel*/
+.carousel-contenu{
     position: relative;
+    margin : 0 20em 0;
+}
+
+/*flèches*/
+.carousel-contenu .fleche {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
     background: none;
+    color: white;
     border: none;
     cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+.carousel-contenu .fleche img{
+    width: 50px;
+    height: auto;
+    opacity: 0.8;
+    transition: transform 0.5s ease-in-out
+    , opacity 0.5s ease-in-out;
+}
+.carousel-contenu .fleche:hover img{
+    transform: scale(1.5);
+    opacity: 1;
+}
+.carousel-contenu .fleche#gauche{
+    left: 0;
+}
+.carousel-contenu .fleche#droite{
+    right: 0;
 }
 
-button.fleche img {
-    width: 50%;
+/*le carousel*/
+.carousel {
+    overflow: hidden;
+    margin : 10em 10em 0;
+}
+.personnes {
+    display: flex; /* Les cartes sont alignées horizontalement */
+    transition: transform 0.5s ease-in-out; /* Animation fluide */
+    padding: 3em 0 0;
+}
+.personne {
+    flex: 0 0 20%;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.7;
+    color : #FFFFFF;
+    user-select: none;
+}
+.personne img{
+    border-radius: 50%;
+    width: 100px;
     height: auto;
 }
 
+/* la personne au milieu */
+.personne.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 10;
+    user-select: text;
+}
+
+.personne.active h3{
+    font-size: 0.8em;
+    color : #727272;
+}
+.personne.active h2{
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.1em 0.25em;
+    background-color: #EFC033;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.personne.active h4 {
+    display: inline-block;
+    font-size: 0.4em;
+    padding: 0.2em 0.5em;
+    background-color: #006db5;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
 
 
 
-
+footer{
+    margin-top: 8em;
+}

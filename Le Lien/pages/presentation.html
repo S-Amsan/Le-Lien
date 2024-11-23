@@ -12,30 +12,35 @@
     <!-- script header + css du header -->
     <script src="../assets/js/header.js" type="module"></script>
     <link rel="stylesheet" href="../assets/css/header.css">
-    <!-- script du carrousel d'équipe  -->
+
+
+    <!-- Carrousel -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" />
     <script src="../assets/js/carrouselEquipe.js" type="module"></script>
 </head>
 <body>
-    <header></header>
+<header></header>
 
-    <main>
-        <section id="quiSommeNous">
-            <div class="logoQuiSommeNous">
-                <img src="../assets/images/logoXXL.png" alt="LE LIEN">
+<main>
+    <section id="quiSommeNous">
+        <div class="logoQuiSommeNous">
+            <img src="../assets/images/logoXXL.png" alt="LE LIEN">
+        </div>
+        <div class="contenu">
+            <h1>Qui sommes-nous ?</h1>
+            <p>Le LIEN est une association engagée dans la défense des patients et usagers de la santé, avec pour mission principale de soutenir les victimes d’accidents médicaux, notamment celles touchées par des infections nosocomiales.</p>
+            <p>Elle se mobilise pour offrir une aide personnalisée aux victimes tout en représentant les patients auprès des institutions et autorités sanitaires, afin de promouvoir la sécurité des soins et la qualité des prises en charge.</p>
+            <p>Membre de France Assos Santé, Le LIEN dispose d’un agrément national (2021-2026) pour représenter les usagers. Sous la vice-présidence de Claude Rambaud, elle s’appuie sur un conseil d’experts composé de juristes en droit de la santé et de médecins spécialisés.</p>
+        </div>
+    </section>
+    <section id="nosMissions">
+        <div class="contenu">
+            <div class="titre">
+                <h2>Nos missions</h2>
             </div>
-            <div class="contenu">
-                <h1>Qui sommes-nous ?</h1>
-                <p>Le LIEN est une association de défense des patients et des usagers de la santé. Son coeur de mission est de défendre les victimes d’accidents médicaux. Son action s’exerce dans le cadre de la lutte contre les infections nosocomiales et les accidents médicaux, qu’il s’agisse d’erreurs, de fautes ou d’aléas. </p>
-                <p>Le LIEN n’a qu’un seul parti pris, celui des patients et de leur sécurité et sa mission première est d’apporter une aide personnalisée aux victimes d’accidents médicaux et plus particulièrement aux victimes d’infections nosocomiales. Sa seconde mission est une mission plus générale et plus politique, celle de défendre les intérêts des patients et de les représenter devant les différentes institutions de santé et autorités administratives pour promouvoir la sécurité des soins et la qualité de la prise en charge.</p>
-                <p>Le LIEN est membre de l’Union des assosciations agréées du système de santé : <i> France Assos Santé </i></p>
-                <p>Claude Rambaud en est la vice présidente.</p>
-            </div>
-        </section>
-        <section id="nosMissions">
-            <h1>Nos Missions</h1>
-            <div class="contenu">
-                <article id="mission1">
-                    <h2>Mission 1 :<br>Accompagnement des victimes</h2>
+            <div class="blocks">
+                <article class="block" id="mission1">
+                    <h3>Accompagnement des victimes</h3>
                     <p>L'association soutient les victimes en :</p>
                     <ul>
                         <li>Orientant vers des structures de soins adaptées</li>
@@ -45,8 +50,8 @@
                         <li>Participant, rarement, à des actions civiles dans des procédures pénales</li>
                     </ul>
                 </article>
-                <article id="mission2">
-                    <h2>Mission 2 :<br>Représentation des usagers</h2>
+                <article class="block" id="mission2">
+                    <h3>Représentation <br> des usagers</h3>
                     <p>L'association représente les usagers dans diverses instances :</p>
                     <ul>
                         <li><span class="instance">National </span>: Ministère de la santé, ONIAM, ANSES, HAS, Agence Santé Publique France, Université de Paris, etc.</li>
@@ -54,8 +59,8 @@
                         <li><span class="instance">Local </span>: Conseils de surveillance, Comités de lutte contre les infections, nutrition (CLAN), douleur (CLUD), etc.</li>
                     </ul>
                 </article>
-                <article id="mission3">
-                    <h2>Mission 3 :<br>Promotion des droits et sécurité des<br>patients</h2>
+                <article class="block" id="mission3">
+                    <h3>Promotion des droits et sécurité</h3>
                     <p>L'association s'engage à :</p>
                     <ul>
                         <li>Interpeller les autorités sanitaires sur les problèmes relevés dans les dossiers patients</li>
@@ -66,38 +71,85 @@
                     </ul>
                 </article>
             </div>
-            <div class="versNosActions">
-                <p>"Les actes valent mieux que les paroles."</p>
-                <button onclick="window.location.href='';">Voir nos actions</button>
-            </div>
-        </section>
-        <section id="notreEquipe">
+        </div>
+        <div class="versNosActions">
+            <p>Voir nos actions</p>
+            <button onclick="window.location.href='#';">
+                <img src="../assets/images/redirection.png" alt=">">
+            </button>
+        </div>
+    </section>
+    <section id="equipe">
+        <div class="contenu">
             <div class="titre">
-                <img src="../assets/images/LogoLeLien.png" alt="">
-                <h1>Notre équipe</h1>
+                <h2>AU CŒUR DE LA LUTTE POUR DES SOINS SÛRS ET RESPECTUEUX DES DROITS DES PATIENTS</h2>
+                <h3>La gouvernance</h3>
             </div>
 
-            <div class="carrousel">
-                <button class ="fleche" id="Gauche">
-                <img src="../assets/images/fleche-gauche.png" alt="<">
-                </button>
-                <div class="contenu">
+
+            <div class="carousel-contenu">
+                <button class="fleche" id="gauche"><img src="../assets/images/fleche-gauche.png" alt="<"></button>
+                <div class="carousel">
+                    <!-- Conteneur du carrousel -->
+                    <div class="personnes">
+                        <!-- 9 cartes (éléments du carrousel) -->
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Chantal%20Cateau.png" alt="">
+                            <h2>Chantal Cateau</h2>
+                            <h3>Présidente</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Claude%20Rambaud.png" alt="">
+                            <h2>Claude Rambaud</h2>
+                            <h3>Vice-présidente</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Alain-Michel%20Ceretti.png" alt="">
+                            <h4>FONDATEUR</h4>
+                            <h2>Alain-Michel Ceretti</h2>
+                            <h3>Président d’honneur</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Jean-Luc%20Bernard.png" alt="">
+                            <h4>FONDATEUR</h4>
+                            <h2>Jean-Luc Bernard </h2>
+                            <h3>1er président du CISS</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Jean-François%20Baibled.png" alt="">
+                            <h2>Jean-François Baibled</h2>
+                            <h3>Secrétaire général</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Lorraine%20Brière%20de%20L’Isle.png" alt="">
+                            <h2>Lorraine Brière de L’Isle</h2>
+                            <h3>Poste non précisé</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/François%20Rullier.png" alt="">
+                            <h2>François Rullier</h2>
+                            <h3>Trésorier</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Nicole%20Billast.png" alt="">
+                            <h2>Nicole Billast</h2>
+                            <h3>Poste non précisé</h3>
+                        </div>
+                        <div class="personne">
+                            <img src="../assets/images/personnes/Jean-Pierre%20Thierry.png" alt="">
+                            <h2>Jean-Pierre Thierry</h2>
+                            <h3>Conseiller médical</h3>
+                        </div>
+                    </div>
+                    <!-- Boutons pour naviguer -->
                 </div>
-                <button class ="fleche" id="Droite">
-                <img src="../assets/images/fleche-droite.png" alt=">">
-                </button>
+                <button class="fleche" id="droite"><img src="../assets/images/fleche-droite.png" alt=">"></button>
             </div>
+        </div>
+    </section>
 
 
-
-            <div class="Apropos">
-                <h2>À propos de l’association</h2>
-                <p>Le LIEN est une association agréée au niveau national pour représenter les usagers de la santé devant les institutions de santé (dernier agrément : 2021-2026).</p>
-                <p>Conseil d'Experts :<br>Le conseil est composé de juristes en droit de la santé, dont un ancien magistrat et vice-président de tribunal administratif, ainsi que de médecins spécialisés dans les recours des patients et en hygiène.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer></footer>
+</main>
+<footer></footer>
 </body>
 </html>
