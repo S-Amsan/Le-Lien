@@ -90,10 +90,7 @@ body {
 }
 
 .boutonContact:hover{
-    transform: scale(1.05); 
-
-
-        
+    transform: scale(1.05);
 }
 
 
@@ -125,14 +122,14 @@ body {
 }
 
 #textIntro h1 {
-    
+
     color: #0E5482; /* Couleur du texte */
     font-weight : 700;
     font-family: Inter, sans-serif;
     /*font-size: 4em;*/
     font-size: 40px;
     margin-bottom: 20px;
-    
+
 }
 #textIntro p {
     color: #0E5482; /* Couleur du texte */
@@ -278,6 +275,94 @@ article{
         height: auto;
         padding-left: 4vw;
     }
+}
+@media (max-width: 450px){
+    .logoWarning{
+        display: none;
+    }
+    #textIntro{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        h1{
+            font-size: 90px;
+        }
+        p{
+            font-size: 50px;
+            text-align: justify;
+            padding-top: 50px;
+        }
+    }
+    body{
+        background-size: 100% 100vw;
+    }
+    #imagePresentation{
+        flex-wrap: wrap;
+        gap: 0px;
+        padding-top: 100px;
+    }
+    .rectangle1, .rectangle2{
+        width: 100%;
+        border-radius:0px;
+        justify-content: space-evenly;
+        img{
+            height: 90%;
+            width: auto;
+        }
+        p{
+            margin-bottom: 0px;
+            font-size: 30px;
+        }
+    }
+    .rectangle1:hover{
+        transform: none;
+    }
+    .rectangle2:hover{
+        transform: none;
+    }
+    .texte2023{
+        padding-top: 100px;
+        p{
+            font-size: 50px;
+        }
+    }
+    #stat{
+        column-gap: 50px;
+        padding-top: 100px;
+    }
+    .rondBleu{
+        height: 220px;
+        width: 220px;
+        p{
+            font-size: 25px;
+        }
+    }
+    .rondBeige{
+        width: 280px;
+        height: 280px;
+        p{
+            font-size: 27px;
+        }
+    }
+    #basdepage{
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    #textOutro{
+        margin-left: 0px;
+        p{
+            font-size: 30px;
+            text-align: justify;
+            line-height: 150%;
+        }
+    }
+
 }
 @media (min-width: 1500px){
     #textOutro{
