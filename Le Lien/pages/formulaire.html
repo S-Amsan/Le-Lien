@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire</title>
+  <!-- Lien Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container mt-3">
+  <h1>Formulaire</h1>
+  <form class="row g-3 needs-validation" action="enquete_form.php" method="POST">
+    <div class="row g-3">
+      <div class="col-md-3"><label for="region" class="form-label">Votre région :</label>
+        <select class="form-select" aria-label="Default select example" id="region" name="region">
+          <option value="">--Sélectionnez--</option>
+          <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
+          <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+          <option value="bretagne">Bretagne</option>
+          <option value="centre-val-de-loire">Centre-Val de Loire</option>
+          <option value="corse">Corse</option>
+          <option value="grand-est">Grand Est</option>
+          <option value="hauts-de-france">Hauts-de-France</option>
+          <option value="ile-de-france">Île-de-France</option>
+          <option value="normandie">Normandie</option>
+          <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+          <option value="occitanie">Occitanie</option>
+          <option value="pays-de-la-loire">Pays de la Loire</option>
+          <option value="provence-alpes-cote-dazur">Provence-Alpes-Côte d'Azur</option>
+          <option value="guadeloupe">Guadeloupe</option>
+          <option value="guyane">Guyane</option>
+          <option value="martinique">Martinique</option>
+          <option value="mayotte">Mayotte</option>
+          <option value="reunion">La Réunion</option>
+          <option value="etranger">Je vis à l'étranger</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="age" class="form-label">Votre âge :</label>
+        <input type="text" class="form-control" id="age" placeholder="Votre âge..." required>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5"><label for="lieuVie" class="form-label">Votre lieu de vie :</label>
+        <select class="form-select" aria-label="Default select example" id="lieuVie" name="lieuVie">
+          <option value="">--Sélectionnez--</option>
+          <option value="dans-la-famille-en-permanence">Dans la famille en permanence</option>
+          <option value="avec-une-solution-d-accueil">Dans la famille avec une solution d'accueil ou des activités en journée</option>
+          <option value="dans-la-famille-principalement">Dans la famille principalement mais avec un accueil temporaire ou séquentiel en établissement</option>
+          <option value="dans-un-logement-indépendant">Dans un logement indépendant</option>
+          <option value="dans-un-habitat-inclusif">Dans un habitat inclusif</option>
+          <option value="dans-un-foyer-d-accueil-médicalisé">Dans un foyer d'accueil médicalisé (FAM)</option>
+          <option value="dans-un-foyer-d-accueil-médicalisé">Dans une maison d'accueil médicalisée (MAS)</option>
+          <option value="dans-un-foyer-de-vie-ou-foyer-d-hébergement">Dans un foyer de vie ou foyer d'hébergement</option>
+          <option value="en-IME-avec-internat">En IME avec internat</option>
+          <option value="hospitalisation-en-psychiatrie">Hospitalisation en psychiatrie</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div>
+        <label for="ChoixLieuVie" class="form-label">Votre lieu de vie correspond-il à votre choix ?</label>
+        <div>
+          <input type="radio" id="oui" name="ChoixLieuVie" value="oui" required>
+          <label for="oui">Oui</label>
+        </div>
+        <div>
+          <input type="radio" id="non" name="ChoixLieuVie" value="non" required>
+          <label for="non">Non</label>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5"><label for="activite" class="form-label">Sélectionnez votre situation :</label>
+        <select class="form-select" aria-label="Default select example" id="activite" name="activite">
+          <option value="">--Sélectionnez--</option>
+          <option value="scolarité-en-milieu-ordinaire">Scolarité en milieu ordinaire</option>
+          <option value="scolarité-en-dispositif-spécialisé-de-l-Education-Nationale">Scolarité en dispositif spécialisé de l'Éducation Nationale</option>
+          <option value="instruction-en-Famille">Instruction en Famille</option>
+          <option value="scolarité-dans-un-établissement-médico-social">Scolarité dans un établissement médico-social (IME, IMPRO...)</option>
+          <option value="formation-professionnelle">Formation professionnelle</option>
+          <option value="etude-supérieures">Étude supérieures</option>
+          <option value="activité-professionnelle-en-milieu-ordinaire">Activité professionnelle en milieu ordinaire</option>
+          <option value="activité-professionnelle-en-milieu-protégé">Activité professionnelle en milieu protégé (ESAT, Entreprise adaptée)</option>
+          <option value="sans-aucune-activité">Sans aucune activité scolaire ou professionnelle</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5"><label for="activite" class="form-label">Comment évaluez-vous votre qualité de vie ?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tout_va_bien" name="qualite_vie[]" value="tout_va_bien">
+          <label class="form-check-label" for="tout_va_bien">Tout va bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="restriction_sociale" name="qualite_vie[]" value="restriction_sociale">
+          <label class="form-check-label" for="restriction_sociale">Restriction de la vie sociale</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="souffrance_psy" name="qualite_vie[]" value="souffrance_psy">
+          <label class="form-check-label" for="souffrance_psy">Souffrance psychologique</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="fatigue" name="qualite_vie[]" value="fatigue">
+          <label class="form-check-label" for="fatigue">Fatigue, épuisement</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="reduction_activite" name="qualite_vie[]" value="reduction_activite">
+          <label class="form-check-label" for="reduction_activite">Réduction d’activité professionnelle</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="couts_financiers" name="qualite_vie[]" value="couts_financiers">
+          <label class="form-check-label" for="couts_financiers">Coûts financiers importants</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="impact_fratri" name="qualite_vie[]" value="impact_fratri">
+          <label class="form-check-label" for="impact_fratri">Impact négatif sur la fratrie</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="conflits_familiaux" name="qualite_vie[]" value="conflits_familiaux">
+          <label class="form-check-label" for="conflits_familiaux">Conflits familiaux</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="maladie_difficultes" name="qualite_vie[]" value="maladie_difficultes">
+          <label class="form-check-label" for="maladie_difficultes">Maladie ou difficultés dans l’exécution de certaines tâches</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="eloignement_personne" name="qualite_vie[]" value="eloignement_personne">
+          <label class="form-check-label" for="eloignement_personne">Éloignement de la personne</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="douleurs_physiques" name="qualite_vie[]" value="douleurs_physiques">
+          <label class="form-check-label" for="douleurs_physiques">Douleurs physiques ou séquelles permanentes</label>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5"><label for="typeIntervention" class="form-label">De quel type d’interventions l’adhérent a t-il besoin ?</label>
+        <select class="form-select" aria-label="Default select example" id="typeIntervention" name="typeIntervention">
+          <option value="">--Sélectionnez--</option>
+          <option value="totalement-autonome">La personne est totalement autonome</option>
+          <option value="une-aide-pour-tout">Une aide pour tous les actes de la vie quotidienne et la présence d’une tierce personne 24/24</option>
+          <option value="interventions-ponctuelles">Des interventions et stimulations ponctuelles mais quotidiennes (toilettes, sorties…)</option>
+          <option value="un-soutien-a-l-autonomie">Un soutien à l’autonomie pour le logement, les loisirs…</option>
+        </select>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <form class="p-4 border rounded bg-light">
+        <div class="mb-3">
+          <label for="comments" class="form-label">Commentaires :</label>
+          <textarea id="comments" name="comments" rows="4" class="form-control" placeholder="Vos remarques..."></textarea>
+        </div>
+        <div class="row gap-3">
+          <button class="btn btn-outline-danger col-md-3 mr-3" type="reset">Annuler</button>
+          <button class="btn btn-primary col-md-3 ml-3" type="submit">Soumettre</button>
+        </div>
+      </form>
+    </div>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
