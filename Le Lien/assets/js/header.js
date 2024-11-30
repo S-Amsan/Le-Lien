@@ -50,4 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="bouton bouton-recherche">Rechercher</button>
         </div>       
     `
+    const burgerMenu = document.getElementById('menu-burger');
+    const mobileMenu = document.getElementById('menu-mobile');
+
+    burgerMenu.addEventListener('click', function () {
+        // Toggle l'affichage du menu mobile
+        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
 });
