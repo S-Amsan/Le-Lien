@@ -2,7 +2,7 @@
     height: 4em;
     display: flex;
     align-items: center;
-    justify-content: space-between; /*permet de mettre un espace entre les containers du logo et des boutons de la nav*/
+    justify-content: space-between;
     background: linear-gradient(to right,
     rgba(249, 190, 13, 0.25)10%,
     rgba(214, 226, 234, 1) 30%,
@@ -52,7 +52,8 @@
 }
 
 .bouton-aider {
-    background-color: #EFC033;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #E7B10D, #FFC71D) right;
     color: white;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
     padding: 0.70em 1.5em;
@@ -62,6 +63,12 @@
     border-radius: 15px;
     font-weight: bold;
 }
+
+.bouton-aider:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
+
 .bouton-recherche {
 
     background: none;
@@ -79,23 +86,20 @@
 }
 
 .logo-recherche{
-    height: 1.2em; /* Utilise une unité relative à la taille du texte */
+    height: 1.2em;
     width: 1.3em;
-    margin-right: 0.15em; /* Ajoute de l'espace entre l'icône et le texte */
-    vertical-align: middle; /* Aligne correctement avec le texte */
+    margin-right: 0.15em;
+    vertical-align: middle;
 
-}
-.bouton:hover {
-    opacity: 0.8; /* mettre de l'opacité lors du survol mais pas sûr de le garder*/
 }
 
 
 .menu-burger, .menu-mobile{
-    display: none; /* c'est pour cacher */
+    display: none;
 }
 @media screen and (max-width: 1093px) {
     .navbar-droite {
-        display: none; /* Du coup là on cache la navbar de base */
+        display: none;
     }
 
     /* Afficher le menu burger */
