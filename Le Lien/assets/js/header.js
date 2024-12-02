@@ -30,10 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a class="${pages.declarerAccident.class}"  id="accident" href="${pages.declarerAccident.href}">Déclarez un accident</a>
                 <div class="boutons-navbar">
                     <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
-                    <button class="bouton bouton-recherche">
+                    <button class="bouton bouton-login">se connecter</button>
+                    <!--<button class="bouton bouton-recherche">
                         <img src="${pageActuel.srcImg}/logo-recherche.png" alt="Logo pour recherche" class="logo-recherche">
                         Rechercher
-                    </button>
+                    </button> -->
                 </div>
             </div>
             <button class="menu-burger" id="menu-burger">
