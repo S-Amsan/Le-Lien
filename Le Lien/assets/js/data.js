@@ -28,6 +28,12 @@ export const pagesData = {
         href : "#",
         srcImg : "../assets/images",
         class : "notActive"
+    },
+    Login : {
+        title : "Le Lien - L'association : Se Connecter",
+        href : "Login.html",
+        srcImg : "../assets/images",
+        class : "notActive"
     }
 };
 

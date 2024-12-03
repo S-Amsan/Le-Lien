@@ -13,6 +13,7 @@ if (pageActuel === pages.accueil){ //Car la page d'acceuil n'est pas au meme emp
     pages.presentation.href = "pages/" + pages.presentation.href;
     pages.nousAider.href = "pages/" + pages.nousAider.href;
     pages.declarerAccident.href = "pages/" + pages.declarerAccident.href;
+    pages.Login.href = "pages/" + pages.Login.href;
 }
 else{
     pages.accueil.href = "../" + pages.accueil.href;
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a class="${pages.declarerAccident.class}"  id="accident" href="${pages.declarerAccident.href}">Déclarez un accident</a>
                 <div class="boutons-navbar">
                     <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
-                    <button class="bouton bouton-login">se connecter</button>
+                    <button class="bouton bouton-login" onclick="window.location.href='${pages.Login.href}';">se connecter</button>
                     <!--<button class="bouton bouton-recherche">
                         <img src="${pageActuel.srcImg}/logo-recherche.png" alt="Logo pour recherche" class="logo-recherche">
                         Rechercher
@@ -47,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="presentation.html">Présentation</a>
             <a href="#">Nos Actions</a>
             <a href="Declarer%20un%20accident.html">Déclarez un accident</a>
-            <button class="bouton bouton-aider">Nous aider</button>
-            <button class="bouton bouton-recherche">Rechercher</button>
+            <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
+            <button class="bouton bouton-login" onclick="window.location.href='${pages.Login.href}';">se connecter</button>
         </div>       
     `
     const burgerMenu = document.getElementById('menu-burger');

@@ -1,0 +1,169 @@
+
+html, body {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+}
+
+main{
+    background-size: cover;
+    background: linear-gradient(to bottom, #015D91, #92B6CA) no-repeat;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#container-login{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 350px;
+    height: 300px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(15px);
+    margin: auto;
+    box-shadow: 0 6px 4px rgba(14,84,130,0.25);
+}
+
+#form-login{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#container-emailLogin{
+    height: 15%;
+    width: 70%;
+    margin-left: 1.5em;
+    display: flex;
+}
+
+#logo-email{
+    height: 106%;
+    width: 2.75em;
+    background: #0E5482;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px 0 0 2px;
+}
+
+#icon-email{
+    width: 50%;
+    height: 50%;
+}
+
+#email-login{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 0.9em;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+    color: white;
+    background: #2771aa;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#email-login::placeholder{
+    color: white;
+}
+
+#container-passwordLogin{
+    height: 15%;
+    width: 70%;
+    margin-left: 1.5em;
+    display: flex;
+}
+
+#password-login{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 0.9em;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+    color: white;
+    background: #2771aa;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#password-login::placeholder{
+    color: white;
+}
+
+#logo-password{
+    height: 106%;
+    width: 2.75em;
+    background: #0E5482;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px 0 0 2px;
+}
+
+#icon-cadena{
+    width: 50%;
+    height: 50%;
+}
+#button-seConnecter{
+    color: white;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    margin-top: 0.5em;
+    padding: 0.70em 1.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #6BC6B0, #4DECC6) right;
+    background-size: 300%;
+}
+
+#button-seConnecter:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
+
+#container-buttonCreateAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-createAccount{
+    position: relative;
+    z-index: 5;
+    color: white;
+    margin-top: 0.1em;
+    padding: 0.70em 5em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 4px 4px 15px 15px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.3), #2771AAFF) right;
+    background-size: 900%;
+    backdrop-filter: blur(15px);
+}
+
+#button-createAccount:hover{
+        background-position: left;
+        transform: scale(1.1);
+    }
+
