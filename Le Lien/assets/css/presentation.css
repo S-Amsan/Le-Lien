@@ -215,7 +215,7 @@ h2, h3{
     padding: 3rem 0 0;
 }
 .personne {
-    height: 30rem;
+    height: 15rem;
     flex: 0 0 20%;
     text-align: center;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;

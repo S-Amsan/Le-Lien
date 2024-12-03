@@ -1,4 +1,4 @@
-import {pagesData} from "./data.js";
+import {pagesData as page, pagesData} from "./data.js";
 const pages = JSON.parse(JSON.stringify(pagesData));
 let pageActuel = pages.accueil
 
@@ -8,12 +8,12 @@ for (const page of Object.values(pages)) {
         pageActuel.class = "active";
     }
 }
-
 if (pageActuel === pages.accueil){ //Car la page d'acceuil n'est pas au meme emplacement que les autres.
-    pages.presentation.href = "pages/" + pages.presentation.href;
-    pages.nousAider.href = "pages/" + pages.nousAider.href;
-    pages.declarerAccident.href = "pages/" + pages.declarerAccident.href;
-    pages.Login.href = "pages/" + pages.Login.href;
+    for (let page of Object.values(pages)) {
+        if (pageActuel !== page){
+            page.href = "pages/" + page.href;
+        }
+    }
 }
 else{
     pages.accueil.href = "../" + pages.accueil.href;
