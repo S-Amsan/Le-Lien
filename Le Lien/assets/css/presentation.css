@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+html * {
+    font-size: 16px;
+}
+
+header, header * {
+    font-size: inherit; /* Rétablit la taille par défaut pour le header et ses enfants */
+}
 
 main {
-    font-size: 16px;
     font-family: 'Poppins', sans-serif;
     color: #006EB6;
     font-weight: bold;
@@ -263,16 +269,16 @@ h2, h3{
 
 /* Téléphone (petit) */
 @media screen and (max-width: 400px){
-    main{
+    html{
         font-size: 5px;
     }
 }
 @media screen and (min-width: 401px) and (max-width: 550px){
-    main{
+    html{
         font-size: 6px;
     }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 849px) {
     #quiSommeNous img {
         height: 30rem !important;
     }
@@ -318,14 +324,14 @@ h2, h3{
 }
 /* Téléphone */
 @media screen and (min-width: 551px) and (max-width: 850px) {
-    main{
+    html{
         font-size: 7px;
     }
     #quiSommeNous p {
         font-size: 0.7rem;
     }
     #quiSommeNous h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.5rem;
     }
 
 }
@@ -336,7 +342,7 @@ h2, h3{
 }
 /* Tablette (petit) */
 @media screen and (min-width: 851px) and (max-width: 1024px) {
-    main{
+    html{
         font-size: 10px;
     }
     .personne {
@@ -364,7 +370,7 @@ h2, h3{
 }
 /* Tablette */
 @media screen and (min-width: 1025px) and (max-width: 1330px) {
-    main{
+    html{
         font-size: 12px;
     }
 
@@ -408,19 +414,19 @@ h2, h3{
 
 /* Ordinateurs (petits écrans) */
 @media screen and (min-width: 1331px) and (max-width: 1440px) {
-    main{
+    html{
         font-size: 14px;
     }
 }
 /* Ordinateurs (écrans moyen ) */
 @media screen and (min-width: 1441px) and (max-width: 1919px) {
-    main{
+    html{
         font-size: 15px;
     }
 }
 
 @media (min-width: 3000px) {
-    main{
+    html{
         font-size: 25px;
     }
 }
