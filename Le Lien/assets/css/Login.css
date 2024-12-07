@@ -18,6 +18,15 @@ main{
     align-items: center;
 }
 
+input:focus{
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+input{
+    border: 2px solid #b0d4f1; /* Bordure en haut */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
 #container-login{
     position: relative;
@@ -32,8 +41,17 @@ main{
     box-shadow: 0 6px 4px rgba(14,84,130,0.25);
 }
 
+#container-login h1{
+    font-family: "Bowlby One", sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+    padding: 2%;
+}
+
 #form-login{
-    margin-top: 20%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,83 +60,44 @@ main{
     width: 100%;
 }
 
-#container-emailLogin{
-    height: 15%;
+.container-div-login{
+    height: 12.5%;
     width: 70%;
     margin-left: 1.5em;
     display: flex;
 }
 
-#logo-email{
+.logo-input-login{
     height: 106%;
     width: 2.75em;
-    background: #0E5482;
+    background: #3fbdf1;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 2px 0 0 2px;
 }
 
-#icon-email{
+.icon-form{
     width: 50%;
     height: 50%;
 }
 
-#email-login{
-    height: 100%;
+.input-login{
+    height: 89%;
     width: 100%;
     border: none;
+    border-top: 2px solid #b0d4f1;
+    border-right: 2px solid #b0d4f1;
+    border-bottom: 2px solid #b0d4f1;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0 5px 5px 0;
     font-size: 0.9em;
     font-family: Inter, sans-serif;
     font-weight: lighter;
-    color: white;
-    background: #2771aa;
     outline: none;
-    border-radius: 0 5px 5px 0;
 }
 
-#email-login::placeholder{
-    color: white;
-}
 
-#container-passwordLogin{
-    height: 15%;
-    width: 70%;
-    margin-left: 1.5em;
-    display: flex;
-}
-
-#password-login{
-    width: 100%;
-    height: 100%;
-    border: none;
-    font-size: 0.9em;
-    font-family: Inter, sans-serif;
-    font-weight: lighter;
-    color: white;
-    background: #2771aa;
-    outline: none;
-    border-radius: 0 5px 5px 0;
-}
-
-#password-login::placeholder{
-    color: white;
-}
-
-#logo-password{
-    height: 106%;
-    width: 2.75em;
-    background: #0E5482;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px 0 0 2px;
-}
-
-#icon-cadena{
-    width: 50%;
-    height: 50%;
-}
 #button-seConnecter{
     color: white;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
@@ -138,6 +117,7 @@ main{
     background-position: left;
     transform: scale(1.1);
 }
+
 
 #container-buttonCreateAccount{
     display: flex;
@@ -167,3 +147,138 @@ main{
         transform: scale(1.1);
     }
 
+#button-back{
+    display: none;
+}
+
+#container-CreateAccount{
+    position: relative;
+    z-index: 10;
+    display: none;
+    width: 400px;
+    height: 525px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(15px);
+    margin: auto;
+    box-shadow: 0 6px 4px rgba(14,84,130,0.25);
+}
+
+#container-CreateAccount h1{
+    font-family: "Bowlby One", sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: white;
+    margin: 0 0 1em 0;
+}
+
+#form-CreateAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.75em;
+    width: 100%;
+}
+
+#container-name{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 6%;
+    width: 100%;
+}
+
+.container-input-name{
+    display: flex;
+    margin-right: 2.5%;
+    width: 42.5%;
+}
+
+.input-name-createAccount{
+    width: 100%;
+    font-size: 0.9em;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+    outline: none;
+    border-radius: 4px;
+}
+
+.divContainerCreateAccount{
+    height: 6%;
+    width: 90%;
+    display: flex;
+}
+
+.logoCreateAccount{
+    height: 119.5%;
+    width: 2.7em;
+    background: #3fbdf1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px 0 0 2px;
+}
+
+.longInputCreateAccount{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-top: 2px solid #b0d4f1;
+    border-right: 2px solid #b0d4f1;
+    border-bottom: 2px solid #b0d4f1;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.9em;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#button-inscription{
+    color: white;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    margin-top: 0.5em;
+    padding: 0.70em 3em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #6BC6B0, #4DECC6) right;
+    background-size: 300%;
+}
+
+#button-inscription:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
+
+#container-buttonBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-back{
+    position: relative;
+    z-index: 5;
+    color: white;
+    margin-top: 0.1em;
+    padding: 0.70em 8em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 4px 4px 15px 15px;
+    font-weight: bold;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.3), #2771AAFF) right;
+    background-size: 900%;
+    backdrop-filter: blur(15px);
+}
+
+#button-back:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
