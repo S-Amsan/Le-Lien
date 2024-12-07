@@ -16,7 +16,7 @@ let personnePrecIndice; // Indice de la personne précédente
 // les fonctions :
 function mediaQueriesNbPersonnesAAfficher() { // Le nombre de personne à afficher selon la largeur de l'écran
     const width = window.innerWidth;
-    if (width < 768) { // petit écran (téléphone)
+    if (width < 851) { // petit écran (téléphone)
         return 1;
     } else if (width < 1025) { // écran moyen (ipad, petit pc)
         return 3;

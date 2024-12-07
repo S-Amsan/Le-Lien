@@ -1,141 +1,251 @@
-body, html{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body, html {
     margin: 0;
     padding: 0;
 }
-
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
-main{
-    flex : 1 0 auto;
+main {
+    flex: 1 0 auto;
 }
-footer{
+footer, footer * {
+    font-size: inherit;
+}
+footer {
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
-    a{
-        color: #f8f8f8;
-        text-decoration: none;
-        font-size: 0.7em;
-    }
-    a[href]:hover {
-        color: #4493F8;
-        text-decoration: underline;
-    }
+    font-size: 16px;
 }
-.footerHaut{
-    background-color : #323232;
-    height : 110px;
-    overflow: hidden;
+footer a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 0.7em;
 }
-.footerBas{
-    background-color: #272727;
-    position: relative;
-    height: auto;
-    p{
-        color: #f8f8f8;
-    }
+footer a[href]:hover {
+    color: #4493F8;
+    text-decoration: underline;
+}
+
+/* Partie haute du footer */
+.footerHaut {
+    background-color: #323232;
+    height: 110px;
     overflow: hidden;
 }
 .leLien{
-    img{
-        width: 2em;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 10px;
-    }
-    p{
-        padding-top: 0.5em;
-        padding-left: 3.9em;
-        color: #edbe33;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 0.7em;
-    }
+    display: flex;
+    position: absolute;
+    align-items: center;
+    gap: 2px;
+    left: 5px;
+    top: 5px;
 }
-.contenuHautFooter{
-    display : flex;
+.leLien img {
+    width: 2em;
+    height: 2em;
+}
+.leLien p {
+    color: #edbe33;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.7em;
+}
+.contenuHautFooter {
+    display: flex;
     justify-content: center;
     padding: 0 0 10px;
-    margin-top: -2em;
 }
-.blockFooter{
-    width : 15%;
+/* les blocks dans la partie haute (localisation, etc) */
+.blockFooter {
+    width: 15%;
     text-align: center;
-    ul{
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        list-style-type: none;
-        margin: 5px;
-    }
-
-    img{
-        width : 1em;
-        height : auto;
-        vertical-align: middle;
-    }
-    h3{
-        text-align: center;
-        font-family: 'Inter', sans-serif;
-        font-size : 1em;
-        font-weight: 700;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-    p{
-        font-family: 'Inria Sans', sans-serif;
-        margin: 5px;
-        text-align: center;
-    }
-    #localisationTitre,
-    #liensTitre{
-        color : #006EB6
-    }
-    #contactTitre{
-        color : #EFC033
-    }
 }
-.contenuBasFooter{
-    margin-top: -0.6em;
-    a{
-        font-size: 0.6em;
-    }
+.blockFooter ul {
+    margin: 0;
+    padding: 0;
+}
+.blockFooter li {
+    list-style-type: none;
+    margin: 5px;
+}
+.blockFooter img {
+    width: 1em;
+    height: auto;
+    vertical-align: middle;
+}
+.blockFooter h3 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.blockFooter p {
+    font-family: 'Poppins', sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+#localisationTitre,
+#liensTitre {
+    color: #006EB6;
 }
 
-.mentionEtCondidentialite, .copyright, .cookie {
-    display : flex;
-    justify-content: center;
+#contactTitre {
+    color: #EFC033;
 }
-.mentionEtCondidentialite{
-    gap : 2em;
-    padding-left: 2em;
+
+/* Partie basse du footer */
+.footerBas {
+    background-color: #272727;
+    position: relative;
+    height: 50px;
 }
-.copyright{
+
+.footerBas p {
+    color: #f8f8f8;
+}
+.contenuBasFooter a {
+    font-size: 0.6em;
+}
+.mentionEtCondidentialite {
+    display: flex;
+    gap: 2em;
+    padding-bottom: 5px;
+    font-size: 1em;
+}
+.copyright p{
     font-size: 0.5em;
-    padding-left: 2.5em;
-    margin-top: -2em;
-
 }
-
-.cookie{
+.copyright p, .mentionEtCondidentialite{
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    justify-content: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-42%);
+}
+/* le cookie */
+.cookie {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
     z-index: 10;
-    img{
-        width : 2.5em;
-        height : auto;
-        vertical-align: middle;
-    }
+}
+.cookie img {
+    width: 2.5em;
+    height: auto;
+    vertical-align: middle;
+}
+.cookie {
     transition: transform 0.3s ease;
 }
-.cookie:hover{
+.cookie:hover {
     transform: scale(1.3);
 }
 
+
+/* Media queries */
+/* Téléphone (petit) */
+@media screen and (max-width: 400px){
+    footer{
+        font-size: 6px;
+    }
+    .footerHaut {
+        height: 170px;
+    }
+    .footerBas {
+        height: 20px;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 550px){
+    footer{
+        font-size: 7px;
+    }
+    .footerHaut {
+        height: 180px;
+    }
+    .footerBas {
+        height: 25px;
+    }
+}
+@media screen and (max-width: 550px){ /* les blocks sont empliler les uns les autres, pour mieux voir sur les petit téléphone*/
+    .contenuHautFooter {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .blockFooter {
+        width: 70%;
+    }
+}
+/* Téléphone (grand)*/
+@media screen and (min-width: 551px) and (max-width: 850px) {
+    footer{
+        font-size: 7px;
+    }
+    .footerHaut {
+        height: 65px;
+    }
+    .footerBas {
+        height: 25px;
+    }
+}
+/* Tablette (petit) */
+@media screen and (min-width: 851px) and (max-width: 1024px) {
+    footer{
+        font-size: 10px;
+    }
+    .footerHaut {
+        height: 80px;
+    }
+    .footerBas {
+        height: 25px;
+    }
+}
+/* Tablette */
+@media screen and (min-width: 1025px) and (max-width: 1330px) {
+    footer{
+        font-size: 12px;
+    }
+    .footerHaut {
+        height: 90px;
+    }
+    .footerBas {
+        height: 35px;
+    }
+}
+/* Ordinateurs (petits écrans) */
+@media screen and (min-width: 1331px) and (max-width: 1440px) {
+    footer{
+        font-size: 14px;
+    }
+    .footerHaut {
+        height: 100px;
+    }
+    .footerBas {
+        height: 40px;
+    }
+}
+/* Ordinateurs (écrans moyen ) */
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+    footer{
+        font-size: 15px;
+    }
+}
+/* Ordinateurs (écrans grand ) */
+@media (min-width: 3000px) {
+    footer{
+        font-size: 30px;
+    }
+    .footerHaut {
+        height: 200px;
+    }
+    .footerBas {
+        height: 75px;
+    }
+}
