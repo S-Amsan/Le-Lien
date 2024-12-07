@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <li><a href="http://www.paris-bristol.com" target="_blank">Paris-Bristol</a></li>
                         </ul>
                     </div>
-                    <div class ="cookie">
-                        <img src="${pageActuel.srcImg}/cookie.png" alt="Cookie footer">
-                    </div>
+
                 </div>
             </div>
             <div class="footerBas">
@@ -46,7 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class = "copyright">
                         <p>© Années 1999-2024 - Association “le Lien” spécialisée dans la traite des erreurs médicales</p>
                     </div>
-    
+                </div>
+                <div class ="cookie">
+                    <img src="${pageActuel.srcImg}/cookie.png" alt="Cookie footer">
                 </div>
             </div>
     `

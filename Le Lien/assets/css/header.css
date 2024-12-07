@@ -1,3 +1,6 @@
+header, header * {
+    font-size: inherit; /* Rétablit la taille par défaut pour le header et ses enfants */
+}
 .navbar {
     height: 4em;
     display: flex;

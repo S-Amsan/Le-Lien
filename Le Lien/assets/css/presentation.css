@@ -3,11 +3,6 @@
 html * {
     font-size: 16px;
 }
-
-header, header * {
-    font-size: inherit; /* Rétablit la taille par défaut pour le header et ses enfants */
-}
-
 main {
     font-family: 'Poppins', sans-serif;
     color: #006EB6;
@@ -23,12 +18,12 @@ h2, h3{
     background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%); /* Fond dégradé*/
 }
 #quiSommeNous img {
-    margin: 13rem 0 0 3vw;
+    margin: 10rem 0 0 3vw;
     height: 40rem;
     width: auto;
 }
 #quiSommeNous .contenu {
-    margin-top: 13rem;
+    margin-top: 10rem;
     padding-bottom: 6rem;
 }
 #quiSommeNous h1 {
@@ -94,7 +89,6 @@ h2, h3{
     color: #c8c8c8;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
-
 #nosMissions h2,#nosMissions .block h3, #nosMissions .block p, #nosMissions .block li {
     position: relative;
     z-index: 1;
@@ -153,8 +147,8 @@ h2, h3{
     transform: scale(1.45);
     opacity: 0.8;
 }
-/* 4. Section Equipe*/
 
+/* 4. Section Equipe*/
 #equipe{
     margin: 10rem 0 15rem;
 }
@@ -170,13 +164,11 @@ h2, h3{
     background: #006db5;
     color: #FFFFFF;
 }
-
 /* 4.1 Carousel*/
 .carousel-contenu{
     position: relative;
     margin : 0 15vw 0;
 }
-
 /*flèches*/
 .carousel-contenu .fleche {
     position: absolute;
@@ -206,7 +198,6 @@ h2, h3{
 .carousel-contenu .fleche#droite{
     right: 0;
 }
-
 /*le carousel*/
 .carousel {
     overflow: hidden;
@@ -231,7 +222,6 @@ h2, h3{
     width: 6rem;
     height: auto;
 }
-
 /* la personne au milieu */
 .personne.active {
     display: flex;
@@ -305,7 +295,7 @@ h2, h3{
     }
 }
 @media screen and (max-width: 850px) {
-    .personne {
+    .personne { /* On affiche plus que 1 personne au lieu de 3*/
         height: 30rem;
         flex: 0 0 100%;
     }
@@ -322,7 +312,7 @@ h2, h3{
         font-size: 0.8rem;
     }
 }
-/* Téléphone */
+/* Téléphone (grand) */
 @media screen and (min-width: 551px) and (max-width: 850px) {
     html{
         font-size: 7px;
@@ -345,7 +335,7 @@ h2, h3{
     html{
         font-size: 10px;
     }
-    .personne {
+    .personne { /* On affiche plus que 3 personnes au lieu de 5*/
         height: 15rem;
         flex: 0 0 33.3333%;
     }
@@ -362,7 +352,6 @@ h2, h3{
         font-size: 0.6rem;
     }
 }
-
 @media screen and (max-width: 1024px) {
     #nosMissions .blocks p, #nosMissions .blocks li {
         -webkit-text-stroke: 0.25px black;
@@ -409,9 +398,6 @@ h2, h3{
         flex: 0 0 100%;
     }
 }
-
-
-
 /* Ordinateurs (petits écrans) */
 @media screen and (min-width: 1331px) and (max-width: 1440px) {
     html{
@@ -424,7 +410,7 @@ h2, h3{
         font-size: 15px;
     }
 }
-
+/* Ordinateurs (écrans grand ) */
 @media (min-width: 3000px) {
     html{
         font-size: 25px;
