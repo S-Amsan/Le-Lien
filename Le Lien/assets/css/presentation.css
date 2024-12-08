@@ -68,7 +68,7 @@ h2, h3{
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 #nosMissions .blocks p{
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 #nosMissions .blocks li{
     padding-top: 2rem;
@@ -87,13 +87,13 @@ h2, h3{
     overflow: hidden;
     z-index: 0;
     color: #c8c8c8;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease;
 }
 #nosMissions h2,#nosMissions .block h3, #nosMissions .block p, #nosMissions .block li {
     position: relative;
     z-index: 1;
     color: #FFFFFF;
-    -webkit-text-stroke: 0.5px black;
+    -webkit-text-stroke: 0.35px black;
 }
 /* met en fond des missions une image flou et transparente*/
 #nosMissions .block::before {
