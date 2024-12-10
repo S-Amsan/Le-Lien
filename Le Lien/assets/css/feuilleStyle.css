@@ -412,15 +412,22 @@ article{
         height: 9%
     }
     .logoWarning{
-        margin-top: 4vw;
-        margin-left: 10vw;
-
         img{
             width: 20vw;
             height: auto;
-
+            padding-right: 3vw;
         }
 
+    }
+    #basdepage{
+        p{
+            font-size: 1.1vw;
+        }
+    }
+    #textOutro{
+        p{
+            line-height: 150%;
+        }
     }
     #textIntro{
         margin-left: 7vw;
