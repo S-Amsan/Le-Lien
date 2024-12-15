@@ -416,8 +416,6 @@ button:hover {
     opacity: 0.9;
 }
 
-.espaceCollaborateur {}
-
 #texteCollaborateurs {
     text-align: center;
     font-size: 2rem;
@@ -475,22 +473,102 @@ button:hover {
 
 @media screen and (min-width: 551px) and (max-width: 767px){
     html{
-        font-size: 10px;
+        font-size: 8px;
     }
     #premiertitre{
-        padding-left:5vw;
+        padding-left:6rem;
+        padding-bottom:2rem;
+    }
+    .Menu{
+        height:68rem;
+    }
+    .ContenuMenu{
+        padding-top: 14rem;
+    }
+    .ImageFauteuilRoulant{
+        padding-top:6rem;
+        padding-right:0;
+        width:44rem;
+        height:56rem;
+        margin-left:-3rem;
+    }
+    #btnNousAider{
+        margin-left:5.5rem;
+    }
+    .Presentation{
+        margin:-100px;
+        padding-top:15rem;
+    }
+    .FondPresentation{
+        margin-top:70px;
+    }
+    .presentation-image{
+        padding-left:50rem;
+    }
+    #docteurPresentation{
+        width:30rem;
+        top:-25rem;
+        right:17rem;
+    }
+    #fichePresentation{
+        width:30rem;
+        right:8rem;
+    }
+    .presentation-content{
+        margin-bottom:-12rem;
+    }
+    .ChiffresCles{
+        margin-top:28em;
+    }
+    .main-content1::before{
+        height:84.9rem;
+    }
+    #info1, #info2, #info3, #info4, #info5 {
+        width: 180px;
+        height: 180px;
+        border: 3px solid #004383;
+        border-radius: 25px;
+        padding: 30px;
+    }
+    #titreEspaceDonAdherer{
+        padding-top:7rem;
     }
 }
 
 
 /* Tablette (petit) */
-@media screen and (min-width: 768px) and (max-width: 1024px){
-
+@media screen and (min-width: 768px) and (max-width: 1025px){
+    html{
+        font-size: 9px;
+    }
+    #premiertitre{
+        padding-left:6rem;
+    }
+    #btnNousAider{
+        margin-left:5.5rem;
+    }
+    .ContenuMenu{
+        padding-top:16rem;
+        padding-left:1rem;
+    }
+    .ImageFauteuilRoulant{
+        padding-top:7.5rem;
+        padding-right:0;
+        margin-left:-8rem;
+    }
+    #docteurPresentation{
+        position: absolute;
+        top: -21rem;
+        right:15rem;
+        margin-left:4rem;
+    }
+    #fichePresentation{
+        position: absolute;
+        top: -3rem;
+        right:7rem;
+    }
 }
 
-@media screen and (max-width: 1024px){
-
-}
 
 
 /*mon écran ^^*/
@@ -512,7 +590,7 @@ button:hover {
     }
     .ImageFauteuilRoulant{
         width:43rem;
-        padding-top:3.95rem;
+        padding-top:3.6rem;
     }
     #titreEspaceDonAdherer{
         padding-top:8rem;
