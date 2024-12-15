@@ -13,26 +13,27 @@
     <!-- script header + css du header -->
     <script src="assets/js/header.js" type="module"></script>
     <link rel="stylesheet" href="assets/css/header.css">
+    <!-- script pour l'anim quand on lance la page -->
+    <script src="assets/js/animationDebut.js"></script>
 </head>
 <body>
     <header>
     </header>
     <main>
-        <div class = "Menu">
+        <div class="Menu">
             <img src="assets/images/fond_hopital.jpg" alt="Fond Hôpital" class="background-image">
-            <div class = "ContenuMenu">
-                <h3>Aidez-nous à réparer les injustices médicales !</h3>
-                <p>Rejoignez-nous pour protéger les patients et améliorer la <br>
+            <div class="ContenuMenu">
+                <h3 class="animate" style="--delay: 0s;">Aidez-nous à réparer les injustices médicales !</h3>
+                <p class="animate" style="--delay: 0.3s;">Rejoignez-nous pour protéger les patients et améliorer la <br>
                     sécurité des soins. Chaque action compte dans la lutte <br>
                     contre les erreurs médicales et leurs conséquences <br>
                     dévastatrices.</p>
-                <a href="pages/nousAider.html" id="btnNousAider">Nous Aider</a>
+                <a id="btnNousAider" class="animate" style="--delay: 0.6s;">Nous Aider</a>
             </div>
 
             <div class = "ImageMenu">
                 <img src="assets/images/hopital%20menu.png"    alt="FauteuilRoulant" class="ImageFauteuilRoulant">
             </div>
-
         </div>
 
         <div class="main-content1">
