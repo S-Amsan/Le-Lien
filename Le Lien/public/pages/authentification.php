@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../assets/css/Login.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/LeLien-Logo.ico" type="image/x-icon">
+    <title>Le Lien - L'association : Authentification</title>
+
+    <!-- script header -->
+    <script src="../assets/js/header.js" type="module"></script>
+    <!-- script footer -->
+    <script src="../assets/js/footer.js" type="module"></script>
+
+    <script src="../assets/js/authentification.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<main>
+    <div id="container-form">
+        <div id="container-login">
+            <form id="form-login" action="../assets/php/connexion.php" method="post">
+                <h1>Connectez-vous</h1>
+                <div class="container-div-login">
+                    <div class="logo-input-login"><img src="../assets/images/icon-user.png" alt="Icon User"
+                                                       class="icon-form"></div>
+                    <input type="email" name="email" class="input-login" placeholder="Email" required>
+                </div>
+                <div class="container-div-login">
+                    <div class="logo-input-login"><img src="../assets/images/icon-cadena.png" alt="Icon Cadena"
+                                                       class="icon-form"></div>
+                    <input type="password" name="password" class="input-login" placeholder="Mot de passe" required>
+                </div>
+                <button type="submit" id="button-seConnecter">Se connecter</button>
+            </form>
+        </div>
+        <div id="container-buttonCreateAccount">
+            <button type="submit" id="button-createAccount">Créer un compte</button>
+        </div>
+        <div id="container-CreateAccount">
+            <form id="form-CreateAccount" action="../assets/php/inscription.php" method="post">
+                <h1>Inscrivez-vous</h1>
+                <div id="container-name">
+                    <div class="container-input-name">
+                        <input type="text" name="prenom" class="input-name-createAccount" placeholder="Prénom" required>
+                    </div>
+                    <div class="container-input-name">
+                        <input type="text" name="nom" class="input-name-createAccount" placeholder="Nom" required>
+                    </div>
+                </div>
+                <div id="container-emailCreateAccount" class="divContainerCreateAccount">
+                    <div class="logoCreateAccount"><img src="../assets/images/icon-user.png" alt="Icon User"
+                                                        class="icon-form"></div>
+                    <input type="email" name="email" id="email-createAccount" class="longInputCreateAccount"
+                           placeholder="Email" required>
+                </div>
+                <div id="container-passwordCreateAccount" class="divContainerCreateAccount">
+                    <div class="logoCreateAccount"><img src="../assets/images/icon-cadena.png" alt="Icon Cadena"
+                                                        class="icon-form"></div>
+                    <input type="password" name="password" id="password-CreateAccount" class="longInputCreateAccount"
+                           placeholder="Mot de passe" required>
+                </div>
+                <div id="container-passwordConfirmCreateAccount" class="divContainerCreateAccount">
+                    <div class="logoCreateAccount"><img src="../assets/images/icon-cadena.png" alt="Icon Cadena"
+                                                        class="icon-form"></div>
+                    <input type="password" name="repassword" id="password-confirm-CreateAccount"
+                           class="longInputCreateAccount" placeholder="Confirmez le mot de passe" required>
+                </div>
+                <button type="submit" id="button-inscription">S'inscrire</button>
+            </form>
+        </div>
+        <div id="container-buttonBack">
+            <button type="button" id="button-back">Retour</button>
+        </div>
+    </div>
+</main>
+</body>
+</html>
