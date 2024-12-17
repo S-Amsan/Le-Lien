@@ -9,8 +9,6 @@ use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\MariaDBUserRepository;
 use LeLien\Management\Messages;
 
-
-require_once 'header.php';
 require_once '../../../vendor/autoload.php';
 
 $bdd = new BddConnect();
@@ -21,7 +19,7 @@ try {
     Messages::goHome(
         $e->getMessage(),
         $e->getType(),
-        "../../pages/authentification.php");
+        "../../pages/authentification.html");
     die();
 }
 
@@ -45,6 +43,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type = "danger";
 }
 
-Messages::goHome($message, $type, "../../pages/authentification.php");
-
-require_once 'footer.php';
+Messages::goHome($message, $type, "../../pages/authentification.html");

@@ -11,6 +11,27 @@ main {
 h2, h3{
     text-align: center;
 }
+/* Animation pour faire apparaître de bas en haut */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.animate.active {
+    animation: slideUp 0.8s ease-out forwards;
+}
 
 /* 1. Section Qui sommes-nous? */
 #quiSommeNous {

@@ -25,9 +25,10 @@ class Messages {
     if(isset($_SESSION['flash'])) {
       foreach($_SESSION['flash'] as $type => $message) {
         echo <<<HTML
-          <div class='alert alert-$type alert-dismissible fade show' role='alert'>
-          <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-          $message</div>
+          <div class='messageFlash $type'>
+              <button onclick="this.parentElement.remove()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+              <p>$message</p>
+          </div>
           HTML;
       }
       unset($_SESSION['flash']);

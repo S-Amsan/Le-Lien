@@ -1,13 +1,14 @@
 header, header * {
     font-size: inherit; /* Rétablit la taille par défaut pour le header et ses enfants */
 }
+
 .navbar {
     height: 4em;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(to right,
-    rgba(249, 190, 13, 0.25)10%,
+    rgba(249, 190, 13, 0.25) 10%,
     rgba(214, 226, 234, 1) 30%,
     rgba(0, 110, 182, 0.37) 100%); /* pour dégréader*/
     padding: 0 2.5em;
@@ -23,10 +24,12 @@ header, header * {
     display: flex;
     align-items: center;
     margin-right: 1em;
+
     a[href]:hover {
         color: aliceblue;
     }
-    .active{
+
+    .active {
         text-decoration: underline;
         text-decoration-thickness: 2px;
         text-underline-offset: 3px;
@@ -59,7 +62,7 @@ header, header * {
     background: linear-gradient(to left, #E7B10D, #FFC71D) right;
     background-size: 300%;
     color: white;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     padding: 0.70em 1.5em;
     border: none;
     cursor: pointer;
@@ -68,12 +71,12 @@ header, header * {
     font-weight: bold;
 }
 
-.bouton-login{
+.bouton-login {
     transition: background 0.5s ease, transform 0.3s ease;
     background: linear-gradient(to left, #6BC6B0, #4DECC6) right;
     background-size: 300%;
     color: white;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     padding: 0.70em 1.5em;
     border: none;
     cursor: pointer;
@@ -81,11 +84,13 @@ header, header * {
     border-radius: 15px;
     font-weight: bold;
 }
-.bouton-login.deco{
+
+.bouton-login.deco {
     background: linear-gradient(to left, #FF6B6B, #FF4D4D) right;
 }
+
 .bouton-aider:hover,
-.bouton-login:hover{
+.bouton-login:hover {
     background-position: left;
     transform: scale(1.1);
 }
@@ -98,15 +103,15 @@ header, header * {
     font-weight: bold;
     cursor: pointer;
     font-size: 0.90em;
-    padding: 0.5em 1.7em 0.5em 1em ;
+    padding: 0.5em 1.7em 0.5em 1em;
     border-radius: 1.2em;
 }
 
-#accident{
+#accident {
     font-weight: bold;
 }
 
-.logo-recherche{
+.logo-recherche {
     height: 1.2em;
     width: 1.3em;
     margin-right: 0.15em;
@@ -114,10 +119,73 @@ header, header * {
 
 }
 
-
-.menu-burger, .menu-mobile{
+.menu-burger, .menu-mobile {
     display: none;
 }
+
+/* Les messages flash */
+.messageFlash{
+    position: absolute;
+    height : 2.5em;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid;
+    z-index: 10;
+    box-sizing: border-box;
+}
+.messageFlash.warning{
+    color : #ac6b0c;
+    background-color: #ffd280;
+    border-color: #ac6b0c;
+}
+.messageFlash.warning svg {
+    fill: #ac6b0c;
+}
+.messageFlash.danger{
+    color : #a80202;
+    background-color: #ed8686;
+    border-color: #a80202;
+}
+.messageFlash.danger svg {
+    fill: #a80202;
+}
+.messageFlash.success{
+    color : #218102;
+    background-color: #65c562;
+    border-color: #218102;
+}
+.messageFlash.success svg {
+    fill: #218102;
+}
+.messageFlash button svg{
+    height : 2em;
+    width: auto;
+}
+.messageFlash button{
+    position: absolute;
+    right: 10px;
+    background: none;
+    border : none;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.messageFlash button:hover{
+    opacity: 0.5;
+}
+.messageFlash p{
+    position: absolute;
+    left : 10px;
+}
+
+
+
+
+
 @media screen and (max-width: 1093px) {
     .navbar-droite {
         display: none;
@@ -146,7 +214,7 @@ header, header * {
         text-align: center;
     }
 
-    .menu-mobile a{
+    .menu-mobile a {
         color: #0E5482;
         text-decoration: none;
         font-size: 2em;
@@ -178,13 +246,15 @@ header, header * {
         height: 2.5em;
         font-size: 2.2em;
     }
-    .menu-mobile .bouton-aider{
+
+    .menu-mobile .bouton-aider {
         border-radius: 0.9em;
     }
 
 }
+
 @media screen and (min-width: 1093px) {
-    .menu-mobile a, .menu-mobile button{
+    .menu-mobile a, .menu-mobile button {
         display: none;
     }
 }

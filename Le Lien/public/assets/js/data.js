@@ -26,7 +26,7 @@ export const pagesData = {
     },
     Login : {
         title :"Le Lien - L'association : Authentification",
-        href : "authentification.php",
+        href : "authentification.html",
         class : "notActive"
     }
 };

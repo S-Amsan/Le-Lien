@@ -1,4 +1,4 @@
-import { pagesData as pages } from "./data.js";
+import {pagesData as pages} from "./data.js";
 
 const srcImg = "../assets/images";
 let pageActuel = pages.accueil;
@@ -43,15 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
             const isAuth = data.auth; // Récupère le statut d'authentification
 
+            // On ajoute le css dans le head
             const headerCss = document.createElement('link');
             headerCss.rel = 'stylesheet';
             headerCss.href = '../assets/css/header.css';
             document.head.appendChild(headerCss);
 
-            // Crée le HTML du header
-            const header = document.createElement("header");
-
-            header.innerHTML = `
+            // On ajoute le contenu HTML dans la balise <header>
+            document.querySelector('header').innerHTML = `
                 <nav class="navbar">
                     <div class="navbar-gauche">
                         <img src="${srcImg}/Logo.png" alt="Logo Le lien" class="logo">
@@ -88,8 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // Insère le header au début du body
-            document.body.insertBefore(header, document.body.firstChild);
 
             // Charge et insère le message flash après le header
             fetch("../assets/php/message.php")

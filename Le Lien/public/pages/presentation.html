@@ -7,21 +7,25 @@
 
     <link rel="stylesheet" href="../assets/css/presentation.css">
 
-    <!-- script header -->
+    <!-- script header + css du header -->
     <script src="../assets/js/header.js" type="module"></script>
-    <!-- script footer -->
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <!-- script footer + css du footer -->
     <script src="../assets/js/footer.js" type="module"></script>
-
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <!-- script pour l'animation quand on lance la page -->
+    <script src="../assets/js/animationDebut.js"></script>
     <!-- Carrousel -->
     <script src="../assets/js/carrouselEquipe.js" type="module"></script>
 </head>
 <body>
+<header></header>
 <main>
     <section id="quiSommeNous">
         <div class="logoQuiSommeNous">
             <img src="../assets/images/logoXXL.png" alt="LE LIEN">
         </div>
-        <div class="contenu">
+        <div class="contenu animate">
             <h1>Qui sommes-nous ?</h1>
             <p>Le LIEN est une association engagée dans la défense des patients et usagers de la santé, avec pour
                 mission principale de soutenir les victimes d’accidents médicaux, notamment celles touchées par des
@@ -159,5 +163,6 @@
 
 
 </main>
+<footer></footer>
 </body>
 </html>

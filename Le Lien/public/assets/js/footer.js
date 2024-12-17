@@ -2,15 +2,13 @@ const srcImg = "../assets/images";
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // On ajoute le Css dans le head
     const footerCss = document.createElement('link');
     footerCss.rel = 'stylesheet';
     footerCss.href = '../assets/css/footer.css';
     document.head.appendChild(footerCss);
-
-    // Créer l'élément footer
-    const footer = document.createElement('footer');
-    // Ajouter le contenu HTML dans le footer
-    footer.innerHTML = `
+    // On ajoute le contenu HTML dans la balise <footer>
+    document.querySelector('footer').innerHTML = `
         <div class="footerHaut">
             <div class="leLien">
                 <img src="${srcImg}/logoFooter.png"/>
@@ -51,7 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     `;
-
-    // Ajouter le footer à la fin du body
-    document.body.appendChild(footer);
 });
