@@ -31,7 +31,7 @@ class Authentification
         }
 
         // Crée un nouvel utilisateur et l'enregistre
-        $user = new User($prenom, $nom, $email, $motDePasse);
+        $user = new User($prenom, $nom, $email, $motDePasse, false, false);
         return $this->userRepository->saveUser($user);
     }
 
@@ -51,8 +51,9 @@ class Authentification
         if (!password_verify($motDePasse, $user->getMotDePasse())) {
             throw new AuthentificationException("Mot de passe incorrect", "warning");
         }
-
+        $prenom = $user->getPrenom();
+        $nom = $user->getNom();
         // Retourne une indication d'authentification réussie
-        return "Authentification réussie";
+        return "Content de vous revoir $prenom $nom ^^!";
     }
 }

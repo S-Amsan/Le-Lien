@@ -132,22 +132,21 @@ header, header * {
     margin: 0;
     display: flex;
     align-items: center;
-    border-radius: 5px;
-    border: 1px solid;
     z-index: 10;
     box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .messageFlash.warning{
-    color : #ac6b0c;
-    background-color: #ffd280;
-    border-color: #ac6b0c;
+    color : #ac970c;
+    background-color: #faf298;
+    border-color: #ac970c;
 }
 .messageFlash.warning svg {
-    fill: #ac6b0c;
+    fill: #ac970c;
 }
 .messageFlash.danger{
     color : #a80202;
-    background-color: #ed8686;
+    background-color: #fda4a4;
     border-color: #a80202;
 }
 .messageFlash.danger svg {
@@ -155,7 +154,7 @@ header, header * {
 }
 .messageFlash.success{
     color : #218102;
-    background-color: #65c562;
+    background-color: #a8ffa4;
     border-color: #218102;
 }
 .messageFlash.success svg {

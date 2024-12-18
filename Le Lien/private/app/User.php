@@ -8,19 +8,25 @@ class User
     private string $nom;
     private string $email;
     private string $motDePasse;
+    private bool $estAdherent;
+    private bool $estAdmin;
 
     /**
      * @param string $prenom
      * @param string $nom
      * @param string $email
      * @param string $motDePasse
+     * @param bool $estAdherent
+     * @param bool $estAdmin
      */
-    public function __construct(string $prenom, string $nom, string $email, string $motDePasse)
+    public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdherent, bool $estAdmin)
     {
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->email = $email;
         $this->motDePasse = $motDePasse;
+        $this->estAdherent = $estAdherent;
+        $this->estAdmin = $estAdmin;
     }
 
 
@@ -43,6 +49,17 @@ class User
     {
         return $this->motDePasse;
     }
+
+    public function estAdherent(): bool
+    {
+        return $this->estAdherent;
+    }
+
+    public function estAdmin(): bool
+    {
+        return $this->estAdmin;
+    }
+
 
 
 }

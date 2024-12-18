@@ -29,9 +29,9 @@ class MariaDBUserRepository implements IUserRepository
         $prenom = $user->getPrenom();
         $nom = $user->getNom();
         $email = $user->getEmail();
+        $estAdherant = $user->estAdherent();
+        $estAdmin = $user->estAdmin();
         $passwordHash = password_hash($user->getMotDePasse(), PASSWORD_BCRYPT);
-        $estAdherant = false;
-        $estAdmin = false;
 
         // Liaison des paramètres
         $stmt->bindParam(':prenom', $prenom);
@@ -65,6 +65,6 @@ class MariaDBUserRepository implements IUserRepository
         }
 
         // Crée un objet User avec le mot de passe hashé récupéré
-        return new User($user['prenom'],$user['nom'],$user['email'], $user['mdp']);
+        return new User($user['prenom'],$user['nom'],$user['email'], $user['mdp'], $user['estAdherant'], $user['estAdmin']);
     }
 }

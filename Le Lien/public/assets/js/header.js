@@ -33,15 +33,26 @@ function handleAuthAction(isAuth) {
     }
 }
 
+function UtilisateurEstConnecte() {
+    return fetch("../assets/php/estConnecte.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.auth; // Récupère le statut d'authentification
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+
 // Rendre handleAuthAction accessible globalement
 window.handleAuthAction = handleAuthAction;
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",  () => {
     // Vérifie si l'utilisateur est connecté via une requête Ajax
-    fetch("../assets/php/checkAuth.php")
-        .then((response) => response.json())
-        .then((data) => {
-            const isAuth = data.auth; // Récupère le statut d'authentification
+    const estConnecte =  async () => await UtilisateurEstConnecte;
+
 
             // On ajoute le css dans le head
             const headerCss = document.createElement('link');
@@ -63,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="boutons-navbar">
                             <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
                             ${
-                !isAuth
+                !estConnecte
                     ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                     : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
             }
@@ -79,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="${pages.nosActions.href}">Nos Actions</a>
                     <a href="${pages.declarerAccident.href}">Déclarez un accident</a>
                     ${
-                !isAuth
+                !estConnecte
                     ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                     : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
             }
@@ -110,8 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
             burgerMenu.addEventListener("click", () => {
                 mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
             });
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-        });
+
+
 });

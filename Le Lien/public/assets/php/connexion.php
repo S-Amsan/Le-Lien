@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $authResult = $auth->authenticate($_POST['email'], $_POST['password']);
 
         // Enregistrer dans la session
-        $_SESSION['auth'] = $authResult;
-
+        $_SESSION['auth'] = $trousseau->findUserByEmail($_POST['email']);
 
         $_SESSION['flash']['success'] = $authResult;
+
         // Rediriger vers `secure.php`
         header("Location: ../../pages/accueil.html");
         exit;
