@@ -310,8 +310,22 @@ article{
     }
 }
 @media (max-width: 450px){
+    body, html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     .logoWarning{
         display: none;
+        padding: 0px;
+        margin: 0px;
+        img{
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    body{
+        background-image: none;
     }
     #textIntro{
         display: flex;
@@ -321,33 +335,38 @@ article{
         margin-left: 0px;
         margin-right: 0px;
         h1{
-            font-size: 90px;
+            padding-top: 100px;
+            font-size: 50px;
         }
         p{
-            font-size: 50px;
+            padding: 50px 20px;
+            font-size: 30px;
             text-align: justify;
-            padding-top: 50px;
+
         }
-    }
-    body{
-        background-size: 100% 100vw;
     }
     #imagePresentation{
         flex-wrap: wrap;
         gap: 0px;
         padding-top: 100px;
+        margin-left: 0px;
+        margin-right: 0px;
+
     }
     .rectangle1, .rectangle2{
         width: 100%;
         border-radius:0px;
-        justify-content: space-evenly;
+        margin: 0;
+        padding: 0;
+        /*justify-content: space-evenly;*/
         img{
-            height: 90%;
+            height: 50%;
             width: auto;
         }
         p{
             margin-bottom: 0px;
             font-size: 30px;
+
         }
     }
     .rectangle1:hover{
@@ -356,15 +375,21 @@ article{
     .rectangle2:hover{
         transform: none;
     }
-    .texte2023{
-        padding-top: 100px;
-        p{
-            font-size: 50px;
-        }
+    #texte2023{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #texteStat2023{
+
+        padding: 100px 0 0 0;
+        margin: 0 0 0 0;
+        font-size: 40px;
     }
     #stat{
+        flex-wrap: wrap;
         column-gap: 50px;
-        padding-top: 100px;
+        padding-top: 50px;
     }
     .rondBleu{
         height: 220px;
@@ -393,10 +418,13 @@ article{
             font-size: 30px;
             text-align: justify;
             line-height: 150%;
+            padding: 50px 20px;
         }
     }
 
+
 }
+
 @media (min-width: 1500px){
     #textOutro{
         p{
@@ -406,7 +434,7 @@ article{
     }
 }
 
-@media (max-width : 1700px){
+@media (max-width : 1700px) and (min-width: 1500px){
     .boutonContactHaut{
         width: 26%;
         height: 9%
@@ -443,7 +471,7 @@ article{
         }
     }
     .rectangle1{
-        width: 15vw;  /* Largeur du rectangle */
+        width: 15vw;
         height: 25.5vw;
 
         p{
@@ -451,7 +479,7 @@ article{
         }
     }
     .rectangle2{
-        width: 18vw;  /* Largeur du rectangle */
+        width: 18vw;
         height: 32vw;
         p{
             font-size: 1.2vw;
@@ -487,7 +515,7 @@ article{
         }
     }
 
-}
+}*/
 @media (min-width: 2000px){
     #textIntro{
         margin-left: 0px;
@@ -512,14 +540,14 @@ article{
 }
 @media (min-width: 2200px){
     .rectangle1{
-        width: 330px;  /* Largeur du rectangle */
+        width: 330px;
         height: 570px;
         p{
             font-size: 26px;
         }
     }
     .rectangle2{
-        width: 410px;  /* Largeur du rectangle */
+        width: 410px;
         height: 720px;
         p{
             font-size: 26px;
