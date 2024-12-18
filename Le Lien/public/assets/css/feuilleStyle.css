@@ -424,11 +424,19 @@ article{
 
 
 }
-
 @media (min-width: 1500px){
     #textOutro{
         p{
             font-size: 1.1vw;
+            line-height: 150%;
+        }
+    }
+
+}
+@media (max-width: 1500px){
+    #sectionContact{
+        p{
+            font-size: 100%;
             line-height: 150%;
         }
     }
