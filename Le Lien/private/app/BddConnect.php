@@ -12,10 +12,10 @@ class BddConnect {
     protected ?string $dbname= null;
 
     public function __construct() {
-        $this->host = "172.16.8.65";
-        $this->login = "amsan.sutharsan";
-        $this->password = "6d22417c";
-        $this->dbname = "grp207_3";
+        $this->host = "127.0.0.1";
+        $this->login = "root";
+        $this->password = "root";
+        $this->dbname = "lelien";
     }
     /**
      * @throws BddConnectException
