@@ -288,7 +288,7 @@ body {
 
 .ChiffresCles{
     padding-top: 4.5rem;
-    padding-bottom:4.5rem;
+    padding-bottom:7.7rem;
 }
 
 #titredeChiffre {
@@ -392,7 +392,6 @@ body {
 
 /* Partie Don/Adherer */
 
-/* Titre principal */
 #titreEspaceDonAdherer {
     text-align: center;
     font-size: 38px;
@@ -407,7 +406,6 @@ body {
     font-size: 38px;
 }
 
-/* Conteneur principal */
 .espaceDonEtAdherer {
     display: flex;
     justify-content: space-between;
@@ -417,7 +415,6 @@ body {
     padding-bottom: 7rem;
 }
 
-/* Blocs individuels */
 .espaceDon, .espaceAdherer {
     background: #FFFFFF;
     border-radius: 20px;
@@ -438,9 +435,9 @@ body {
 }
 
 .espaceAdherer{
-    border: 2px solid rgba(255, 215, 92, 1);
+    border: 2px solid rgb(244, 223, 153);
 }
-/* Ombres spécifiques */
+
 .espaceDon:hover{
     box-shadow: 0 0 20px rgba(96, 178, 255, 1);
 }
@@ -449,7 +446,6 @@ body {
     box-shadow: 0 0 20px rgba(255, 215, 92, 1);
 }
 
-/* Icônes */
 .icon img {
     width: 15rem;
     height: auto;
@@ -457,9 +453,9 @@ body {
     position: relative;
     top: -8rem;
     z-index: 2;
+    padding-right:1rem;
 }
 
-/* Titres */
 .titleDon, .titleAdherer {
     font-size: 4rem;
     font-weight: 600;
@@ -475,7 +471,6 @@ body {
     color: #FFCA28;
 }
 
-/* Textes descriptifs */
 .espaceDon p, .espaceAdherer p {
     font-size: 20px;
     font-weight: 500;
@@ -486,7 +481,6 @@ body {
     width: 85%;
 }
 
-/* Ligne séparatrice */
 .separator {
     width: 100%;
     height: 1px;
@@ -495,22 +489,21 @@ body {
     margin-bottom: 20px;
 }
 
-/* Bouton cercle */
 .cta-wrapper {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Augmente l'espacement entre le bouton et le texte */
+    gap: 1.5rem;
     margin-top: 20px;
 }
 
 .circle {
-    width: 60px; /* Augmentation de la taille du bouton */
+    width: 60px;
     height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px; /* Augmentation de la taille de la flèche */
+    font-size: 28px;
     font-weight: bold;
     color: #FFF;
     cursor: pointer;
@@ -530,26 +523,24 @@ body {
 }
 
 .arrow-img {
-    width: 34px; /* Ajustez la taille selon vos besoins */
+    width: 34px;
     height: auto;
 }
 
 .cta-text-don {
-    font-size: 20px; /* Augmentation de la taille du texte */
+    font-size: 25px;
+    padding-right:3rem;
     font-weight: bold;
     color: #004484;
     text-transform: uppercase;
 }
 
 .cta-text-adherer {
-    font-size: 20px; /* Augmentation de la taille du texte */
+    font-size: 25px;
     font-weight: bold;
     color: #FFCA28;
     text-transform: uppercase;
 }
-
-
-
 
 
 
