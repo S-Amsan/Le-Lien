@@ -97,15 +97,16 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <a class="${pages.declarerAccident.class}" id="accident" href="${pages.declarerAccident.href}">Déclarez un accident</a>
                         <div class="boutons-navbar">
                             <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
-                            ${!estAdmin // Inversé la conditions !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            ${estAdmin
                             ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.statistiques.href}';">Voir stats</button>` 
                             : ``
                             }
-                            ${!estConnecte 
-                            ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` 
-                            : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                            ${estConnecte
+                            ? `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                            : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                             }
-                            ${!estAdherent // Inversé la conditions !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                            ${estAdherent
                             ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.formulaire.href}';">Répondre au formulaire</button>` 
                             : ``
                             }

@@ -65,6 +65,6 @@ class MariaDBUserRepository implements IUserRepository
         }
 
         // Crée un objet User avec le mot de passe hashé récupéré
-        return new User($user['prenom'],$user['nom'],$user['email'], $user['mdp'], $user['estAdherant'], $user['estAdmin']);
+        return new User($user['prenom'], $user['nom'], $user['email'], $user['mdp'], $user['estAdherant'], $user['estAdmin']);
     }
 }

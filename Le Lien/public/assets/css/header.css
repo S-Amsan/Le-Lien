@@ -89,7 +89,7 @@ header, header * {
     background: linear-gradient(to left, #FF6B6B, #FF4D4D) right;
 }
 
-.bouton-stat{
+.bouton-stat {
     transition: background 0.5s ease, transform 0.3s ease;
     background: linear-gradient(to left, #71ed68, #4eb831) right;
     background-size: 300%;
@@ -104,25 +104,7 @@ header, header * {
 }
 
 
-
-.stat {
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-}
-
-.stat img {
-    height: 2em;
-    width: 2em;
-}
-
-
-.bouton-aider:hover,
-.bouton-login:hover {
+.bouton:hover {
     background-position: left;
     transform: scale(1.1);
 }
@@ -156,9 +138,9 @@ header, header * {
 }
 
 /* Les messages flash */
-.messageFlash{
+.messageFlash {
     position: absolute;
-    height : 2.5em;
+    height: 2.5em;
     width: 100%;
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -168,53 +150,60 @@ header, header * {
     box-sizing: border-box;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.messageFlash.warning{
-    color : #ac970c;
+
+.messageFlash.warning {
+    color: #ac970c;
     background-color: #faf298;
     border-color: #ac970c;
 }
+
 .messageFlash.warning svg {
     fill: #ac970c;
 }
-.messageFlash.danger{
-    color : #a80202;
+
+.messageFlash.danger {
+    color: #a80202;
     background-color: #fda4a4;
     border-color: #a80202;
 }
+
 .messageFlash.danger svg {
     fill: #a80202;
 }
-.messageFlash.success{
-    color : #218102;
+
+.messageFlash.success {
+    color: #218102;
     background-color: #a8ffa4;
     border-color: #218102;
 }
+
 .messageFlash.success svg {
     fill: #218102;
 }
-.messageFlash button svg{
-    height : 2em;
+
+.messageFlash button svg {
+    height: 2em;
     width: auto;
 }
-.messageFlash button{
+
+.messageFlash button {
     position: absolute;
     right: 10px;
     background: none;
-    border : none;
+    border: none;
     display: flex;
     align-items: center;
     transition: 0.5s;
 }
-.messageFlash button:hover{
+
+.messageFlash button:hover {
     opacity: 0.5;
 }
-.messageFlash p{
+
+.messageFlash p {
     position: absolute;
-    left : 10px;
+    left: 10px;
 }
-
-
-
 
 
 @media screen and (max-width: 1093px) {

@@ -1,5 +1,6 @@
 <?php
-if (!session_id()) session_start();
+if (!session_id())
+    session_start();
 
 use LeLien\Management\Authentification;
 use LeLien\Management\BddConnect;
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $authResult = $auth->authenticate($_POST['email'], $_POST['password']);
 
         // Enregistrer dans la session
-        $_SESSION['auth'] = $trousseau->findUserByEmail($_POST['email']);
+        $_SESSION['auth'] = $_POST['email'];
 
         $_SESSION['flash']['success'] = $authResult;
 
