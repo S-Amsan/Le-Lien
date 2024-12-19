@@ -79,7 +79,7 @@ body {
 
 .Menu {
     position: relative;
-    min-height: 53rem;
+    min-height: 52rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -91,8 +91,8 @@ body {
     flex-direction: column;
     justify-content: center;
     max-width: 50%;
-    margin-bottom: 4rem;
-    padding-left: 3rem;
+    margin-bottom: 14rem;
+    padding-left: 3.5rem;
 }
 
 .Menu::before {
@@ -134,7 +134,7 @@ body {
 
 .Menu h3 {
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 0.5rem;
     padding-left:3rem;
     color: #004383;
@@ -149,7 +149,7 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     right:3rem;
-    padding-top:4rem;
+    padding-top:12rem;
 }
 
 .ImageFauteuilRoulant {
@@ -182,7 +182,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin-left: 7.2rem;
+    margin-left: -0.3rem;
     margin-top: 3rem;
 }
 
@@ -420,7 +420,7 @@ h2 {
     display: grid;
     align-items: center;
     text-align: center;
-    padding-left: 250px;
+    padding-left: 21rem;
     font-size: 1.3rem;
 }
 
@@ -428,7 +428,7 @@ h2 {
     display: grid;
     align-items: center;
     text-align: center;
-    padding-right: 250px;
+    padding-right: 21rem;
     font-size: 1.3rem;
 }
 
@@ -553,6 +553,7 @@ button:hover {
         max-width: 50%;
         padding-bottom:8rem;
         margin-bottom: 1rem;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
@@ -590,6 +591,7 @@ button:hover {
         max-width: 55%;
         padding-bottom:8rem;
         margin-bottom: 1rem;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
@@ -635,6 +637,7 @@ button:hover {
         max-width: 50%;
         padding-bottom:8rem;
         margin-bottom: 1rem;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
@@ -675,6 +678,7 @@ button:hover {
         max-width: 60%;
         padding-bottom:8rem;
         margin-bottom: 1rem;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
@@ -735,6 +739,7 @@ button:hover {
         max-width: 70%;
         padding-bottom:10rem;
         margin-bottom: 0;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
@@ -760,7 +765,7 @@ button:hover {
 
 /* Ordinateurs (écrans moyen) */
 
-@media screen and (min-width: 1441px) and (max-width: 1920px) {
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
     html{
         font-size:13px;
     }
@@ -774,6 +779,7 @@ button:hover {
         max-width: 60%;
         padding-bottom:8rem;
         margin-bottom: 1rem;
+        padding-left:3rem;
     }
     .Menu h3{
         top: 2%;
