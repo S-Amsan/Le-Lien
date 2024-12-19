@@ -34,10 +34,34 @@ function handleAuthAction(isAuth) {
 }
 
 function UtilisateurEstConnecte() {
-    return fetch("../assets/php/estConnecte.php")
+    return fetch("../assets/php/infosUtilisateur.php")
         .then((response) => response.json())
         .then((data) => {
-            return data.auth; // Récupère le statut d'authentification
+            return data.estConnecte;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+function UtilisateurEstAdherent() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.estAdherent;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+function UtilisateurEstAdmin() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.estAdmin;
         })
         .catch((error) => {
             console.error("Erreur lors de la vérification de l'authentification :", error);
@@ -48,18 +72,20 @@ function UtilisateurEstConnecte() {
 // Rendre handleAuthAction accessible globalement
 window.handleAuthAction = handleAuthAction;
 
-document.addEventListener("DOMContentLoaded",  async() => {
+document.addEventListener("DOMContentLoaded", async () => {
     // Vérifie si l'utilisateur est connecté via une requête Ajax
     const estConnecte = await UtilisateurEstConnecte();
+    const estAdherent = await UtilisateurEstAdherent();
+    const estAdmin = await UtilisateurEstAdmin();
 
     // On ajoute le css dans le head
-            const headerCss = document.createElement('link');
-            headerCss.rel = 'stylesheet';
-            headerCss.href = '../assets/css/header.css';
-            document.head.appendChild(headerCss);
+    const headerCss = document.createElement('link');
+    headerCss.rel = 'stylesheet';
+    headerCss.href = '../assets/css/header.css';
+    document.head.appendChild(headerCss);
 
-            // On ajoute le contenu HTML dans la balise <header>
-            document.querySelector('header').innerHTML = `
+    // On ajoute le contenu HTML dans la balise <header>
+    document.querySelector('header').innerHTML = `
                 <nav class="navbar">
                     <div class="navbar-gauche">
                         <img src="${srcImg}/Logo.png" alt="Logo Le lien" class="logo">
@@ -71,11 +97,18 @@ document.addEventListener("DOMContentLoaded",  async() => {
                         <a class="${pages.declarerAccident.class}" id="accident" href="${pages.declarerAccident.href}">Déclarez un accident</a>
                         <div class="boutons-navbar">
                             <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
-                            ${
-                !estConnecte
-                    ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
-                    : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
-            }
+                            ${!estAdmin // Inversé la conditions !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.statistiques.href}';">Voir stats</button>` 
+                            : ``
+                            }
+                            ${!estConnecte 
+                            ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` 
+                            : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                            }
+                            ${!estAdherent // Inversé la conditions !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.formulaire.href}';">Répondre au formulaire</button>` 
+                            : ``
+                            }
                         </div>
                     </div>
                     <button class="menu-burger" id="menu-burger">
@@ -87,38 +120,34 @@ document.addEventListener("DOMContentLoaded",  async() => {
                     <a href="${pages.presentation.href}">Présentation</a>
                     <a href="${pages.nosActions.href}">Nos Actions</a>
                     <a href="${pages.declarerAccident.href}">Déclarez un accident</a>
-                    ${
-                !estConnecte
-                    ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
-                    : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
-            }
+                    ${!estConnecte ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`}
                     <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
                 </div>
             `;
 
 
-            // Charge et insère le message flash après le header
-            fetch("../assets/php/message.php")
-                .then(response => response.text())
-                .then(messageHtml => {
-                    const messageContainer = document.createElement("div");
-                    messageContainer.innerHTML = messageHtml;
-                    // Sélectionne le header
-                    const headerElement = document.querySelector('header');
-                    // Insère le message après le header
-                    headerElement.insertAdjacentElement('afterend', messageContainer);
-                })
-                .catch((error) => {
-                    console.error("Erreur lors du chargement du message :", error);
-                });
+    // Charge et insère le message flash après le header
+    fetch("../assets/php/message.php")
+        .then(response => response.text())
+        .then(messageHtml => {
+            const messageContainer = document.createElement("div");
+            messageContainer.innerHTML = messageHtml;
+            // Sélectionne le header
+            const headerElement = document.querySelector('header');
+            // Insère le message après le header
+            headerElement.insertAdjacentElement('afterend', messageContainer);
+        })
+        .catch((error) => {
+            console.error("Erreur lors du chargement du message :", error);
+        });
 
-            // Gestion du menu burger
-            const burgerMenu = document.getElementById("menu-burger");
-            const mobileMenu = document.getElementById("menu-mobile");
+    // Gestion du menu burger
+    const burgerMenu = document.getElementById("menu-burger");
+    const mobileMenu = document.getElementById("menu-mobile");
 
-            burgerMenu.addEventListener("click", () => {
-                mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
-            });
+    burgerMenu.addEventListener("click", () => {
+        mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
 
 
 });

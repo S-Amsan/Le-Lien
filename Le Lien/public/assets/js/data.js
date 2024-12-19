@@ -28,5 +28,15 @@ export const pagesData = {
         title :"Le Lien - L'association : Authentification",
         href : "authentification.html",
         class : "notActive"
+    },
+    statistiques : {
+        title :"Le Lien - Les statistiques",
+        href : "statistiques.html",
+        class : "notActive"
+    },
+    formulaire : {
+        title :"?",
+        href : "formulaire.html",
+        class : "notActive"
     }
 };

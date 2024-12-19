@@ -52,5 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = "Accès interdit";
     $type = "danger";
 }
-
 Messages::goHome($message, $type, "../../pages/authentification.html");
