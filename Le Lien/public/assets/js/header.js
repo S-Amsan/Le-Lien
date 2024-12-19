@@ -45,16 +45,14 @@ function UtilisateurEstConnecte() {
         });
 }
 
-
 // Rendre handleAuthAction accessible globalement
 window.handleAuthAction = handleAuthAction;
 
-document.addEventListener("DOMContentLoaded",  () => {
+document.addEventListener("DOMContentLoaded",  async() => {
     // Vérifie si l'utilisateur est connecté via une requête Ajax
-    const estConnecte =  async () => await UtilisateurEstConnecte;
+    const estConnecte = await UtilisateurEstConnecte();
 
-
-            // On ajoute le css dans le head
+    // On ajoute le css dans le head
             const headerCss = document.createElement('link');
             headerCss.rel = 'stylesheet';
             headerCss.href = '../assets/css/header.css';
