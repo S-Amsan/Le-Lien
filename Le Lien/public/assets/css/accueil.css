@@ -288,6 +288,7 @@ body {
 
 .ChiffresCles{
     padding-top: 4.5rem;
+    padding-bottom:4.5rem;
 }
 
 #titredeChiffre {
@@ -391,106 +392,164 @@ body {
 
 /* Partie Don/Adherer */
 
-.espaceDonEtAdherer p {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 500;
-}
-
+/* Titre principal */
 #titreEspaceDonAdherer {
     text-align: center;
-    padding-top: 1.6rem;
+    font-size: 38px;
+    padding-bottom: 6rem;
+    font-weight: normal;
+    color: #004484;
 }
 
+#titreEspaceDonAdherer span {
+    font-weight: bold;
+    color: #004484;
+    font-size: 38px;
+}
+
+/* Conteneur principal */
 .espaceDonEtAdherer {
     display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 100px;
-    padding-left:1rem;
+    justify-content: space-between;
+    gap: 6rem;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding-bottom: 7rem;
 }
 
-.espaceDon {
-    display: grid;
+/* Blocs individuels */
+.espaceDon, .espaceAdherer {
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 48%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-left: 21rem;
-    font-size: 1.3rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    min-height: 600px;
+    transition: box-shadow 0.3s ease;
 }
 
-.espaceAdherer {
-    display: grid;
+.espaceDon{
+    border: 2px solid #b0d4f1;
+}
+
+.espaceAdherer{
+    border: 2px solid rgba(255, 215, 92, 1);
+}
+/* Ombres spécifiques */
+.espaceDon:hover{
+    box-shadow: 0 0 20px rgba(96, 178, 255, 1);
+}
+
+.espaceAdherer:hover{
+    box-shadow: 0 0 20px rgba(255, 215, 92, 1);
+}
+
+/* Icônes */
+.icon img {
+    width: 15rem;
+    height: auto;
+    margin-bottom: -8rem;
+    position: relative;
+    top: -8rem;
+    z-index: 2;
+}
+
+/* Titres */
+.titleDon, .titleAdherer {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+.titleDon {
+    color: #004484;
+}
+
+.titleAdherer {
+    color: #FFCA28;
+}
+
+/* Textes descriptifs */
+.espaceDon p, .espaceAdherer p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #333333;
+    text-align: left;
+    width: 85%;
+}
+
+/* Ligne séparatrice */
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #DDD;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* Bouton cercle */
+.cta-wrapper {
+    display: flex;
     align-items: center;
-    text-align: center;
-    padding-right: 21rem;
-    font-size: 1.3rem;
+    gap: 1.5rem; /* Augmente l'espacement entre le bouton et le texte */
+    margin-top: 20px;
 }
 
-.LigneSeparatrice {
-    width: 4px;
-    height: 70vh;
-    background-color: #fdd868;
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-
-#coeur {
-    width: 8vw;
-    justify-self: center;
-}
-
-#main {
-    width: 8vw;
-    justify-self: center;
-}
-
-#btnDon {
-    background-color: #007bff;
-    padding: 10px;
-    font-size: 1.1rem;
+.circle {
+    width: 60px; /* Augmentation de la taille du bouton */
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px; /* Augmentation de la taille de la flèche */
     font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    color: #FFF;
     cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#btnDon:hover {
-    background-color: #0056b3;
+.ctaDon {
+    background-color: #00BBFF;
 }
 
-#btnAdherent {
-    background-color: #f8bd12;
-    padding: 10px;
-    font-size: 1.1rem;
+.ctaAdherer {
+    background-color: #FFCA28;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
+
+.arrow-img {
+    width: 34px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+}
+
+.cta-text-don {
+    font-size: 20px; /* Augmentation de la taille du texte */
     font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    color: #004484;
+    text-transform: uppercase;
 }
 
-#btnAdherent:hover {
-    background-color: #d4a00e;
+.cta-text-adherer {
+    font-size: 20px; /* Augmentation de la taille du texte */
+    font-weight: bold;
+    color: #FFCA28;
+    text-transform: uppercase;
 }
 
-button:hover {
-    opacity: 0.9;
-}
+
+
 
 
 
