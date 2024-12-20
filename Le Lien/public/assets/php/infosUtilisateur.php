@@ -1,5 +1,4 @@
 <?php
-// Démarrage de la session
 use LeLien\Management\BddConnect;
 use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\MariaDBUserRepository;
@@ -7,6 +6,7 @@ use LeLien\Management\Messages;
 
 require_once '../../../vendor/autoload.php';
 
+// Démarrage de la session
 if (!session_id()) {
     session_start();
 }
@@ -34,13 +34,10 @@ $estAdmin = false;
 if (isset($_SESSION['auth'])) {
     $estConnecte = true;
     $user = $trousseau->findUserByEmail($_SESSION['auth']);
-
-    // Vérifie si l'utilisateur est un adhérent ou un administrateur
     $estAdherent = $user->estAdherent();
     $estAdmin = $user->estAdmin();
 }
 
-// Renvoie une réponse JSON avec les informations nécessaires
 header('Content-Type: application/json');
 echo json_encode([
     'estConnecte' => $estConnecte,

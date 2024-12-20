@@ -8,7 +8,6 @@ class User
     private string $nom;
     private string $email;
     private string $motDePasse;
-    private bool $estAdherent;
     private bool $estAdmin;
 
     /**
@@ -19,13 +18,12 @@ class User
      * @param bool $estAdherent
      * @param bool $estAdmin
      */
-    public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdherent, bool $estAdmin)
+    public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdmin)
     {
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->email = $email;
         $this->motDePasse = $motDePasse;
-        $this->estAdherent = $estAdherent;
         $this->estAdmin = $estAdmin;
     }
 
@@ -52,7 +50,10 @@ class User
 
     public function estAdherent(): bool
     {
-        return $this->estAdherent;
+        $bdd = new BddConnect();
+        $pdo = $bdd->connexion();
+        $trousseau = new MariaDBUserRepository($pdo);
+        return $trousseau->UserIsAdherent($this->email);
     }
 
     public function estAdmin(): bool

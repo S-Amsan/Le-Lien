@@ -21,26 +21,23 @@ class MariaDBUserRepository implements IUserRepository
      */
     public function saveUser(User $user): bool
     {
-        $sql = "INSERT INTO users (prenom, nom, email, mdp, estAdherant, estAdmin) 
-            VALUES (:prenom, :nom, :email, :password, :estAdherant, :estAdmin)";
+        $sql = "INSERT INTO users (prenom, nom, email, mdp, estAdmin) 
+            VALUES (:prenom, :nom, :email, :mdp, :estAdmin)";
         $stmt = $this->dbConnexion->prepare($sql);
 
         // Récupérer les valeurs
         $prenom = $user->getPrenom();
         $nom = $user->getNom();
         $email = $user->getEmail();
-        $estAdherant = $user->estAdherent();
         $estAdmin = $user->estAdmin();
-        $passwordHash = password_hash($user->getMotDePasse(), PASSWORD_BCRYPT);
+        $mdpHash = password_hash($user->getMotDePasse(), PASSWORD_BCRYPT);
 
         // Liaison des paramètres
         $stmt->bindParam(':prenom', $prenom);
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $passwordHash);
-        $stmt->bindParam(':estAdherant', $estAdherant, PDO::PARAM_BOOL);
+        $stmt->bindParam(':mdp', $mdpHash);
         $stmt->bindParam(':estAdmin', $estAdmin, PDO::PARAM_BOOL);
-
         // Exécution et retour du statut
         return $stmt->execute();
     }
@@ -59,12 +56,15 @@ class MariaDBUserRepository implements IUserRepository
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $user = $stmt->fetch();
-
         if (!$user) {
             return null;
         }
-
         // Crée un objet User avec le mot de passe hashé récupéré
-        return new User($user['prenom'], $user['nom'], $user['email'], $user['mdp'], $user['estAdherant'], $user['estAdmin']);
+        return new User($user['prenom'], $user['nom'], $user['email'], $user['mdp'],$user['estAdmin']);
+    }
+
+    public function UserIsAdherent(string $email): bool
+    {
+        return true;
     }
 }

@@ -31,7 +31,7 @@ class Authentification
         }
 
         // Crée un nouvel utilisateur et l'enregistre
-        $user = new User($prenom, $nom, $email, $motDePasse, false, false);
+        $user = new User($prenom, $nom, $email, $motDePasse, false);
         return $this->userRepository->saveUser($user);
     }
 
