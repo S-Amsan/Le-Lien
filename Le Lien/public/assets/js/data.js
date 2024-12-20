@@ -9,11 +9,6 @@ export const pagesData = {
         href : "presentation.html",
         class : "notActive"
     },
-    nousAider : {
-        title : "Le Lien - L'association : Nous Aider",
-        href : "nousAider.html",
-        class : "notActive"
-    },
     declarerAccident : {
         title : "Le Lien - L'association : Déclarez un accident médical",
         href : "Declarer un accident.html",
@@ -24,19 +19,4 @@ export const pagesData = {
         href : "#",
         class : "notActive"
     },
-    Login : {
-        title :"Le Lien - L'association : Authentification",
-        href : "authentification.html",
-        class : "notActive"
-    },
-    statistiques : {
-        title :"Le Lien - Les statistiques",
-        href : "statistiques.html",
-        class : "notActive"
-    },
-    formulaire : {
-        title :"?",
-        href : "formulaire.html",
-        class : "notActive"
-    }
 };

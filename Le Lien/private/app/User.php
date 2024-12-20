@@ -61,6 +61,11 @@ class User
         return $this->estAdmin;
     }
 
-
-
+    public function getId(): int
+    {
+        $bdd = new BddConnect();
+        $pdo = $bdd->connexion();
+        $trousseau = new MariaDBUserRepository($pdo);
+        return $trousseau->getUserId($this->email);
+    }
 }

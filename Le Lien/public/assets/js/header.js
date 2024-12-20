@@ -1,4 +1,4 @@
-import {pagesData as pages} from "./data.js";
+import {pagesData as pages} from "./data.js"; // Les pages présents dans la navBar
 
 const srcImg = "../assets/images";
 let pageActuel = pages.accueil;
@@ -12,8 +12,8 @@ for (const page of Object.values(pages)) {
 }
 
 // Fonction pour gérer l'authentification (connexion/déconnexion)
-function handleAuthAction(isAuth) {
-    if (isAuth) {
+function handleAuthAction(estConnecte) {
+    if (estConnecte) {
         // Si l'utilisateur est connecté, effectuer la déconnexion
         fetch("../assets/php/deconnexion.php")
             .then((response) => response.json())
@@ -29,7 +29,7 @@ function handleAuthAction(isAuth) {
             });
     } else {
         // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
-        window.location.href = pages.Login.href;
+        window.location.href = 'authentification.html';
     }
 }
 
@@ -96,21 +96,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <a class="${pages.nosActions.class}" href="${pages.nosActions.href}">Nos Actions</a>
                         <a class="${pages.declarerAccident.class}" id="accident" href="${pages.declarerAccident.href}">Déclarez un accident</a>
                         <div class="boutons-navbar">
-                            <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
-                            ${estAdmin
-                            ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.statistiques.href}';">Voir stats</button>` 
-                            : ``
-                            }
-                            ${estConnecte
-                            ? `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
-                            : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
-                            }
+                            <button class="bouton bouton-aider" onclick="window.location.href='nousAider.html';">Nous aider</button>
 
-                            ${estAdherent
-                            ? `<button class="bouton bouton-stat" onclick="window.location.href='${pages.formulaire.href}';">Répondre au formulaire</button>` 
-                            : ``
+                            ${estConnecte
+                                ? `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                                : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
+                            }
+                            ${estAdherent // Je le laisse pour l'instant
+                                ? `<button class="bouton bouton-stat" onclick="window.location.href='formulaire.html';">Répondre au formulaire</button>`
+                                : ``
                             }
                         </div>
+                            ${estAdmin
+                                ? `<button class="bouton-stat" onclick="window.location.href='statistiques.html';"><img src="${srcImg}/graphique.png" alt="Voir stats"></button>`
+                                : ``
+                            }
                     </div>
                     <button class="menu-burger" id="menu-burger">
                         <img src="${srcImg}/menuBurger.png" alt="menuBurger" width="100%" height="100%" class="menu-burger">
@@ -121,8 +121,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a href="${pages.presentation.href}">Présentation</a>
                     <a href="${pages.nosActions.href}">Nos Actions</a>
                     <a href="${pages.declarerAccident.href}">Déclarez un accident</a>
-                    ${!estConnecte ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`}
-                    <button class="bouton bouton-aider" onclick="window.location.href='${pages.nousAider.href}';">Nous aider</button>
+                    ${!estConnecte 
+                        ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` 
+                        : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                    }
+                    <button class="bouton bouton-aider" onclick="window.location.href='nousAider.html';">Nous aider</button>
                 </div>
             `;
 

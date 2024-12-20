@@ -63,8 +63,13 @@ class MariaDBUserRepository implements IUserRepository
         return new User($user['prenom'], $user['nom'], $user['email'], $user['mdp'],$user['estAdmin']);
     }
 
-    public function UserIsAdherent(string $email): bool
+    public function userIsAdherent(string $email): bool
     {
-        return true;
+        return true; // à compléter
+    }
+
+    public function getUserId(string $email)
+    {
+        return 1; // à compléter
     }
 }
