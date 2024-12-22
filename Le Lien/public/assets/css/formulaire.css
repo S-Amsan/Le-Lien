@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #DFE7FF 0%, #DAF3FF 50%, #FFFFFF 100%);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.form-container {
+    background: rgba(249, 190, 13, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+    width: 900px;
+}
+h1 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    padding-top: 30px;
+}
+#prev-button {
+    color: #000;
+    background-color: white;
+    border-color: black;
+    transition: all 0.3s ease;
+}
+#prev-button:hover {
+    background-color:rgba(178, 186, 187, 0.5);
+    border-color: #000;
+}
