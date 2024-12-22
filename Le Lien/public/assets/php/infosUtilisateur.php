@@ -42,6 +42,6 @@ header('Content-Type: application/json');
 echo json_encode([
     'estConnecte' => $estConnecte,
     'estAdherent' => $estAdherent,
-    'estAdmin' => $estAdmin
+    'estAdmin' => $estAdmin,
 ]);
 ?>

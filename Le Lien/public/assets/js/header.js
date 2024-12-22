@@ -19,6 +19,7 @@ function handleAuthAction(estConnecte) {
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
+                    localStorage.removeItem("popupCacher"); // On supprime les données
                     window.location.href = "../index.php"; // Rediriger après déconnexion
                 } else {
                     alert("Une erreur est survenue lors de la déconnexion.");
@@ -33,7 +34,7 @@ function handleAuthAction(estConnecte) {
     }
 }
 
-function UtilisateurEstConnecte() {
+function utilisateurEstConnecte() {
     return fetch("../assets/php/infosUtilisateur.php")
         .then((response) => response.json())
         .then((data) => {
@@ -45,19 +46,7 @@ function UtilisateurEstConnecte() {
         });
 }
 
-function UtilisateurEstAdherent() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.estAdherent;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
-
-function UtilisateurEstAdmin() {
+function utilisateurEstAdmin() {
     return fetch("../assets/php/infosUtilisateur.php")
         .then((response) => response.json())
         .then((data) => {
@@ -74,15 +63,8 @@ window.handleAuthAction = handleAuthAction;
 
 document.addEventListener("DOMContentLoaded", async () => {
     // Vérifie si l'utilisateur est connecté via une requête Ajax
-    const estConnecte = await UtilisateurEstConnecte();
-    const estAdherent = await UtilisateurEstAdherent();
-    const estAdmin = await UtilisateurEstAdmin();
-
-    // On ajoute le css dans le head
-    const headerCss = document.createElement('link');
-    headerCss.rel = 'stylesheet';
-    headerCss.href = '../assets/css/header.css';
-    document.head.appendChild(headerCss);
+    const estConnecte = await utilisateurEstConnecte();
+    const estAdmin = await utilisateurEstAdmin();
 
     // On ajoute le contenu HTML dans la balise <header>
     document.querySelector('header').innerHTML = `
@@ -102,10 +84,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 ? `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
                                 : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                             }
-                            ${estAdherent // Je le laisse pour l'instant
-                                ? `<button class="bouton bouton-stat" onclick="window.location.href='formulaire.html';">Répondre au formulaire</button>`
-                                : ``
-                            }
                         </div>
                             ${estAdmin
                                 ? `<button class="bouton-stat" onclick="window.location.href='statistiques.html';"><img src="${srcImg}/graphique.png" alt="Voir stats"></button>`
@@ -121,10 +99,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a href="${pages.presentation.href}">Présentation</a>
                     <a href="${pages.nosActions.href}">Nos Actions</a>
                     <a href="${pages.declarerAccident.href}">Déclarez un accident</a>
-                    ${!estConnecte 
-                        ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>` 
-                        : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
-                    }
+                    ${!estConnecte
+        ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
+        : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+    }
                     <button class="bouton bouton-aider" onclick="window.location.href='nousAider.html';">Nous aider</button>
                 </div>
             `;

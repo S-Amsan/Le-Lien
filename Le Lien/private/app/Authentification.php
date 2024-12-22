@@ -54,6 +54,6 @@ class Authentification
         $prenom = $user->getPrenom();
         $nom = $user->getNom();
         // Retourne une indication d'authentification réussie
-        return "Content de vous revoir $prenom $nom ^^!";
+        return "Content de vous revoir $prenom $nom &#128522!";
     }
 }

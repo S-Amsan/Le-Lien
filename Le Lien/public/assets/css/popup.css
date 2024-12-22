@@ -1,0 +1,96 @@
+.popup {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    right: 20px;
+    bottom: 20%;
+    height: auto;
+    max-width: 40vw;
+    background: linear-gradient(to right,#0471B8 0%,#38B2EC 100%);
+    z-index: 10;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transform: translateX(93%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.popup.visible {
+    transform: translateX(10%);
+    animation: slideIn 0.5s; /*permet de faire une animation, le popup apparait dans la page*/
+}
+
+.popup.cacher {
+    transform: translateX(93%);
+    padding-left: 0
+}
+
+.popup button {
+    background: none;
+    border: none;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup button img {
+    height: 3vw;
+    width: 3vw;
+    transition: transform 0.5s ease;
+}
+
+.popup.cacher button img {
+    transform: rotate(180deg);
+}
+
+.popup.visible button img {
+    transform: rotate(0deg);
+}
+
+
+.popup button:hover {
+    transform: scale(1.1);
+}
+
+.popup .contenu {
+    flex-grow: 1;
+}
+
+.popup p {
+    color: white;
+    margin: 0;
+    padding-right: 2vw;
+    padding-left: 10px;
+    font-size: 0.8vw;
+}
+
+
+.popup a {
+    color: #F7BE0F;
+    padding-left: 10px;
+    transition: opacity 0.5s;
+    font-size: 0.8vw;
+}
+
+.popup a:hover {
+    opacity: 0.8;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(93%);
+    }
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+/* ecran petit */
+@media (max-width: 1200px) {
+    .popup {
+        padding: 5px;
+    }
+}

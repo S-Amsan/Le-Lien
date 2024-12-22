@@ -53,7 +53,7 @@ class User
         $bdd = new BddConnect();
         $pdo = $bdd->connexion();
         $trousseau = new MariaDBUserRepository($pdo);
-        return $trousseau->UserIsAdherent($this->email);
+        return $trousseau->userIsAdherent($this->email);
     }
 
     public function estAdmin(): bool

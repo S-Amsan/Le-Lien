@@ -2,11 +2,6 @@ const srcImg = "../assets/images";
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // On ajoute le Css dans le head
-    const footerCss = document.createElement('link');
-    footerCss.rel = 'stylesheet';
-    footerCss.href = '../assets/css/footer.css';
-    document.head.appendChild(footerCss);
     // On ajoute le contenu HTML dans la balise <footer>
     document.querySelector('footer').innerHTML = `
         <div class="footerHaut">
