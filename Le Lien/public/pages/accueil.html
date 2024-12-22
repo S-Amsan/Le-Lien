@@ -7,17 +7,20 @@
 
     <link rel="stylesheet" href="../assets/css/accueil.css">
 
-    <!-- script header + css du header -->
-    <script src="../assets/js/header.js" type="module"></script>
+    <!-- CSS pour le header -->
     <link rel="stylesheet" href="../assets/css/header.css">
-    <!-- script footer + css du footer -->
-    <script src="../assets/js/footer.js" type="module"></script>
+    <!-- CSS pour le footer -->
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <!-- script popup Adhérent + css popup-->
-    <script src="../assets/js/popupEnquete.js" type="module"></script>
-    <link rel="stylesheet" href="../assets/css/popup.css">
-    <!-- script pour l'animation quand on lance la page -->
-    <script src="../assets/js/animationDebut.js"></script>
+    <!-- Animation au lancement -->
+    <script src="../assets/js/animationDebut.js" defer></script>
+    <!-- Script pour le header -->
+    <script src="../assets/js/header.js" type="module" defer></script>
+    <!-- Script pour le footer -->
+    <script src="../assets/js/footer.js" type="module" defer></script>
+    <!-- Script pour les flèches du slider -->
+    <script src="../assets/js/flechesChiffresCles.js" defer></script>
+    <!-- Script pour l'animation des chiffres clés' -->
+    <script src="../assets/js/chiffreGrandit.js" defer></script>
 </head>
 <body>
 <header></header>
@@ -63,53 +66,87 @@
                 <img src="../assets/images/fiche%20medicale.png" alt="fichePresentation" id="fichePresentation"/>
             </div>
         </div>
-
-
+        
     </div>
 
     <div class="main-content2">
+
         <div class="ChiffresCles">
-
-            <div id="titredeChiffre">
-                <h2 id="titreChiffre">Chiffres clés : </h2>
+            <h2 class="titreChiffres">Chiffres clés :</h2>
+            <div class="slider">
+                <button class="nav prev">&lt;</button>
+                <div class="card card-blue">
+                    <div class="data">
+                        <h3 class="big-number" data-target="450000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            accidents médicaux sont recensés en France chaque année
+                            <img src="../assets/images/drapeau-france.png" alt="France">
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/Abandon.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-green" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="1400000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            de personnes dans le monde sont touchées par des infections nosocomiales
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/immune.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-gray" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="60000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            décès par an dans l'Union Européenne suite à des erreurs médicales
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/grave.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-yellow" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="42" data-unit="Milliards">0</h3>
+                        <p class="description">
+                            Coût annuel estimé des erreurs médicamenteuses dans le monde
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/audit.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-red" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="22" data-unit="%">0</h3>
+                        <p class="description">
+                            des Français déclarent avoir été victimes, ou connaître une victime,
+                            d'une erreur de diagnostic ou de traitement
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/injury.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <button class="nav next">&gt;</button>
             </div>
-            <div class="chiffresPartieHaute">
-                <div id="info1">
-                    <img src="../assets/images/lit-dhopital.png" alt="Lit Hopital" id="litHopital"/>
-                    <h3>450 000</h3>
-                    <p>accidents médicaux recensés <br> en France chaque année</p>
-                </div>
-
-                <div id="info2">
-                    <img src="../assets/images/virus.png" alt="Virus" id="virus"/>
-                    <h3>1,4 millions</h3>
-                    <p>de personnes dans le monde sont touchées par des infections nosocomiales</p>
-                </div>
-
-                <div id="info3">
-                    <img src="../assets/images/deces.png" alt=Tombe" id="tombe"/>
-                    <h3>60 000</h3>
-                    <p>décès par an dans <br>l'Union Européenne <br>suite à des erreurs médicales</p>
-                </div>
-
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-
-
-            <div class="chiffresPartieBasse">
-                <div id="info4">
-                    <img src="../assets/images/prescription.png" alt=Prescription" id="prescription"/>
-                    <h3>42 milliards</h3>
-                    <p>Coût annuel estimé des erreurs médicamenteuses dans le monde</p>
-                </div>
-
-                <div id="info5">
-                    <img src="../assets/images/infirmiere.png" alt=Medecin" id="medecin"/>
-                    <h3>22 %</h3>
-                    <p>des Français déclarent avoir été victimes, ou connaître une victime, d'une erreur de diagnostic
-                        ou de traitement</p>
-                </div>
-            </div>
-
         </div>
 
 

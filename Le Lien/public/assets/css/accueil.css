@@ -58,6 +58,7 @@ body {
 .main-content2 {
     position: relative;
     z-index: 0;
+    padding-top:80px;
 }
 
 .main-content2::before {
@@ -199,7 +200,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 25px;
 }
 
 .FondPresentation {
@@ -284,109 +285,165 @@ body {
 
 
 
-/* Partie Chiffres clés */
 
-.ChiffresCles{
-    padding-top: 4.5rem;
-    padding-bottom:7.7rem;
-}
 
-#titredeChiffre {
+/* Chiffres Clés */
+
+.ChiffresCles {
     text-align: center;
-    padding-bottom:1rem;
 }
 
-#titreChiffre {
-    font-weight: 620;
-    font-size: 2.3rem;
-    color: #004383;
-    font-family: Poppins;
-    border-bottom: 5px solid #fdd868;
-    display: inline-block;
+.titreChiffres {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #458DD3;
+    margin-bottom: 2rem;
 }
 
-#info1, #info2, #info3, #info4, #info5 {
+.slider {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 300px;
-    border: 4px solid #004383;
-    border-radius: 25px;
+    gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+    border-radius: 40px;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: rgba(107, 198, 176, 0.07);
+    width: 1100px;
+    height: 500px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-#info1:hover, #info2:hover, #info3:hover, #info4:hover, #info5:hover {
-    transform: translateY(-2px);
+.card .big-number {
+    font-size: 6rem !important;
 }
 
-.ChiffresCles img {
-    width: 7vw;
+.data {
+    text-align: left;
+    flex: 1;
+    padding-left: 50px;
+    max-width: 45%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Texte amélioré */
+.big-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     margin: 0;
-    padding-bottom: 20px;
 }
 
-.ChiffresCles h3 {
-    margin: 5px 0;
-    padding: 0;
-    text-align: center;
-    font-size: 2.5rem;
-    color: #004383;
+.unit {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-left: 0.7rem;
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+    padding-left:7px;
+}
+
+.description img {
+    width: 28px;
+    height: auto;
+    vertical-align: text-bottom;
+    margin-left: 0.3rem;
+    margin-bottom: 5px;
+}
+
+.image {
+    flex: 1;
+    text-align: right;
+    padding-right: 2.5rem;
+}
+
+.illustration {
+    width: 27rem;
+    height: auto;
+}
+
+.card-blue {
+    background: radial-gradient(circle, rgba(155, 206, 255, 0) 5%, #59B1FF 100%);
+    border: 2px solid #0E75B9;
+}
+
+.card-green {
+    background: radial-gradient(circle, rgba(200, 250, 200, 0) 5%, #A6D7A0 100%);
+    border: 2px solid #73B97C;
+}
+
+.card-yellow {
+    background: radial-gradient(circle, rgba(255, 239, 190, 0) 5%, #F9C74F 100%);
+    border: 2px solid #E5A729;
+}
+
+.card-yellow img {
+    width: 23rem;
+}
+
+.card-red {
+    background: radial-gradient(circle, rgba(255, 200, 200, 0) 5%, #E97D81 100%);
+    border: 2px solid #D96065;
+}
+
+.card-gray {
+    background: radial-gradient(circle, rgba(220, 220, 220, 0) 5%, #A8A8A8 100%);
+    border: 2px solid #8E8E8E;
+}
+
+.nav {
+    background: none;
+    border: none;
+    font-size: 4rem;
     font-weight: 800;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #515151;
+    padding: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.ChiffresCles p {
-    margin: 5px 0;
-    padding-bottom: 70px;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #004383;
-    line-height: 1.2;
+.nav:hover {
+    color: #333333;
+    transform: scale(1.1);
 }
 
-.chiffresPartieHaute {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.dots {
+    margin-top: 2rem;
 }
 
-.chiffresPartieBasse {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding-top: 10px;
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
 }
 
-#litHopital {
-    width: 7vw;
-    padding-top: 40px;
+.dot.active {
+    background-color: #458DD3;
 }
 
-#virus {
-    width: 6vw;
-    padding-top: 70px;
-}
-
-#tombe {
-    width: 5.5vw;
-    padding-top: 85px;
-}
-
-#prescription {
-    width: 5.5vw;
-    padding-top: 75px;
-}
-
-#medecin {
-    width: 5.5vw;
-    padding-top: 95px;
-}
 
 
 
@@ -396,6 +453,7 @@ body {
     text-align: center;
     font-size: 38px;
     padding-bottom: 6rem;
+    padding-top: 6rem;
     font-weight: normal;
     color: #004484;
 }
