@@ -10,24 +10,43 @@ for (const page of Object.values(pages)) {
         pageActuel.class = "active";
     }
 }
+function handleDeconnexion(){
+    // Si l'utilisateur est connecté, effectuer la déconnexion
+    fetch("../assets/php/deconnexion.php")
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                localStorage.removeItem("popupCacher"); // On supprime les données
+                window.location.href = "../index.php"; // Rediriger après déconnexion
+            } else {
+                alert("Une erreur est survenue lors de la déconnexion.");
+            }
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la déconnexion :", error);
+        });
+}
 
 // Fonction pour gérer l'authentification (connexion/déconnexion)
 function handleAuthAction(estConnecte) {
     if (estConnecte) {
-        // Si l'utilisateur est connecté, effectuer la déconnexion
-        fetch("../assets/php/deconnexion.php")
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    localStorage.removeItem("popupCacher"); // On supprime les données
-                    window.location.href = "../index.php"; // Rediriger après déconnexion
-                } else {
-                    alert("Une erreur est survenue lors de la déconnexion.");
-                }
-            })
-            .catch((error) => {
-                console.error("Erreur lors de la déconnexion :", error);
-            });
+        if (document.getElementById("decoPopup")) {
+            return; // Si le popup existe
+        }
+        const decoPopup = `
+        <div class="deconnexion" id="decoPopup">
+            <div class="contenu">
+                <h1>Déconnexion</h1>
+                <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+            </div>
+            <div class="actions">
+                <button id="annuler" onclick="this.parentElement.parentElement.remove()">Annuler</button>
+                <button id="deco">Déconnexion</button>
+            </div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML("beforeend", decoPopup);
+        document.getElementById("deco").addEventListener("click", handleDeconnexion);
     } else {
         // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
         window.location.href = 'authentification.html';

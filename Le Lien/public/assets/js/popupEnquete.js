@@ -13,7 +13,7 @@ let premiereConnexion = false;
 const ajouterPopup = () => {
 
     // Ajoute le popup à la page
-    document.body.innerHTML += `
+    const adherentPopup= `
         <div class="popup ${localStorage.getItem("popupCacher") === "true" ? "cacher" : "visible"}" id="popup">
             <button id="bouton-popup"><img src="../assets/images/fleche-droite-blanche.png" alt=""/></button>
             <div class="contenu">
@@ -22,6 +22,7 @@ const ajouterPopup = () => {
             </div>
         </div>
     `;
+    document.body.insertAdjacentHTML("beforeend", adherentPopup);
     document.getElementById("bouton-popup").addEventListener("click", handleChangerEtat);
 };
 

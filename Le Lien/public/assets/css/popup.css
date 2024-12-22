@@ -67,7 +67,12 @@
     font-size: 0.8vw;
 }
 
-
+.popup.cacher a{
+    pointer-events: none;
+    color: gray;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
 .popup a {
     color: #F7BE0F;
     padding-left: 10px;

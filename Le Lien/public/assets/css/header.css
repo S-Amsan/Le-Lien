@@ -205,6 +205,92 @@ header, header * {
     left: 10px;
 }
 
+/* Le popup pour confirmer la déconnexion */
+.deconnexion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre le popup au milieu de la page */
+    z-index: 100;
+    background: linear-gradient(to bottom, #5CAEFF 0% , #5CAEFF 80%, #216BB5 80% , #216BB5 100% );
+    padding: 1em 1em 0.5em 1em;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 30vw;
+    height: 15em;
+    opacity: 0.97;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.deconnexion h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+
+.deconnexion button {
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    transition: background 0.5s ease, transform 0.3s ease;
+}
+.deconnexion button:hover {
+    background-position: left;
+    transform: scale(1.1);
+}
+.deconnexion #annuler {
+    background: none;
+    border: 2px solid white;
+    margin-right: 0.5em;
+}
+
+.deconnexion #deco {
+    background: linear-gradient(to left, #FF6B6B, #FF4D4D);
+    border: none;
+    margin-left: 0.5em;
+}
+
+.deconnexion .actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Animation lorsque le popup apparait */
+
+@keyframes animationApparition {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.deconnexion {
+    animation: animationApparition 0.7s ease-out;
+}
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1093px) {
     .navbar-droite {
