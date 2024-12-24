@@ -2,39 +2,151 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, white 0%, rgba(249, 190, 13, 0.14) 50%, #FFFFFF 100%);
 }
-.container{
+.custom-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
-.form-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-top: 20px;
+.form-container{
     width: 900px;
-}
-h1 {
-    color: #343a40;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.navigation-buttons {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
-    column-gap: 10px;
-    padding-top: 30px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 40px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        color: #333
+    }
+}
+.custom-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.custom-button:hover {
+    background-color: #0056b3;
+}
+.custom-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 #prev-button {
-    color: #000;
-    background-color: white;
-    border-color: black;
-    transition: all 0.3s ease;
+    background-color: #f0f0f0; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
 }
+
 #prev-button:hover {
-    background-color:rgba(178, 186, 187, 0.5);
-    border-color: #000;
+    background-color: #e0e0e0; /* Couleur de fond au survol */
+}
+
+#prev-button:active {
+    background-color: #d0d0d0; /* Couleur de fond lors du clic */
+}
+.question-page.active {
+    display: block;
+}
+.question-page {
+    display: none;
+    margin-bottom: 20px;
+
+}
+.question-page label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: "Inter",sans-serif ;
+    font-weight: lighter;
+}
+.question-page select {
+    width: 850px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #e5e7e8;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Inter",sans-serif;
+}
+.question-page select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+.question-page option {
+    font-size: 1rem;
+    color: #333;
+}
+.question-page select option {
+    padding: 5px;
+}
+.navigation-buttons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+    column-gap: 10px;
+}
+#page-2 input{
+    width: 825px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #e5e7e8;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+/*page qualité de vie*/
+#pageQualitédeVie{
+    padding-right: 350px;
+}
+/* Page 4*/
+#page-4{
+    margin: 0;
+    padding: 0;
+    padding-right: 500px;
+
+}
+.form-check-group {
+    padding-right: 100px;
+}
+.form-check {
+    display: flex;
+    align-items: center;
+}
+.form-check label {
+    padding-top: 10px;
+}
+.form-check-label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.form-check-input:hover {
+    border-color: #0056b3;
+    cursor: pointer;
+}
+.form-check-label:hover {
+    color: #0056b3;
+}
+/*page 5*/
+#page-5 textarea{
+    width: 830px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
 }
