@@ -89,21 +89,24 @@ header, header * {
     background: linear-gradient(to left, #FF6B6B, #FF4D4D) right;
 }
 
-.bouton-stat{
+.bouton-stat {
     background: none;
     color: white;
     border: none;
     cursor: pointer;
     display: flex;
     margin-left: 0.5em;
-    transition : 0.3s ease;
+    transition: 0.3s ease;
 }
-.bouton-stat img{
+
+.bouton-stat img {
     height: 2.5em;
 }
-.bouton-stat:hover{
+
+.bouton-stat:hover {
     transform: scale(1.1);
 }
+
 .bouton:hover {
     background-position: left;
     transform: scale(1.1);
@@ -212,7 +215,7 @@ header, header * {
     left: 50%;
     transform: translate(-50%, -50%); /* Centre le popup au milieu de la page */
     z-index: 100;
-    background: linear-gradient(to bottom, #5CAEFF 0% , #5CAEFF 80%, #216BB5 80% , #216BB5 100% );
+    background: linear-gradient(to bottom, #5CAEFF 0%, #5CAEFF 80%, #216BB5 80%, #216BB5 100%);
     padding: 1em 1em 0.5em 1em;
     border-radius: 15px;
     color: white;
@@ -224,6 +227,8 @@ header, header * {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    animation: animationApparition 0.7s ease-out;
+
 }
 
 .deconnexion h1 {
@@ -241,10 +246,12 @@ header, header * {
     font-weight: 700;
     transition: background 0.5s ease, transform 0.3s ease;
 }
+
 .deconnexion button:hover {
     background-position: left;
     transform: scale(1.1);
 }
+
 .deconnexion #annuler {
     background: none;
     border: 2px solid white;
@@ -279,17 +286,6 @@ header, header * {
         transform: translate(-50%, -50%) scale(1);
     }
 }
-
-.deconnexion {
-    animation: animationApparition 0.7s ease-out;
-}
-
-
-
-
-
-
-
 
 
 @media screen and (max-width: 1093px) {

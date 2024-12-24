@@ -18,12 +18,13 @@ const ajouterPopup = () => {
             <button id="bouton-popup"><img src="../assets/images/fleche-droite-blanche.png" alt=""/></button>
             <div class="contenu">
                 <p>En tant qu'adhérent précieux, votre avis compte ! Aidez-nous à mieux comprendre vos besoins en répondant à ce formulaire dédié à notre enquête.</p>
-                <a href="formulaire.html">Je participe à l'enquête</a>
+                <a href="formulaire.html" id="lien">Je participe à l'enquête</a>
             </div>
         </div>
     `;
     document.body.insertAdjacentHTML("beforeend", adherentPopup);
     document.getElementById("bouton-popup").addEventListener("click", handleChangerEtat);
+    document.getElementById("lien").addEventListener("click", handleChangerEtat);
 };
 
 const handleChangerEtat = () => {

@@ -13,137 +13,146 @@
 </head>
 <body>
 <header class="custom-header"></header>
-<div class="custom-container">
-    <div class="form-container">
-        <h1>Formulaire</h1>
-        <form id="formulaire">
-            <!-- Page 1 -->
-            <div class="question-page" id="page-1">
-                <label for="region">Votre région :</label>
-                <select id="region" name="region" required>
-                    <option value="">--Sélectionnez--</option>
-                    <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
-                    <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
-                    <option value="bretagne">Bretagne</option>
-                    <option value="centre-val-de-loire">Centre-Val de Loire</option>
-                    <option value="corse">Corse</option>
-                    <option value="grand-est">Grand Est</option>
-                    <option value="hauts-de-france">Hauts-de-France</option>
-                    <option value="ile-de-france">Île-de-France</option>
-                    <option value="normandie">Normandie</option>
-                    <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
-                    <option value="occitanie">Occitanie</option>
-                    <option value="pays-de-la-loire">Pays de la Loire</option>
-                    <option value="provence-alpes-cote-dazur">Provence-Alpes-Côte d'Azur</option>
-                    <option value="guadeloupe">Guadeloupe</option>
-                    <option value="guyane">Guyane</option>
-                    <option value="martinique">Martinique</option>
-                    <option value="mayotte">Mayotte</option>
-                    <option value="reunion">La Réunion</option>
-                    <option value="etranger">Je vis à l'étranger</option>
-                </select>
-            </div>
-            <!-- Page 2 -->
-            <div class="question-page" id="page-2">
-                <label for="age">Votre âge :</label>
-                <input type="number" id="age" name="age" placeholder="Votre âge..." required>
-            </div>
-            <!-- Page 3 -->
-            <div class="question-page" id="page-3">
-                <label for="lieuVie">Votre lieu de vie :</label>
-                <select id="lieuVie" name="lieuVie" required>
-                    <option value="">--Sélectionnez--</option>
-                    <option value="dans-la-famille-en-permanence">Dans la famille en permanence</option>
-                    <option value="avec-une-solution-d-accueil">Dans la famille avec une solution d'accueil ou des activités en journée</option>
-                    <option value="dans-la-famille-principalement">Dans la famille principalement mais avec un accueil temporaire ou séquentiel en établissement</option>
-                    <option value="dans-un-logement-indépendant">Dans un logement indépendant</option>
-                    <option value="dans-un-habitat-inclusif">Dans un habitat inclusif</option>
-                    <option value="dans-un-foyer-d-accueil-médicalisé">Dans un foyer d'accueil médicalisé (FAM)</option>
-                    <option value="dans-une-maison-d-accueil-médicalisée">Dans une maison d'accueil médicalisée (MAS)</option>
-                    <option value="dans-un-foyer-de-vie-ou-foyer-d-hébergement">Dans un foyer de vie ou foyer d'hébergement</option>
-                    <option value="en-IME-avec-internat">En IME avec internat</option>
-                    <option value="hospitalisation-en-psychiatrie">Hospitalisation en psychiatrie</option>
-                    <option value="autre">Autre</option>
-                </select>
-            </div>
-            <div class="question-page" id="pageQualitédeVie">
-                <label for="activite" class="form-label">Comment évaluez-vous votre qualité de vie ?</label>
-                <div class="checkbox-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="tout_va_bien" name="qualite_vie[]" value="tout_va_bien">
-                        <label class="form-check-label" for="tout_va_bien">Tout va bien</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="restriction_sociale" name="qualite_vie[]" value="restriction_sociale">
-                        <label class="form-check-label" for="restriction_sociale">Restriction de la vie sociale</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="souffrance_psy" name="qualite_vie[]" value="souffrance_psy">
-                        <label class="form-check-label" for="souffrance_psy">Souffrance psychologique</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="fatigue" name="qualite_vie[]" value="fatigue">
-                        <label class="form-check-label" for="fatigue">Fatigue, épuisement</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="reduction_activite" name="qualite_vie[]" value="reduction_activite">
-                        <label class="form-check-label" for="reduction_activite">Réduction d’activité professionnelle</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="couts_financiers" name="qualite_vie[]" value="couts_financiers">
-                        <label class="form-check-label" for="couts_financiers">Coûts financiers importants</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="impact_fratri" name="qualite_vie[]" value="impact_fratri">
-                        <label class="form-check-label" for="impact_fratri">Impact négatif sur la fratrie</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="conflits_familiaux" name="qualite_vie[]" value="conflits_familiaux">
-                        <label class="form-check-label" for="conflits_familiaux">Conflits familiaux</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="maladie_difficultes" name="qualite_vie[]" value="maladie_difficultes">
-                        <label class="form-check-label" for="maladie_difficultes">Maladie ou difficultés dans l’exécution de certaines tâches</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="eloignement_personne" name="qualite_vie[]" value="eloignement_personne">
-                        <label class="form-check-label" for="eloignement_personne">Éloignement de la personne</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="douleurs_physiques" name="qualite_vie[]" value="douleurs_physiques">
-                        <label class="form-check-label" for="douleurs_physiques">Douleurs physiques ou séquelles permanentes</label>
-                    </div>
+<main>
+    <div class="custom-container">
+        <div class="form-container">
+            <h1 id="titre">Formulaire</h1>
+            <form id="formulaire">
+                <!-- Page 1 -->
+                <div class="question-page" id="page-1">
+                    <label for="region">Votre région :</label>
+                    <select id="region" name="region" required>
+                        <option value="">--Sélectionnez--</option>
+                        <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
+                        <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+                        <option value="bretagne">Bretagne</option>
+                        <option value="centre-val-de-loire">Centre-Val de Loire</option>
+                        <option value="corse">Corse</option>
+                        <option value="grand-est">Grand Est</option>
+                        <option value="hauts-de-france">Hauts-de-France</option>
+                        <option value="ile-de-france">Île-de-France</option>
+                        <option value="normandie">Normandie</option>
+                        <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+                        <option value="occitanie">Occitanie</option>
+                        <option value="pays-de-la-loire">Pays de la Loire</option>
+                        <option value="provence-alpes-cote-dazur">Provence-Alpes-Côte d'Azur</option>
+                        <option value="guadeloupe">Guadeloupe</option>
+                        <option value="guyane">Guyane</option>
+                        <option value="martinique">Martinique</option>
+                        <option value="mayotte">Mayotte</option>
+                        <option value="reunion">La Réunion</option>
+                        <option value="etranger">Je vis à l'étranger</option>
+                    </select>
+                    <p class="numpage">1/6</p>
                 </div>
-            </div>
-            <!-- Page 4 -->
-            <div class="question-page" id="page-4">
-                <label for="ChoixLieuVie" class="form-label">Votre lieu de vie correspond-il à votre choix ?</label>
-                <div class="form-check-group">
-                    <div class="form-check">
-                        <input type="radio" id="oui" name="ChoixLieuVie" value="oui" class="form-check-input" required>
-                        <label for="oui" class="form-check-label">Oui</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" id="non" name="ChoixLieuVie" value="non" class="form-check-input" required>
-                        <label for="non" class="form-check-label">Non</label>
-                    </div>
+                <!-- Page 2 -->
+                <div class="question-page" id="page-2">
+                    <label for="age">Votre âge :</label>
+                    <input type="number" id="age" name="age" placeholder="Votre âge..." required>
+                    <p class="numpage">2/6</p>
                 </div>
-            </div>
+                <!-- Page 3 -->
+                <div class="question-page" id="page-3">
+                    <label for="lieuVie">Votre lieu de vie :</label>
+                    <select id="lieuVie" name="lieuVie" required>
+                        <option value="">--Sélectionnez--</option>
+                        <option value="dans-la-famille-en-permanence">Dans la famille en permanence</option>
+                        <option value="avec-une-solution-d-accueil">Dans la famille avec une solution d'accueil ou des activités en journée</option>
+                        <option value="dans-la-famille-principalement">Dans la famille principalement mais avec un accueil temporaire ou séquentiel en établissement</option>
+                        <option value="dans-un-logement-indépendant">Dans un logement indépendant</option>
+                        <option value="dans-un-habitat-inclusif">Dans un habitat inclusif</option>
+                        <option value="dans-un-foyer-d-accueil-médicalisé">Dans un foyer d'accueil médicalisé (FAM)</option>
+                        <option value="dans-une-maison-d-accueil-médicalisée">Dans une maison d'accueil médicalisée (MAS)</option>
+                        <option value="dans-un-foyer-de-vie-ou-foyer-d-hébergement">Dans un foyer de vie ou foyer d'hébergement</option>
+                        <option value="en-IME-avec-internat">En IME avec internat</option>
+                        <option value="hospitalisation-en-psychiatrie">Hospitalisation en psychiatrie</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <p class="numpage">3/6</p>
+                </div>
+                <div class="question-page" id="pageQualitédeVie">
+                    <label for="activite" class="form-label">Comment évaluez-vous votre qualité de vie ?</label>
+                    <div class="checkbox-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="tout_va_bien" name="qualite_vie[]" value="tout_va_bien">
+                            <label class="form-check-label" for="tout_va_bien">Tout va bien</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="restriction_sociale" name="qualite_vie[]" value="restriction_sociale">
+                            <label class="form-check-label" for="restriction_sociale">Restriction de la vie sociale</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="souffrance_psy" name="qualite_vie[]" value="souffrance_psy">
+                            <label class="form-check-label" for="souffrance_psy">Souffrance psychologique</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="fatigue" name="qualite_vie[]" value="fatigue">
+                            <label class="form-check-label" for="fatigue">Fatigue, épuisement</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="reduction_activite" name="qualite_vie[]" value="reduction_activite">
+                            <label class="form-check-label" for="reduction_activite">Réduction d’activité professionnelle</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="couts_financiers" name="qualite_vie[]" value="couts_financiers">
+                            <label class="form-check-label" for="couts_financiers">Coûts financiers importants</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="impact_fratri" name="qualite_vie[]" value="impact_fratri">
+                            <label class="form-check-label" for="impact_fratri">Impact négatif sur la fratrie</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="conflits_familiaux" name="qualite_vie[]" value="conflits_familiaux">
+                            <label class="form-check-label" for="conflits_familiaux">Conflits familiaux</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="maladie_difficultes" name="qualite_vie[]" value="maladie_difficultes">
+                            <label class="form-check-label" for="maladie_difficultes">Maladie ou difficultés dans l’exécution de certaines tâches</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="eloignement_personne" name="qualite_vie[]" value="eloignement_personne">
+                            <label class="form-check-label" for="eloignement_personne">Éloignement de la personne</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="douleurs_physiques" name="qualite_vie[]" value="douleurs_physiques">
+                            <label class="form-check-label" for="douleurs_physiques">Douleurs physiques ou séquelles permanentes</label>
+                        </div>
+                    </div>
+                    <p class="numpage">4/6</p>
+                </div>
+                <!-- Page 4 -->
+                <div class="question-page" id="page-4">
+                    <label for="ChoixLieuVie" class="form-label">Votre lieu de vie correspond-il à votre choix ?</label>
+                    <div class="form-check-group">
+                        <div class="form-check">
+                            <input type="radio" id="oui" name="ChoixLieuVie" value="oui" class="form-check-input" required>
+                            <label for="oui" class="form-check-label">Oui</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="non" name="ChoixLieuVie" value="non" class="form-check-input" required>
+                            <label for="non" class="form-check-label">Non</label>
+                        </div>
+                    </div>
+                    <p class="numpage">5/6</p>
+                </div>
 
-            <!-- Page 5 -->
-            <div class="question-page" id="page-5">
-                <label for="comments">Commentaires :</label>
-                <textarea id="comments" name="comments" rows="4" placeholder="Vos remarques..."></textarea>
-            </div>
-            <!-- Navigation Buttons -->
-            <div class="navigation-buttons">
-                <button type="button" id="prev-button" class="custom-button">Précédent</button>
-                <button type="button" id="next-button" class="custom-button">Suivant</button>
-                <button type="submit" id="submit-button" class="custom-button">Soumettre</button>
-            </div>
-        </form>
+                <!-- Page 5 -->
+                <div class="question-page" id="page-6">
+                    <label for="comments">Commentaires :</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Vos remarques..."></textarea>
+                    <p class="numpage">6/6</p>
+                </div>
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button type="button" id="prev-button" class="custom-button">Précédent</button>
+                    <button type="button" id="next-button" class="custom-button">Suivant</button>
+                    <button type="button" id="retourAccueil-button" class="custom-button" onclick="window.location.href='accueil.html';">Retourner à l'accueil</button>
+                    <button type="submit" id="submit-button" class="custom-button">Soumettre</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</main>
 <footer class="custom-footer"></footer>
 </body>
 </html>
