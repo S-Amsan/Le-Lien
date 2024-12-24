@@ -7,12 +7,13 @@ const submitButton = document.getElementById('submit-button');
 
 function showPage(index) {
     pages.forEach((page, i) => {
-        page.classList.toggle('d-none', i !== index);
+        page.classList.toggle('active', i === index);
     });
-    prevButton.classList.toggle('d-none', index === 0);
-    nextButton.classList.toggle('d-none', index === pages.length - 1);
-    submitButton.classList.toggle('d-none', index !== pages.length - 1);
+    prevButton.style.display = index === 0 ? 'none' : 'inline-block';
+    nextButton.style.display = index === pages.length - 1 ? 'none' : 'inline-block';
+    submitButton.style.display = index === pages.length - 1 ? 'inline-block' : 'none';
 }
+
 
 prevButton.addEventListener('click', () => {
     if (currentPage > 0) {
