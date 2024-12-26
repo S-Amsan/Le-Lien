@@ -98,8 +98,13 @@ main {
     border: 1px solid #e5e7e8;
     border-radius: 4px;
     background-color: #fff;
-    color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+select {
+    color: gray;
+}
+select:valid {
+    color: #333;
 }
 .question-page select:focus {
     border-color: #007bff;
@@ -113,6 +118,8 @@ main {
 .question-page select option {
     padding: 5px;
 }
+
+
 .navigation-buttons{
     display: flex;
     justify-content: center;
@@ -171,3 +178,4 @@ main {
     font-size: 16px;
     resize: vertical;
 }
+
