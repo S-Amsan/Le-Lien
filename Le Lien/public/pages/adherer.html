@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/images/LeLien-Logo.ico" type="image/x-icon">
+  <title>Le Lien - L'association : adhérer</title>
+  <link rel="stylesheet" href="../assets/css/adherer.css">
+
+  <!-- script header + css du header -->
+  <script src="../assets/js/header.js" type="module"></script>
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <!-- script footer + css du footer -->
+  <script src="../assets/js/footer.js" type="module"></script>
+  <link rel="stylesheet" href="../assets/css/footer.css">
+
+  <script src="../assets/js/adherer.js" type="module"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+  <title>Title</title>
+</head>
+<body>
+<header></header>
+<main>
+  <div id="container-adherer">
+    <form id="form-adherer">
+      <h1> Adhérer</h1>
+      <div id="container-mensualite">
+        <button id="button-mensuel" class="button-mensualite active" type="button">Mensuel</button>
+        <button id="button-annuel" class="button-mensualite" type="button">Annuel</button>
+      </div>
+
+      <div id="container-buttonDon">
+        <button type="button" class="buttons-Don"> 5€ </button>
+        <button type="button" class="buttons-Don"> 10€ </button>
+        <button type="button" class="buttons-Don"> 20€ </button>
+        <button type="button" class="buttons-Don"> 50€ </button>
+      </div>
+
+      <div id="container-input-montant">
+        <input type="text" name="montant" id="input-montant" maxlength="4" placeholder="€ Choisir votre montant">
+      </div>
+
+      <div id="container-button-paypal">
+        <button id="button-paypal"> Faire un don avec Paypal </button>
+      </div>
+
+      <div id="container-ou-svg">
+        <svg width="100%" height="25" id="svg-line-ou" viewBox="0 0 100 100">
+          <line x1="-550" y1="50" x2="0" y2="50" stroke="white" stroke-width="5"/>
+          <text x="20" y="62.5" id="text-ou"> ou </text>
+          <line x1="100" y1="50" x2="650" y2="50" stroke="white" stroke-width="5"/>
+
+        </svg>
+      </div>
+
+      <div id="container-button-cb">
+        <button id="button-cb"> Faire un don avec carte bancaire </button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer></footer>
+</body>
+</html>

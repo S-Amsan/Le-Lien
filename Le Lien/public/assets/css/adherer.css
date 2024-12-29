@@ -1,0 +1,188 @@
+html, body {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+}
+
+
+input:hover{
+    border-color: #6BC6B0;
+    box-shadow: 0 0 10px #6BC6B0;
+}
+
+input{
+    border: 2px solid #52AAF0;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+main{
+    background-size: cover;
+    background: linear-gradient(to bottom, #015D91, #92B6CA) no-repeat;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-adherer{
+    display: flex;
+    width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(15px);
+    margin: auto;
+    box-shadow: 0 6px 4px rgba(14,84,130,0.25);
+}
+
+#container-adherer h1{
+    font-family: "Bowlby One", sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: -5px 4px 3px rgba(0,0,0,0.35);
+    margin: 0;
+    padding: 2%;
+}
+
+#form-adherer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#button-mensuel{
+    margin-right: -0.15em;
+    border-radius: 5px 0 0 5px;
+}
+
+#button-annuel{
+    margin-left: -0.15em;
+    border-radius: 0 5px 5px 0;
+}
+
+.button-mensualite{
+    padding: 1.25em 1.5em;
+    cursor: pointer;
+    border: 2px solid #52AAF0;
+    background: white;
+    color: #52AAF0;
+    transition: border-color 0.6s ease, box-shadow 0.3s ease;
+}
+
+#container-buttonDon{
+    margin-top:0.25em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-Don{
+    margin: 2%;
+    padding: 1.15em 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #52AAF0;
+    background: white;
+    color: grey;
+    transition: border-color 0.6s ease, box-shadow 0.3s ease;
+}
+
+.active{
+    border: 2px solid #52AAF0;
+    background: #52AAF0;
+    color: white;
+}
+
+button:hover{
+    border-color: #6BC6B0;
+    box-shadow: 0 0 10px #6BC6B0;
+}
+
+#container-input-montant{
+    margin: -0.75em 0 1em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input-montant{
+    width: 75%;
+    height: 3em;
+    border-radius: 5px;
+}
+
+#container-button-paypal{
+    margin-bottom: -1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-paypal{
+    color: white;
+    width: 75%;
+    height: 3.5em;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #52AAF0, #0089ea) right;
+    font-weight: bold;
+    font-size: 0.90em;
+    background-size: 600%;
+}
+
+#button-paypal:hover{
+    background-position: left;
+    transform: scale(1.05);
+}
+
+#container-ou-svg{
+    width: 100%;
+}
+
+#text-ou{
+    font-size: 3.5em;
+    font-family: Inter, sans-serif;
+    fill: white;
+}
+
+#container-button-cb{
+    margin-top: -1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-cb{
+    color: #52AAF0;
+    border: 2px solid #52AAF0;
+    width: 75%;
+    height: 3.5em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #ffffff, #6BC6B0) right;
+    font-weight: bold;
+    font-size: 0.90em;
+    background-size: 600%;
+}
+
+#button-cb:hover{
+    color:white;
+    border: none;
+    background-position: left;
+    transform: scale(1.05);
+}
