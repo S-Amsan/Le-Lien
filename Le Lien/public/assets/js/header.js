@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             <button class="bouton bouton-aider" onclick="window.location.href='nousAider.html';">Nous aider</button>
 
                             ${estConnecte
-                                ? `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
+                                ? `<button class="bouton bouton-login deco" id="bDeco" onclick="handleAuthAction(true);">Se déconnecter</button>`
                                 : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                             }
                         </div>

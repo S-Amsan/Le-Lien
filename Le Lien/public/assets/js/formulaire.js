@@ -1,13 +1,12 @@
 const pages = document.querySelectorAll('.question-page');
 let currentPage = 0;
-
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
 const submitButton = document.getElementById('submit-button');
 const retourButton = document.getElementById('retourAccueil-button');
 
 const ageInput = document.getElementById('age');
-const qualiteDeVieCheckboxes = document.querySelectorAll('.form-check-input');
+const qualiteDeVieCheckboxes = document.querySelectorAll('#page-5 .form-check-input');
 const toutVaBienCheckbox = document.getElementById('tout_va_bien');
 
 const AGE_MAX = 120; // la limite d'age maximum est de 120 ans
@@ -18,10 +17,8 @@ ageInput.setAttribute('min', AGE_MINIMUM);
 ageInput.addEventListener('input', () => {
     if (parseInt(ageInput.value) > AGE_MAX) {
         ageInput.setCustomValidity(`L'âge ne peut pas dépasser ${AGE_MAX} ans.`);
-        ageInput.reportValidity();
     } else if(parseInt(ageInput.value) < AGE_MINIMUM){
         ageInput.setCustomValidity(`L'âge doit être d'au moins 18 ans`);
-        ageInput.reportValidity();
     } else {
         ageInput.setCustomValidity('');
     }
@@ -75,7 +72,9 @@ function validatePage() {
         }
     }
     // Valide la qualité de vie si on est sur cette page
-    if (pages[currentPage].id === 'pageQualitédeVie') {
+    if (pages[currentPage].id === 'page-5') {
+        console.log(pages[currentPage].id)
+        console.log(currentPage)
         return validateQualiteDeVie();
     }
     return true;
@@ -108,9 +107,18 @@ function utilisateurEstAdherent() {
         });
 }
 const estAdherent = await utilisateurEstAdherent();
+let aReponduAuFormulaire = false;
 
 if (estAdherent) {
     showPage(currentPage);
+} else if(aReponduAuFormulaire){ // Si l'utilisateur n'est pas Adherent, il n'est pas censé avoir accès à cette page
+    document.getElementById('titre').innerHTML = `Merci d'avoir répondu à notre enquête &#128522!`;
+    document.getElementById('titre').style.textAlign = 'center';
+    document.getElementById('titre').style.fontSize = '35px';
+    retourButton.style.display = 'inline-block';
+    prevButton.style.display = 'none';
+    nextButton.style.display = 'none';
+    submitButton.style.display = 'none';
 } else { // Si l'utilisateur n'est pas Adherent, il n'est pas censé avoir accès à cette page
     document.getElementById('titre').innerHTML = `Hmm &#129300, cette page est réservée aux adhérents.<br> Comment êtes-vous arrivé là ?`;
     document.getElementById('titre').style.textAlign = 'center';
@@ -120,8 +128,3 @@ if (estAdherent) {
     nextButton.style.display = 'none';
     submitButton.style.display = 'none';
 }
-
-// Indique à l'utilisateur qu'il peut perdre ces données si il quitte ou actualise la page
-window.addEventListener('beforeunload', (event) => {
-    event.preventDefault();
-});
