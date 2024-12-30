@@ -103,6 +103,7 @@ main {
 select {
     color: gray;
 }
+
 select:valid {
     color: #333;
 }
@@ -115,6 +116,7 @@ select:valid {
     font-size: 1rem;
     color: #333;
 }
+
 .question-page select option {
     padding: 5px;
 }
