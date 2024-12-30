@@ -193,7 +193,7 @@ select:valid {
         }
 
     }
-    #pageQualitédeVie{
+    #page-5{
         padding: 0;
         margin-left: 15px;
     }
@@ -224,7 +224,7 @@ select:valid {
     }
 }
 @media (max-width: 550px){
-    #pageQualitédeVie{
+    #page-5{
         label{
             font-size: 10px;
         }
