@@ -180,4 +180,59 @@ select:valid {
     font-size: 16px;
     resize: vertical;
 }
+@media (max-width: 1000px){
+    .form-container{
+        width: 90%;
+    }
+    #region, #lieuVie{
+        width: 84vw;
+    }
+    #page-2{
+        input{
+            width:80vw;
+        }
+
+    }
+    #pageQualitédeVie{
+        padding: 0;
+        margin-left: 15px;
+    }
+    #activite{
+        label{
+            font-size: 17px;
+        }
+    }
+    #page-4{
+        padding: 0;
+    }
+    #page-6{
+        textarea{
+            width: 80vw;
+        }
+    }
+}
+@media (max-width: 630px){
+    #activite{
+        label{
+            font-size: 15px;
+        }
+    }
+    #page-4{
+        label{
+            font-size: 15px;
+        }
+    }
+}
+@media (max-width: 550px){
+    #pageQualitédeVie{
+        label{
+            font-size: 10px;
+        }
+    }
+    #activite{
+        label{
+            font-size: 10px;
+        }
+    }
+}
 
