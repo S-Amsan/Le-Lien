@@ -21,15 +21,14 @@ class MariaDBUserRepository implements IUserRepository
      */
     public function saveUser(User $user): bool
     {
-        $sql = "INSERT INTO user (prenom, nom, email, mdp, estAdmin) 
-            VALUES (:prenom, :nom, :email, :mdp, :estAdmin)";
+        $sql = "INSERT INTO user (prenom, nom, email, mdp) 
+            VALUES (:prenom, :nom, :email, :mdp)";
         $stmt = $this->dbConnexion->prepare($sql);
         return $stmt->execute([
             "prenom" => $user->getPrenom(),
             "nom" => $user->getNom(),
             "email" => $user->getEmail(),
-            "mdp" => password_hash($user->getMotDePasse(), PASSWORD_BCRYPT),
-            "estAdmin" => (int) $user->estAdmin()
+            "mdp" => password_hash($user->getMotDePasse(), PASSWORD_BCRYPT)
         ]);
     }
     /**
