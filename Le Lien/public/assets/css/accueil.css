@@ -386,6 +386,10 @@ body {
     border: 2px solid #0E75B9;
 }
 
+.card-blue img{
+    transform: scaleX(-1);
+}
+
 .card-green {
     background: radial-gradient(circle, rgba(200, 250, 200, 0) 5%, #A6D7A0 100%);
     border: 2px solid #73B97C;
