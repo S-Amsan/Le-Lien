@@ -9,6 +9,18 @@ function utilisateurEstAdherent() {
             return false;
         });
 }
+function utilisateurASoumisEnquete() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.aSoumisEnquete;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
 let premiereConnexion = false;
 const ajouterPopup = () => {
 
@@ -41,7 +53,8 @@ const handleChangerEtat = () => {
 };
 
 const estAdherent = await utilisateurEstAdherent();
-if (estAdherent){
+const aSoumisEnquete = await utilisateurASoumisEnquete();
+if (estAdherent && !aSoumisEnquete){ // Si il est adhérent et qu'il n'a pas soumis l'enquete alors on affiche le popUp
     if (localStorage.getItem("popupCacher") === null) {
         localStorage.setItem("popupCacher", "false");
         premiereConnexion = true; // Car si il est vide ça veut dire que l'utilisateur viens de se connecter

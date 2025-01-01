@@ -106,21 +106,29 @@ function utilisateurEstAdherent() {
             return false;
         });
 }
-const estAdherent = await utilisateurEstAdherent();
-let aReponduAuFormulaire = false;
+function utilisateurASoumisEnquete() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.aSoumisEnquete;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
 
-if (estAdherent) {
+const estAdherent = await utilisateurEstAdherent();
+const aSoumisEnquete = await utilisateurASoumisEnquete();
+
+if(estAdherent && !aSoumisEnquete) { // Adhérent qui n'a pas soumis l'enquete
     showPage(currentPage);
-} else if(aReponduAuFormulaire){ // Si l'utilisateur n'est pas Adherent, il n'est pas censé avoir accès à cette page
-    document.getElementById('titre').innerHTML = `Merci d'avoir répondu à notre enquête &#128522!`;
-    document.getElementById('titre').style.textAlign = 'center';
-    document.getElementById('titre').style.fontSize = '35px';
-    retourButton.style.display = 'inline-block';
-    prevButton.style.display = 'none';
-    nextButton.style.display = 'none';
-    submitButton.style.display = 'none';
-} else { // Si l'utilisateur n'est pas Adherent, il n'est pas censé avoir accès à cette page
-    document.getElementById('titre').innerHTML = `Hmm &#129300, cette page est réservée aux adhérents.<br> Comment êtes-vous arrivé là ?`;
+} else {
+    if(aSoumisEnquete){ // si il a soumis l'enquete on le remercie ^^
+        document.getElementById('titre').innerHTML = `Merci d'avoir répondu à notre enquête &#128522!`;
+    }else{ // Si l'utilisateur n'est pas Adherent, il n'est pas censé avoir accès à cette page
+        document.getElementById('titre').innerHTML = `Hmm &#129300, cette page est réservée aux adhérents.<br> Comment êtes-vous arrivé là ?`;
+    }
     document.getElementById('titre').style.textAlign = 'center';
     document.getElementById('titre').style.fontSize = '35px';
     retourButton.style.display = 'inline-block';

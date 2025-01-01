@@ -17,7 +17,7 @@
     <div class="custom-container">
         <div class="form-container">
             <h1 id="titre">Formulaire</h1>
-            <form id="formulaire">
+            <form id="formulaire" action="../assets/php/formulaireEnquete.php" method="post">
                 <!-- Page 1 -->
                 <div class="question-page" id="page-1">
                     <label for="region">Votre région :</label>
@@ -75,11 +75,11 @@
                     <label for="ChoixLieuVie" class="form-label">Votre lieu de vie correspond-il à votre choix ?</label>
                     <div class="form-check-group" id="ChoixLieuVie">
                         <div class="form-check">
-                            <input type="radio" id="oui" name="ChoixLieuVie" value="oui" class="form-check-input" required>
+                            <input type="radio" id="oui" name="choixLieuVie" value="oui" class="form-check-input" required>
                             <label for="oui" class="form-check-label">Oui</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" id="non" name="ChoixLieuVie" value="non" class="form-check-input" required>
+                            <input type="radio" id="non" name="choixLieuVie" value="non" class="form-check-input" required>
                             <label for="non" class="form-check-label">Non</label>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                 <!-- Page 6 -->
                 <div class="question-page" id="page-6">
                     <label for="comments">Commentaires :</label>
-                    <textarea id="comments" name="comments" rows="4" placeholder="Saisissez vos remarques..."></textarea>
+                    <textarea id="comments" name="commentaire" rows="4" placeholder="Saisissez vos remarques..."></textarea>
                     <p class="numpage">6 sur 6</p>
                 </div>
                 <!-- Navigation Buttons -->

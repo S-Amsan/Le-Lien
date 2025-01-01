@@ -2,12 +2,12 @@
 if (!session_id())
     session_start();
 
-use LeLien\Management\Authentification;
 use LeLien\Management\BddConnect;
 use LeLien\Management\Exceptions\AuthentificationException;
 use LeLien\Management\Exceptions\BddConnectException;
-use LeLien\Management\MariaDBUserRepository;
 use LeLien\Management\Messages;
+use LeLien\Management\user\Authentification;
+use LeLien\Management\user\MariaDBUserRepository;
 
 require_once '../../../vendor/autoload.php';
 
@@ -32,8 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new AuthentificationException("Accès interdit", "danger");
         }
         $retour = $auth->register($_POST['prenom'],$_POST['nom'],$_POST['email'], $_POST['password'], $_POST['repassword']);
-        $message = "Vous êtes enregistré. Vous pouvez vous authentifier";
-        $type = "success";
+        if($retour) {
+            $message = "Vous êtes enregistré. Vous pouvez vous authentifier";
+            $type = "success";
+        }else{
+            $message = "BDD : Erreur lors de l'exécution de la requête";
+            $type = "danger";
+        }
+
     } catch (AuthentificationException $e) {
         $message = $e->getMessage();
         $type = $e->getType();
