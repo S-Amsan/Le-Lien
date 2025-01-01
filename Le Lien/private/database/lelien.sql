@@ -23,25 +23,25 @@ CREATE TABLE User
 CREATE TABLE Cotisation
 (
     idCotisation INT AUTO_INCREMENT PRIMARY KEY,
-    debut        TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL, -- Date de début de la cotisation
-    fin          TIMESTAMP,                    -- Date de fin, lorsque la cotisation n'est plus active
-    type         VARCHAR(255)   NOT NULL, -- Type de cotisation (mensuelle ou annuelle)
-    montant      DECIMAL(15, 2) NOT NULL CHECK (montant > 0), -- Montant en €
-    active       BOOLEAN        NOT NULL DEFAULT TRUE, -- Définit si la cotisation est active
-    idUser       INT            NOT NULL, -- L'ID de l'utilisateur (de l'adhérent)
+    debut        TIMESTAMP               DEFAULT CURRENT_TIMESTAMP NOT NULL, -- Date de début de la cotisation
+    fin          TIMESTAMP,                                                  -- Date de fin, lorsque la cotisation n'est plus active
+    type         VARCHAR(255)   NOT NULL,                                    -- Type de cotisation (mensuelle ou annuelle)
+    montant      DECIMAL(15, 2) NOT NULL CHECK (montant > 0),                -- Montant en €
+    active       BOOLEAN        NOT NULL DEFAULT TRUE,                       -- Définit si la cotisation est active
+    idUser       INT            NOT NULL,                                    -- L'ID de l'utilisateur (de l'adhérent)
     FOREIGN KEY (idUser) REFERENCES User (idUser) ON DELETE CASCADE
 );
 
 -- Table des formulaires : collecte des réponses données pour l'enquête
 CREATE TABLE Formulaire
 (
-    idFormulaire    INT AUTO_INCREMENT PRIMARY KEY,
-    region          VARCHAR(255) NOT NULL,
-    age             INT          NOT NULL CHECK (age >= 0),
-    lieuDeVie       VARCHAR(255) NOT NULL,
-    lieuDeVieVoulue BOOLEAN      NOT NULL,
-    commentaire     TEXT,                  -- Commentaire optionnel
-    idUser          INT          NOT NULL UNIQUE,
+    idFormulaire     INT AUTO_INCREMENT PRIMARY KEY,
+    region           VARCHAR(255)                        NOT NULL,
+    age              INT                                 NOT NULL CHECK (age >= 0),
+    lieuDeVie        VARCHAR(255)                        NOT NULL,
+    lieuDeVieVoulue  BOOLEAN                             NOT NULL,
+    commentaire      TEXT, -- Commentaire optionnel
+    idUser           INT                                 NOT NULL UNIQUE,
     dateDeSoumission TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     FOREIGN KEY (idUser) REFERENCES User (idUser) ON DELETE CASCADE
 );
@@ -74,15 +74,17 @@ CREATE TRIGGER SetActiveCotisation
 BEGIN
     IF NEW.active = TRUE THEN
         UPDATE Cotisation
-        SET active = FALSE, fin = CURDATE()
-        WHERE idUser = NEW.idUser AND active = TRUE;
+        SET active = FALSE,
+            fin    = CURDATE()
+        WHERE idUser = NEW.idUser
+          AND active = TRUE;
     END IF;
 END$$
 DELIMITER ;
 
 -- Création des comptes administrateurs
 INSERT INTO User (prenom, nom, email, mdp, estAdmin) VALUES
-        ("Amsan", "Sutharsan", "amsan.sutharsan@lelien.fr", "$2y$10$tmwQh8D9BD/qrtWK9.fUnO7ZszfpT1GHDSJtV9nNB4glhcR5w6vtu", TRUE),
-        ("Lucas", "Barbier", "lucas.barbier@lelien.fr", "$2y$10$/hiW5EZVjnG0i9CEBb.2S.CzIjPG/Je9wiLvA7t.tPgkYpWCmqDT2", TRUE),
-        ("Abdelhilah", "Tabti", "abdelhilah.tabti@lelien.fr", "$2y$10$wkpQTnmDfm.kY6iJLhylOu1tuqORgnWC4PnGy7vImLvUitVVYNIC.", TRUE),
-        ("Rayan", "Meri", "rayan.meri@lelien.fr", "$2y$10$5O1Ol0JJWUoV5MRkoyRlxOu8Nw8tZaD0FyF7imh2ZrVf/E8llowVq", TRUE);
+    ("Amsan", "Sutharsan", "amsan.sutharsan@lelien.fr","$2y$10$tmwQh8D9BD/qrtWK9.fUnO7ZszfpT1GHDSJtV9nNB4glhcR5w6vtu", TRUE),
+    ("Lucas", "Barbier", "lucas.barbier@lelien.fr", "$2y$10$/hiW5EZVjnG0i9CEBb.2S.CzIjPG/Je9wiLvA7t.tPgkYpWCmqDT2",TRUE),
+    ("Abdelhilah", "Tabti", "abdelhilah.tabti@lelien.fr","$2y$10$wkpQTnmDfm.kY6iJLhylOu1tuqORgnWC4PnGy7vImLvUitVVYNIC.", TRUE),
+    ("Rayan", "Meri", "rayan.meri@lelien.fr", "$2y$10$5O1Ol0JJWUoV5MRkoyRlxOu8Nw8tZaD0FyF7imh2ZrVf/E8llowVq", TRUE);
