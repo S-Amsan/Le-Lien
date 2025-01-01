@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 100%;
     height: 25em;
-    background-image: url('../images/photo-don.jpg');
+    background-image: url('../images/nousAider/photo-don.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -217,7 +217,7 @@
     margin-top: 3em;
     height: 15em;
     width: 100%;
-    background-image: url('../images/banniere-newsletter.jpg');
+    background-image: url('../images/nousAider/banniere-newsletter.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

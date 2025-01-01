@@ -1,4 +1,4 @@
-const srcImg = "../assets/images";
+const srcImg = "../assets/images/footer";
 
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -136,14 +136,13 @@ h2, h3{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
 }
 #mission1::before {
-    background-image: url('../images/Accompagnement.jpeg');
+    background-image: url('../images/presentation/Accompagnement.jpeg');
 }
 #mission2::before {
-    background-image: url('../images/Représentation.jpeg');
+    background-image: url('../images/presentation/Représentation.jpeg');
 }
-
 #mission3::before {
-    background-image: url('../images/Promotion.jpeg');
+    background-image: url('../images/presentation/Promotion.jpeg');
 }
 /* redirection vers la page nos action */
 .versNosActions{

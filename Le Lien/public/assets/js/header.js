@@ -1,6 +1,6 @@
 import {pagesData as pages} from "./data.js"; // Les pages présents dans la navBar
 
-const srcImg = "../assets/images";
+const srcImg = "../assets/images/header";
 let pageActuel = pages.accueil;
 
 // Identifie la page actuelle pour appliquer la classe "active"
