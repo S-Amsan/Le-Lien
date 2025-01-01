@@ -27,7 +27,7 @@ const ajouterPopup = () => {
     // Ajoute le popup à la page
     const adherentPopup= `
         <div class="popup ${localStorage.getItem("popupCacher") === "true" ? "cacher" : "visible"}" id="popup">
-            <button id="bouton-popup"><img src="../assets/images/fleche-droite-blanche.png" alt=""/></button>
+            <button id="bouton-popup"><img src="../assets/images/popup/fleche-droite-blanche.png" alt=""/></button>
             <div class="contenu">
                 <p>En tant qu'adhérent précieux, votre avis compte ! Aidez-nous à mieux comprendre vos besoins en répondant à ce formulaire dédié à notre enquête.</p>
                 <a href="formulaire.html" id="lien">Je participe à l'enquête</a>
