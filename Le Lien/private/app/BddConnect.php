@@ -6,10 +6,10 @@ use LeLien\Management\Exceptions\BddConnectException;
 
 class BddConnect {
     public \PDO $pdo;
-    protected ?string $host = null;
-    protected ?string $login= null;
-    protected ?string $password= null;
-    protected ?string $dbname= null;
+    protected ?string $host;
+    protected ?string $login;
+    protected ?string $password;
+    protected ?string $dbname;
 
     public function __construct() {
         $this->host = "127.0.0.1";
@@ -28,7 +28,9 @@ class BddConnect {
             $this->pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
         }
         catch(\PDOException $e) {
-            throw new BddConnectException("Erreur de connexion BDD : il faut configurer la classe BDDConnect avec les bonnes valeurs");
+            throw new BddConnectException(
+                "Erreur de connexion BDD : " . $e->getMessage()
+            );
         }
 
         return $this->pdo;
