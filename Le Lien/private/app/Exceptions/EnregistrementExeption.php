@@ -2,7 +2,7 @@
 
 namespace LeLien\Management\Exceptions;
 
-class AuthentificationException extends \Exception
+class EnregistrementExeption extends \Exception
 {
     protected ?string $type = null;
 
@@ -19,5 +19,4 @@ class AuthentificationException extends \Exception
     {
         return $this->type;
     }
-
 }
