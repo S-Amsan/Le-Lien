@@ -20,7 +20,7 @@ class User
      * @param bool $estAdherent
      * @param bool $estAdmin
      */
-    public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdmin)
+    public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdmin = false)
     {
         $this->prenom = $prenom;
         $this->nom = $nom;
@@ -28,7 +28,6 @@ class User
         $this->motDePasse = $motDePasse;
         $this->estAdmin = $estAdmin;
     }
-
 
     public function getPrenom(): string
     {
@@ -62,6 +61,7 @@ class User
     {
         return $this->estAdmin;
     }
+
     public function aSoumisEnquete(int $id): bool
     {
         $bdd = new BddConnect();
@@ -69,6 +69,7 @@ class User
         $trousseau = new MariaDBUserRepository($pdo);
         return $trousseau->findUserFormById($id);
     }
+
     public function getCotisationInfo(): array
     {
         return [];

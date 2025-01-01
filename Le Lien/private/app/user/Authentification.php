@@ -36,7 +36,7 @@ class Authentification
         $prenom = ucfirst(strtolower(trim($prenom)));
         $nom = ucfirst(strtolower(trim($nom)));
         // Crée un nouvel utilisateur et l'enregistre
-        $user = new User($prenom, $nom, $email, $motDePasse, true);
+        $user = new User($prenom, $nom, $email, $motDePasse);
         return $this->userRepository->saveUser($user);
     }
 
