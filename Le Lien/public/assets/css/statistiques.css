@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+
+/* Général */
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+/* Carte de la France */
+
 .titreStatistiques{
     padding-bottom:3rem;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Style de la carte */
 .imageCarte {
     width: 30%;
     float: left;
@@ -35,7 +46,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Style du titre */
 .nomRegion h1, .titreStatistiques h1{
     font-size: 2rem;
     font-weight: 600;
@@ -56,3 +66,59 @@
 .nomRegion h2:hover {
     opacity: 0.8;
 }
+
+
+
+/* Oui ou Non */
+
+#myChart2 {
+    width: 70%;
+    height: 400px;
+    margin: 0 auto;
+    padding-top:4rem;
+}
+
+
+
+
+/* Qualité de vie */
+
+#myChart {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    padding-top:4rem;
+}
+
+
+
+/* Age */
+
+#myChart3 {
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    padding-top:4rem;
+}
+
+.chart-legend-item span {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* Lieu de Vie */
+
+#myChart4 {
+    width: 700px;
+    height: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding-top:4rem;
+}
+
+
+
