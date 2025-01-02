@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.titreStatistiques{
+    padding-bottom:3rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style de la carte */
+.imageCarte {
+    width: 30%;
+    float: left;
+    margin:1rem;
+    padding-left:20rem;
+}
+
+.imageCarte path {
+    fill: #15d0fd;
+    stroke: white;
+    stroke-width: 1px;
+    transition: fill 0.3s ease;
+}
+
+.imageCarte path:hover {
+    fill: #3e3e3e;
+}
+
+.nomRegion {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style du titre */
+.nomRegion h1, .titreStatistiques h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.nomRegion h2 .titreStatistiques h2{
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.nomRegion h2:hover {
+    opacity: 0.8;
+}
