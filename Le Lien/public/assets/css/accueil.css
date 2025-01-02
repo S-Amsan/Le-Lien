@@ -336,7 +336,6 @@ body {
     justify-content: center;
 }
 
-/* Texte amélioré */
 .big-number {
     font-family: 'Poppins', sans-serif;
     font-size: 6rem;
@@ -381,13 +380,15 @@ body {
     height: auto;
 }
 
+.imageAbandon{
+    width: 27rem;
+    height: auto;
+    transform: scaleX(-1);
+}
+
 .card-blue {
     background: radial-gradient(circle, rgba(155, 206, 255, 0) 5%, #59B1FF 100%);
     border: 2px solid #0E75B9;
-}
-
-.card-blue img{
-    transform: scaleX(-1);
 }
 
 .card-green {
@@ -771,6 +772,89 @@ body {
         width: 47rem;
         max-width: 57rem;
     }
+    .titreChiffres{
+        font-size:4.5rem;
+    }
+    .card{
+        border-radius: 40px;
+        padding: 30px;
+        width: 700px;
+        height: 300px;
+    }
+    #emojiFrance{
+        width:20px;
+        margin-bottom:-1px;
+        margin-top:3px;
+    }
+    .dot{
+        width: 12px;
+        height: 12px;
+    }
+    .imageAbandon{
+        width:28rem;
+    }
+    .card-green img{
+        width:28rem;
+    }
+    .card-yellow img{
+        width:26rem;
+    }
+    .illustration{
+        width:30rem;
+    }
+    .description{
+        font-size:2rem;
+    }
+    #titreEspaceDonAdherer{
+        font-size:2.3rem;
+    }
+    #titreEspaceDonAdherer span{
+        font-size:2.3rem;
+    }
+    .espaceDon, .espaceAdherer {
+        width: 30%;
+        padding: 20px;
+        min-height: 100px;
+    }
+    .espaceDon{
+        margin-left:17rem;
+    }
+    .espaceAdherer{
+        margin-right:17rem;
+    }
+    .espaceDon h3, .espaceAdherer h3 {
+        font-size: 2.5rem;
+    }
+    .espaceDon p, .espaceAdherer p {
+        font-size: 10px;
+    }
+    .espaceAdherer p em{
+        font-size: 10px;
+    }
+    .cta-text-don, .cta-text-adherer {
+        font-size: 12px;
+    }
+    .icon img {
+        max-width: 80%;
+        height: auto;
+    }
+    .circle{
+        width:40px;
+        height:40px;
+    }
+    .arrow-img{
+        width:24px;
+    }
+    .separator{
+        margin-bottom:5px;
+    }
+    .imageFranceAssos, .imageHeral{
+        width:26rem;
+    }
+    .imageFranceAssos{
+        width:28rem;
+        padding-top:2rem;
+    }
 }
 
 
@@ -812,7 +896,6 @@ body {
         width: 48vw;
         max-width: 48rem;
     }
-
     #titreEspaceDonAdherer{
         padding-top:8rem;
     }
@@ -830,13 +913,56 @@ body {
         width:20%;
         padding-top:1rem;
     }
-
-    #info1, #info2, #info3, #info4, #info5 {
-        width: 180px;
-        height: 180px;
-        border: 3px solid #004383;
-        border-radius: 25px;
+    .card{
+        border-radius: 40px;
         padding: 30px;
+        width: 800px;
+        height: 350px;
+    }
+    #emojiFrance{
+        width:23px;
+        margin-bottom:-1px;
+        margin-top:3px;
+    }
+    #titreEspaceDonAdherer{
+        font-size:2.3rem;
+    }
+    #titreEspaceDonAdherer span{
+        font-size:2.3rem;
+    }
+    .espaceDon, .espaceAdherer {
+        width: 37%;
+        padding: 20px;
+        min-height: 350px;
+    }
+    .espaceDon{
+        margin-left:8rem;
+    }
+    .espaceAdherer{
+        margin-right:8rem;
+    }
+    .espaceDon h3, .espaceAdherer h3 {
+        font-size: 2.5rem;
+    }
+    .espaceDon p, .espaceAdherer p {
+        font-size: 15px;
+    }
+    .cta-text-don, .cta-text-adherer {
+        font-size: 17px;
+    }
+    .icon img {
+        max-width: 80%;
+        height: auto;
+    }
+    .circle{
+        width:40px;
+        height:40px;
+    }
+    .arrow-img{
+        width:24px;
+    }
+    .separator{
+        margin-bottom:5px;
     }
 }
 
@@ -872,7 +998,6 @@ body {
         width: 44vw;
         max-width: 48rem;
     }
-
 }
 
 /* Ordinateurs (écrans moyen) */
@@ -929,6 +1054,52 @@ body {
     .imageFranceAssos{
         width:20%;
         padding-top:1rem;
+    }
+    .card{
+        border-radius: 40px;
+        padding: 30px;
+        width: 1000px;
+        height: 450px;
+    }
+    #titreEspaceDonAdherer{
+        font-size:2.5rem;
+    }
+    #titreEspaceDonAdherer span{
+        font-size:2.5rem;
+    }
+    .espaceDon, .espaceAdherer {
+        width: 41%;
+        padding: 20px;
+        min-height: 485px;
+    }
+    .espaceDon h3, .espaceAdherer h3 {
+        font-size: 3rem;
+    }
+
+    .espaceDon p, .espaceAdherer p {
+        font-size: 18px;
+    }
+    .espaceAdherer p em{
+        font-size: 18px;
+    }
+
+    .cta-text-don, .cta-text-adherer {
+        font-size: 22px;
+    }
+
+    .icon img {
+        max-width: 90%;
+        height: auto;
+    }
+    .circle{
+        width:50px;
+        height:50px;
+    }
+    .arrow-img{
+        width:24px;
+    }
+    .separator{
+        margin-bottom:5px;
     }
 }
 
