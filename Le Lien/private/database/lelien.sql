@@ -67,6 +67,11 @@ CREATE TABLE FormulaireQualiteDeVie
     FOREIGN KEY (idQualiteDeVie) REFERENCES QualiteDeVie (idQualiteDeVie) ON DELETE CASCADE
 );
 
+
+
+
+
+
 -- Création des procédures et fonctions
 
 DELIMITER ;
@@ -151,6 +156,20 @@ END;
 DELIMITER ;
 
 DELIMITER ;
+-- On supprime la cotisation en cours
+CREATE PROCEDURE supprimerCotisation(
+    IN pIdUser INT
+)
+BEGIN
+    -- Désactiver les cotisations actives existantes pour cet utilisateur
+    UPDATE Cotisation
+    SET fin = CURRENT_TIMESTAMP
+    WHERE idUser = pIdUser
+      AND fin IS NULL;
+END;
+DELIMITER ;
+
+DELIMITER ;
 -- crée des faux utilisateurs, adhérent et réponse au formulaire (on insere dans les table)
 CREATE PROCEDURE GenererFausseDonnées(
     IN nbUtilisateurs INT,
@@ -159,22 +178,26 @@ CREATE PROCEDURE GenererFausseDonnées(
 )
 BEGIN
     DECLARE idDepart INT DEFAULT getDernierIdUser() + 1;
-    CALL GenererUtilisateurs(nbUtilisateurs);
+    CALL GenererUtilisateurs(nbUtilisateurs, idDepart);
     CALL GenererCotisations(FLOOR(nbUtilisateurs * pourcentageAdherent), idDepart);
     CALL GenererReponsesFormulaire(FLOOR(nbUtilisateurs * pourcentageAdherent * pourcentageReponse), idDepart);
 END;
 DELIMITER ;
 
 DELIMITER ;
-CREATE PROCEDURE GenererUtilisateurs(IN nbUtilisateurs INT)
+CREATE PROCEDURE GenererUtilisateurs
+(
+    IN nbUtilisateurs INT,
+    IN idDepart INT
+)
 BEGIN
     DECLARE i INT DEFAULT 1;
     WHILE i < nbUtilisateurs + 1
         DO
             INSERT INTO User (prenom, nom, email, mdp)
-            VALUES (CONCAT("FaussePersonne", i),
-                    CONCAT("Compte", i),
-                    CONCAT("faux.compte", i, "@lelien.fr"),
+            VALUES (CONCAT("FaussePersonne", i+idDepart-1),
+                    CONCAT("Compte", i+idDepart-1),
+                    CONCAT("faux.compte", i+idDepart-1, "@lelien.fr"),
                     "$2y$10$rrQV86gpsRXw9TdwsAqXj.JmDLPyTeGxwXaN1x.5AKW2rldZnUT0G" -- Ils ont tous le même mdp ce sont des faux comptes, le mot de passe est "000" et ne marche que pour le 1er compte
                    );
             SET i = i + 1;
@@ -321,35 +344,36 @@ BEGIN
 END;
 DELIMITER ;
 
+
+
+
+
+
+
 -- Création des différents types de qualité de vie
 CALL CreerTypeQualiteDeVie();
 
 -- Création des comptes utilisateurs
 
--- 1) comptes administrateurs
+-- 1) comptes administrateurs (mdp top secret)
 INSERT INTO User (prenom, nom, email, mdp, estAdmin)
 VALUES ("Amsan", "Sutharsan", "amsan.sutharsan@lelien.fr","$2y$10$tmwQh8D9BD/qrtWK9.fUnO7ZszfpT1GHDSJtV9nNB4glhcR5w6vtu", TRUE),
        ("Lucas", "Barbier", "lucas.barbier@lelien.fr", "$2y$10$/hiW5EZVjnG0i9CEBb.2S.CzIjPG/Je9wiLvA7t.tPgkYpWCmqDT2",TRUE),
        ("Abdelhilah", "Tabti", "abdelhilah.tabti@lelien.fr","$2y$10$wkpQTnmDfm.kY6iJLhylOu1tuqORgnWC4PnGy7vImLvUitVVYNIC.", TRUE),
        ("Rayan", "Meri", "rayan.meri@lelien.fr", "$2y$10$5O1Ol0JJWUoV5MRkoyRlxOu8Nw8tZaD0FyF7imh2ZrVf/E8llowVq", TRUE);
-CALL AjouterCotisation(1, "annuelle", 1.00);
+CALL AjouterCotisation(1, "annuelle", 1.00);  -- 1€ symbolique
 CALL AjouterCotisation(2, "annuelle", 1.00);
 CALL AjouterCotisation(3, "annuelle", 1.00);
 CALL AjouterCotisation(4, "annuelle", 1.00);
 
 
--- 2) autres comptes :
+-- 2) autres comptes (Pas Adhérent et pas Admin avec mdp="2025"):
 INSERT INTO User (prenom, nom, email, mdp)
-VALUES ("Phuong", "Nguyen", "phuong.nguyen66@lelien.fr","$2y$10$/CM59zupeFgw2OIOL/kmrOtNSeFhrFd/IF8he5NnhUxz0S4cZrJwu"),
+VALUES ("Phuong", "Nguyen", "phuong.nguyen@lelien.fr","$2y$10$/CM59zupeFgw2OIOL/kmrOtNSeFhrFd/IF8he5NnhUxz0S4cZrJwu"),
        ("Mohamed Amine", "Abdeljebbar", "mohamedamine.abdeljebbar@lelien.fr","$2y$10$goUKnCHyYTnVT5UeB3vIUOKpcdunHSt7oSBN2imdH1Bvdbk03dFRi"),
-       ("Oskar", "Jakubczyk", "oskar.jakubczyk28@lelien.fr","$2y$10$.m/Vo2xTuol81v5mx1y97.bHCtvlSBMINH.p7EeUtg67nzzaU8q02"),
+       ("Oskar", "Jakubczyk", "oskar.jakubczyk@lelien.fr","$2y$10$.m/Vo2xTuol81v5mx1y97.bHCtvlSBMINH.p7EeUtg67nzzaU8q02"),
        ("Sayeed", "Mohamed Abu", "sayeed.mohamedabu@lelien.fr","$2y$10$C4E2GdAbp4uchABMhaYwxuMmZZNQrnoYV8li.uJxHoEwetvpGXceq"),
-       ("Jean Baptiste", "Ramette", "jeanbaptiste.ramette75@lelien.fr","$2y$10$I/RinsGEJrUcjkxOp/bHeumWDcW73l1jILCfWo0.z.rdS4MYGjtO6");
-CALL AjouterCotisation(5, "mensuelle", 10.00);
-CALL AjouterCotisation(6, "annuelle", 50.00);
-CALL AjouterCotisation(7, "mensuelle", 7.50);
-CALL AjouterCotisation(8, "mensuelle", 4.00);
-CALL AjouterCotisation(9, "annuelle", 20.00);
+       ("Jean Baptiste", "Ramette", "jeanbaptiste.ramette@lelien.fr","$2y$10$I/RinsGEJrUcjkxOp/bHeumWDcW73l1jILCfWo0.z.rdS4MYGjtO6");
 
 -- Géneration aléatoire de fausses données
-CALL GenererFausseDonnées(400, 0.9, 0.78);
+CALL GenererFausseDonnées(100, 0.9, 0.78);

@@ -56,9 +56,12 @@ class MariaDBUserRepository implements IUserRepository
         return null;
     }
 
-    public function userIsAdherent(string $email): bool
+    public function userIsAdherent(string $id): bool
     {
-        return true; // à compléter avec la table cotisation
+        $sql = "SELECT * FROM Cotisation WHERE idUser = :id AND fin IS NULL";
+        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt->execute(["id" => $id]);
+        return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
 
     public function getUserId(string $email)
@@ -72,14 +75,13 @@ class MariaDBUserRepository implements IUserRepository
 
     public function saveUserCotisation(Cotisation $cotisation): bool
     {
-        // TODO: Implement saveUserCotisation() method.
-        return false;
-    }
-
-    public function findUserCotisationById(int $id): ?Cotisation
-    {
-        // TODO: Implement findUserCotisationByEmail() method.
-        return null;
+        $sql = "CALL AjouterCotisation(:idUser, :type, :montant);";
+        $stmt = $this->dbConnexion->prepare($sql);
+        return $stmt->execute([
+            "idUser" => $cotisation->getIdUser(),
+            "type" => $cotisation->getType(),
+            "montant" => $cotisation->getMontant()
+        ]);
     }
 
     public function findUserFormById(int $id): bool
@@ -88,5 +90,14 @@ class MariaDBUserRepository implements IUserRepository
         $stmt = $this->dbConnexion->prepare($sql);
         $stmt->execute(["id" => $id]);
         return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
+    }
+
+    public function deleteUserCotisation(int $idUser) : bool
+    {
+        $sql = "CALL supprimerCotisation(:idUser);";
+        $stmt = $this->dbConnexion->prepare($sql);
+        return $stmt->execute([
+            "idUser" => $idUser
+        ]);
     }
 }

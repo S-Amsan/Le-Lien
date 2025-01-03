@@ -45,16 +45,4 @@ class MariaDBFormRepository implements IFormRepository
 
         return true;
     }
-
-
-    public function findFormByUserEmail(string $email): ?Form
-    {
-        // TODO: Implement findFormByUserEmail() method.
-        return null;
-    }
-    public static function getStatProportionParAge(): array
-    {
-        // TODO: Implement getStatProportionParAge() method.
-        return [];
-    }
 }

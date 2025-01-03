@@ -49,12 +49,12 @@ class User
         return $this->motDePasse;
     }
 
-    public function estAdherent(): bool
+    public function estAdherent(int $id): bool
     {
         $bdd = new BddConnect();
         $pdo = $bdd->connexion();
         $trousseau = new MariaDBUserRepository($pdo);
-        return $trousseau->userIsAdherent($this->email);
+        return $trousseau->userIsAdherent($id);
     }
 
     public function estAdmin(): bool

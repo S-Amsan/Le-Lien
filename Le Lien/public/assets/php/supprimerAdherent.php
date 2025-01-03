@@ -29,17 +29,11 @@ $coti = new GestionCotisation($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        $user = $trousseau->findUserByEmail($_SESSION['auth']);
-        $idUser = $user->getId();
-        $cotisationEnCours = $user->estAdherent($idUser); // On regarde si il a une cotisation en cours
-        $cotiResult = $coti->enregistrer($idUser,"annuelle",10);
+        $idUser = $trousseau->findUserByEmail($_SESSION['auth'])->getId();
+        $cotiResult = $coti->annulerCotisation($idUser);
 
         if ($cotiResult) {
-            if($cotisationEnCours){
-                $_SESSION['flash']['success'] = "Votre cotisation a été mise à jour avec succès. Merci pour votre engagement continu !";
-            }else{
-                $_SESSION['flash']['success'] = "Votre cotisation a été enregistrée avec succès. Vous êtes désormais adhérent, merci pour votre soutien précieux !";
-            }
+            $_SESSION['flash']['success'] = "Votre cotisation a été annulée avec succès, merci pour tout votre soutien.";
             header("Location: ../../pages/accueil.html");
             exit;
         }

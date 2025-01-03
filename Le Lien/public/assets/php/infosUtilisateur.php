@@ -34,9 +34,9 @@ $estAdmin = false;
 if (isset($_SESSION['auth'])) {
     $estConnecte = true;
     $user = $trousseau->findUserByEmail($_SESSION['auth']);
-    $estAdherent = $user->estAdherent();
     $estAdmin = $user->estAdmin();
     $userID = $user->getId();
+    $estAdherent = $user->estAdherent($userID);
     $aSoumisEnquete = $user->aSoumisEnquete($userID);
     $_SESSION['userID'] = $userID;
 }
