@@ -1,30 +1,11 @@
 <?php
-if (!session_id())
-    session_start();
 
-use LeLien\Management\BddConnect;
-use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\Exceptions\EnregistrementExeption;
 use LeLien\Management\form\EnregistrementEnquete;
-use LeLien\Management\form\MariaDBFormRepository;
 use LeLien\Management\Messages;
 
-require_once '../../../vendor/autoload.php';
+require_once 'header.php';
 
-$bdd = new BddConnect();
-
-try {
-    $pdo = $bdd->connexion();
-} catch (BddConnectException $e) {
-    Messages::goHome(
-        $e->getMessage(),
-        $e->getType(),
-        "../../pages/formulaire.html"
-    );
-    die();
-}
-
-$trousseau = new MariaDBFormRepository($pdo);
 $enregistrement = new EnregistrementEnquete($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

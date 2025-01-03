@@ -1,30 +1,10 @@
 <?php
 
-use LeLien\Management\BddConnect;
-use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\Messages;
 use LeLien\Management\user\GestionCotisation;
-use LeLien\Management\user\MariaDBUserRepository;
 
-if (!session_id())
-    session_start();
+require_once 'header.php';
 
-require_once '../../../vendor/autoload.php';
-
-$bdd = new BddConnect();
-
-try {
-    $pdo = $bdd->connexion();
-} catch (BddConnectException $e) {
-    Messages::goHome(
-        $e->getMessage(),
-        $e->getType(),
-        "../../pages/pageAdherent.html"
-    );
-    die();
-}
-
-$trousseau = new MariaDBUserRepository($pdo);
 $coti = new GestionCotisation($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,4 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = "Accès interdit";
     $type = "danger";
 }
-Messages::goHome($message, $type, "../../pages/pageAdherent.html");
+Messages::goHome($message, $type, "../../pages/adherer.html");

@@ -17,7 +17,6 @@ class User
      * @param string $nom
      * @param string $email
      * @param string $motDePasse
-     * @param bool $estAdherent
      * @param bool $estAdmin
      */
     public function __construct(string $prenom, string $nom, string $email, string $motDePasse, bool $estAdmin = false)

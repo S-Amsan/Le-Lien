@@ -1,30 +1,11 @@
 <?php
-if (!session_id())
-    session_start();
 
-use LeLien\Management\BddConnect;
 use LeLien\Management\Exceptions\AuthentificationException;
-use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\Messages;
 use LeLien\Management\user\Authentification;
-use LeLien\Management\user\MariaDBUserRepository;
 
-require_once '../../../vendor/autoload.php';
+require_once 'header.php';
 
-$bdd = new BddConnect();
-
-try {
-    $pdo = $bdd->connexion();
-} catch (BddConnectException $e) {
-    Messages::goHome(
-        $e->getMessage(),
-        $e->getType(),
-        "../../pages/authentification.html"
-    );
-    die();
-}
-
-$trousseau = new MariaDBUserRepository($pdo);
 $auth = new Authentification($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
