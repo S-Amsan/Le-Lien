@@ -3,9 +3,11 @@
 use LeLien\Management\Exceptions\AuthentificationException;
 use LeLien\Management\Messages;
 use LeLien\Management\user\Authentification;
+use LeLien\Management\user\MariaDBUserRepository;
 
 require_once 'header.php';
 
+$trousseau = new MariaDBUserRepository($pdo);
 $auth = new Authentification($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -2,15 +2,14 @@
 
 namespace LeLien\Management\user;
 
+use LeLien\Management\MariaDBRepository;
 use PDO;
 
-class MariaDBUserRepository implements IUserRepository
+class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
 {
-    private \PDO $dbConnexion;
-
-    public function __construct(\PDO $dbConnexion)
+    public function __construct(PDO $dbConnexion)
     {
-        $this->dbConnexion = $dbConnexion;
+        parent::__construct($dbConnexion);
     }
 
     /**
@@ -23,7 +22,7 @@ class MariaDBUserRepository implements IUserRepository
     {
         $sql = "INSERT INTO user (prenom, nom, email, mdp) 
             VALUES (:prenom, :nom, :email, :mdp)";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         return $stmt->execute([
             "prenom" => $user->getPrenom(),
             "nom" => $user->getNom(),
@@ -40,7 +39,7 @@ class MariaDBUserRepository implements IUserRepository
     public function findUserByEmail(string $email): ?User
     {
         $sql = "SELECT * FROM user WHERE email = :email";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["email" => $email]);
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -59,7 +58,7 @@ class MariaDBUserRepository implements IUserRepository
     public function userIsAdherent(string $id): bool
     {
         $sql = "SELECT * FROM Cotisation WHERE idUser = :id AND fin IS NULL";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["id" => $id]);
         return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
@@ -67,7 +66,7 @@ class MariaDBUserRepository implements IUserRepository
     public function getUserId(string $email)
     {
         $sql = "SELECT idUser FROM User WHERE email = :email";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["email" => $email]);
         $id = $stmt->fetch(PDO::FETCH_ASSOC);
         return (int) $id['idUser'];
@@ -76,7 +75,7 @@ class MariaDBUserRepository implements IUserRepository
     public function saveUserCotisation(Cotisation $cotisation): bool
     {
         $sql = "CALL AjouterCotisation(:idUser, :type, :montant);";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         return $stmt->execute([
             "idUser" => $cotisation->getIdUser(),
             "type" => $cotisation->getType(),
@@ -87,7 +86,7 @@ class MariaDBUserRepository implements IUserRepository
     public function findUserFormById(int $id): bool
     {
         $sql = "SELECT * FROM formulaire WHERE idUser = :id";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["id" => $id]);
         return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
@@ -95,7 +94,7 @@ class MariaDBUserRepository implements IUserRepository
     public function deleteUserCotisation(int $idUser) : bool
     {
         $sql = "CALL supprimerCotisation(:idUser);";
-        $stmt = $this->dbConnexion->prepare($sql);
+        $stmt = $this->getDbConnexion()->prepare($sql);
         return $stmt->execute([
             "idUser" => $idUser
         ]);

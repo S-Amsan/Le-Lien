@@ -2,10 +2,12 @@
 
 use LeLien\Management\Exceptions\EnregistrementExeption;
 use LeLien\Management\form\EnregistrementEnquete;
+use LeLien\Management\form\MariaDBFormRepository;
 use LeLien\Management\Messages;
 
 require_once 'header.php';
 
+$trousseau = new MariaDBFormRepository($pdo);
 $enregistrement = new EnregistrementEnquete($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

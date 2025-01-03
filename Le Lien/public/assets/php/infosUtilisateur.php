@@ -1,6 +1,10 @@
 <?php
 
+use LeLien\Management\user\MariaDBUserRepository;
+
 require_once 'header.php';
+
+$trousseau = new MariaDBUserRepository($pdo);
 
 // Initialisation des variables
 $estConnecte = false;

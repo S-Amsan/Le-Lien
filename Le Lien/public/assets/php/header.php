@@ -5,7 +5,6 @@ if (!session_id())
 use LeLien\Management\BddConnect;
 use LeLien\Management\Exceptions\BddConnectException;
 use LeLien\Management\Messages;
-use LeLien\Management\user\MariaDBUserRepository;
 
 require_once '../../../vendor/autoload.php';
 
@@ -21,5 +20,3 @@ try {
     );
     die();
 }
-
-$trousseau = new MariaDBUserRepository($pdo);

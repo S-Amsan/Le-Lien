@@ -2,9 +2,11 @@
 
 use LeLien\Management\Messages;
 use LeLien\Management\user\GestionCotisation;
+use LeLien\Management\user\MariaDBUserRepository;
 
 require_once 'header.php';
 
+$trousseau = new MariaDBUserRepository($pdo);
 $coti = new GestionCotisation($trousseau);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
