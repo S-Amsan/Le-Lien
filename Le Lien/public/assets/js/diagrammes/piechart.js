@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         size: 18
                     },
                     padding: {
-                        top: 20,
-                        bottom: 30
+                        top: 40, // Augmente l'espace au-dessus du titre
+                        bottom: 50 // Augmente l'espace en-dessous du titre
                     }
                 },
                 legend: {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '65%'
+            cutout: '65%' // Contrôle l'épaisseur de l'anneau (Doughnut spécifique)
         }
     });
 });

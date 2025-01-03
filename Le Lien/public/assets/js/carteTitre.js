@@ -10,7 +10,7 @@ regions.forEach(function(region) {
     });
 
     region.addEventListener("mouseleave", function(e) {
-        titreRegion.textContent = "Choisir Region";
+        titreRegion.textContent = "Survolez une région à l'aide de votre curseur";
         donneeRegion.textContent = "Donnée : ";
     });
 });

@@ -40,13 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 legend: {
-                    position: 'top',
-                    labels: {
-                        padding: 10,
-                        font: {
-                            size: 14
-                        }
-                    }
+                    display: false // Supprime la légende
                 }
             },
             responsive: true,
@@ -56,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     beginAtZero: true,
                     ticks: {
                         stepSize: 5
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 16 // Augmente la taille de la police des légendes
+                        }
                     }
                 }
             }

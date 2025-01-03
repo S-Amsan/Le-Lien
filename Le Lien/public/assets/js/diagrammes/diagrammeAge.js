@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             datasets: [{
                 label: 'Répartition des âges',
-                data: [12, 25, 34, 22, 19, 15, 10, 5, 3, 1],  
+                data: [12, 25, 34, 22, 19, 15, 10, 5, 3, 1],
                 backgroundColor: [
                     '#1e88e5', '#43a047', '#f4511e', '#ffb300', '#8e24aa',
                     '#00acc1', '#d81b60', '#3949ab', '#fdd835', '#5e35b1'
@@ -41,10 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 legend: {
-                    position: 'top',
-                    labels: {
-                        padding: 20
-                    }
+                    display: false // Désactiver la légende
                 }
             },
             responsive: true,
