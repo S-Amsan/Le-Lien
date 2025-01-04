@@ -1,3 +1,5 @@
+import {utilisateurASoumisEnquete, utilisateurEstAdherent} from "./infoUser";
+
 const pages = document.querySelectorAll('.question-page');
 let currentPage = 0;
 const prevButton = document.getElementById('prev-button');
@@ -95,28 +97,8 @@ nextButton.addEventListener('click', () => {
     qualiteDeVieCheckboxes[0].reportValidity();
 });
 
-function utilisateurEstAdherent() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.estAdherent;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
-function utilisateurASoumisEnquete() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.aSoumisEnquete;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
+
+
 
 const estAdherent = await utilisateurEstAdherent();
 const aSoumisEnquete = await utilisateurASoumisEnquete();

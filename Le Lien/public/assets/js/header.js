@@ -1,4 +1,5 @@
 import {pagesData as pages} from "./data.js"; // Les pages présents dans la navBar
+import { utilisateurEstConnecte, utilisateurEstAdmin } from "./infoUser.js";
 
 const srcImg = "../assets/images/header";
 let pageActuel = pages.accueil;
@@ -53,29 +54,6 @@ function handleAuthAction(estConnecte) {
     }
 }
 
-function utilisateurEstConnecte() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.estConnecte;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
-
-function utilisateurEstAdmin() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.estAdmin;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
 
 // Rendre handleAuthAction accessible globalement
 window.handleAuthAction = handleAuthAction;

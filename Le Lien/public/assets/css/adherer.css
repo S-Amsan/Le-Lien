@@ -5,10 +5,6 @@ html, body {
     padding: 0;
 }
 
-body{
-}
-
-
 input:hover{
     border-color: #6BC6B0;
     box-shadow: 0 0 10px #6BC6B0;

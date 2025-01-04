@@ -1,25 +1,5 @@
-function utilisateurEstAdherent() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.estAdherent;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
-function utilisateurASoumisEnquete() {
-    return fetch("../assets/php/infosUtilisateur.php")
-        .then((response) => response.json())
-        .then((data) => {
-            return data.aSoumisEnquete;
-        })
-        .catch((error) => {
-            console.error("Erreur lors de la vérification de l'authentification :", error);
-            return false;
-        });
-}
+import {utilisateurASoumisEnquete, utilisateurEstAdherent} from "./infoUser.js";
+
 
 let premiereConnexion = false;
 const ajouterPopup = () => {
