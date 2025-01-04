@@ -70,11 +70,24 @@ main{
 }
 
 #container-rang p {
-    color: #FFCD2B;
     margin-top: 1.25em;
     font-size: 1.3em;
     font-family: Roboto, sans-serif;
     font-weight: normal;
+}
+
+#container-rang p.admin {
+    color: #FFCD2B;
+}
+
+#container-rang p.adherent {
+    color: #4DECC6;
+
+}
+
+#container-rang p.utilisateur {
+    color: #1b62c5;
+
 }
 
 /* Boutons */
