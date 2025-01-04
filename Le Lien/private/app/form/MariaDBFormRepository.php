@@ -1,16 +1,17 @@
 <?php
 
 namespace LeLien\Management\form;
+
 use LeLien\Management\MariaDBRepository;
-use PDO;
 
 class MariaDBFormRepository extends MariaDBRepository implements IFormRepository
 {
 
-    public function __construct(PDO $dbConnexion)
+    public function __construct(\PDO $dbConnexion)
     {
         parent::__construct($dbConnexion);
     }
+
     public function saveForm(Form $form): bool
     {
         // On insère d'abord dans la table formulaire
@@ -21,7 +22,7 @@ class MariaDBFormRepository extends MariaDBRepository implements IFormRepository
             [":region" => $form->getRegion(),
                 ":age" => $form->getAge(),
                 ":lieuDeVie" => $form->getLieuDeVie(),
-                ":lieuDeVieVoulue" => (int) $form->isLieuDeVieVoulue(),
+                ":lieuDeVieVoulue" => (int)$form->isLieuDeVieVoulue(),
                 ":commentaire" => $form->getCommentaire(),
                 ":idUser" => $form->getIdUser()]
         );
@@ -46,4 +47,45 @@ class MariaDBFormRepository extends MariaDBRepository implements IFormRepository
 
         return true;
     }
+
+
+    // Fonction pour récupérer les statistiques du formulaire :
+    public static function getTauxReponseData(): float
+    {
+        return (self::getNombreReponseData() / self::getNombreAdherentsData());
+    }
+
+    public static function getNombreReponseData(): int
+    {
+        return 44;
+    } // TODO requete sql (respecter le format)
+
+    public static function getNombreAdherentsData(): int
+    {
+        return 100;
+    } // TODO requete sql (respecter le format)
+    public static function getNombreAdherentsDataByRegion(string $region): int
+    {
+        return 40;
+    } // TODO requete sql (respecter le format)
+    public static function getQualitesVieData(): array
+    {
+        return [25, 15, 18, 20, 10, 34, 12, 5, 14, 9, 11];
+    } // TODO requete sql (respecter le format)
+
+    public static function getAgesData(): array
+    {
+        return [12, 25, 34, 22, 19, 15, 10, 5, 3, 1];
+    } // TODO requete sql (respecter le format)
+
+    public static function getLieuxVieData(): array
+    {
+        return [26, 20, 15, 18, 10, 8, 12, 5, 14, 9, 11];
+    } // TODO requete sql (respecter le format)
+
+    public static function getLieuxVieVoulusData(): array
+    {
+        return [50, 50];
+    } // TODO requete sql (respecter le format)
+
 }

@@ -1,5 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
+function getLieuxVieData() {
+    return fetch("../assets/php/donneesStatistique.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.lieuxVie;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
     const ctx4 = document.getElementById('myChart4');
+    const lieuxVie = await getLieuxVieData();
 
     new Chart(ctx4, {
         type: 'radar',
@@ -19,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             datasets: [{
                 label: 'Réponses par lieu de vie',
-                data: [26, 20, 15, 18, 10, 8, 12, 5, 14, 9, 11],
+                data: lieuxVie,
                 backgroundColor: 'rgba(30, 136, 229, 0.2)',
                 borderColor: '#1e88e5',
                 borderWidth: 2,

@@ -1,5 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
+function getAgeStatistiquesData() {
+    return fetch("../assets/php/donneesStatistique.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.agesStatistiques;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
     const ctx3 = document.getElementById('myChart3');
+    const agesStatistiques = await getAgeStatistiquesData();
 
     new Chart(ctx3, {
         type: 'bar',
@@ -18,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             datasets: [{
                 label: 'Répartition des âges',
-                data: [12, 25, 34, 22, 19, 15, 10, 5, 3, 1],
+                data: agesStatistiques,
                 backgroundColor: [
                     '#1e88e5', '#43a047', '#f4511e', '#ffb300', '#8e24aa',
                     '#00acc1', '#d81b60', '#3949ab', '#fdd835', '#5e35b1'

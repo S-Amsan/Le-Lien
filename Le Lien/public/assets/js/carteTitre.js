@@ -1,16 +1,36 @@
-var regions = document.querySelectorAll(".imageCarte path");
-var titreRegion = document.querySelector(".nomRegion h1");
-var donneeRegion = document.querySelector(".nomRegion h2");
+function getNombreAdherentsEtrangerData() {
+    return fetch("../assets/php/donneesStatistique.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.nombreAdherentsEtranger;
+        })
+        .catch((error) => {
+            console.error("Erreur :", error);
+            return false;
+        });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const regions = document.querySelectorAll(".imageCarte path");
+    const titreRegion = document.querySelectorAll(".nomRegion h1")[1];
+    const donneeRegion = document.getElementById("regionSelect");
+    const donneeEtranger = document.getElementById("etranger");
+
+    donneeEtranger.innerHTML=`${await getNombreAdherentsEtrangerData()}`;
 
 // Ajoute un événement à chaque région
-regions.forEach(function(region) {
-    region.addEventListener("mouseenter", function(e) {
-        titreRegion.textContent = region.getAttribute("title");
-        donneeRegion.textContent = "Donnée : " // je modifierai plus tard quand y'aura les requetes sql
-    });
+    regions.forEach(function (region) {
+        region.addEventListener("mouseenter", async (e) => {
+            titreRegion.textContent = region.getAttribute("title");
+            const regionSelect = region.getAttribute("title");
+            donneeRegion.innerHTML=`${await getNombreAdherentsData(regionSelect)}`;
+        });
 
-    region.addEventListener("mouseleave", function(e) {
-        titreRegion.textContent = "Survolez une région à l'aide de votre curseur";
-        donneeRegion.textContent = "Donnée : ";
+        region.addEventListener("mouseleave", function (e) {
+            titreRegion.textContent = `Aucune région`;
+            donneeRegion.innerHTML=`N/A`;
+        });
     });
 });

@@ -376,4 +376,9 @@ VALUES ("Phuong", "Nguyen", "phuong.nguyen@lelien.fr","$2y$10$/CM59zupeFgw2OIOL/
        ("Jean Baptiste", "Ramette", "jeanbaptiste.ramette@lelien.fr","$2y$10$I/RinsGEJrUcjkxOp/bHeumWDcW73l1jILCfWo0.z.rdS4MYGjtO6");
 
 -- Géneration aléatoire de fausses données
-CALL GenererFausseDonnées(100, 0.9, 0.78);
+
+
+
+
+
+
