@@ -18,6 +18,8 @@ if (isset($_SESSION['auth'])) {
     $userID = $user->getId();
     $estAdherent = $user->estAdherent($userID);
     $aSoumisEnquete = $user->aSoumisEnquete($userID);
+    $sonNom = $user->getNom();
+    $sonPrenom = $user->getPrenom();
     $_SESSION['userID'] = $userID;
 }
 
@@ -27,5 +29,7 @@ echo json_encode([
     'estAdherent' => $estAdherent,
     'estAdmin' => $estAdmin,
     'aSoumisEnquete' => $aSoumisEnquete,
+    'sonNom' => $sonNom,
+    'sonPrenom' => $sonPrenom
 ]);
-?>
+

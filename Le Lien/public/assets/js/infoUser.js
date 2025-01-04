@@ -45,3 +45,28 @@ export function utilisateurASoumisEnquete() {
             return false;
         });
 }
+
+export function getNom() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.sonNom;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+export function getPrenom() {
+    return fetch("../assets/php/infosUtilisateur.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.sonPrenom;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
