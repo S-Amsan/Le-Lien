@@ -62,7 +62,7 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         return (bool) $stmt->fetch(\PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
 
-    public function getUserId(string $email)
+    public function getUserId(string $email): int
     {
         $sql = "SELECT idUser FROM User WHERE email = :email";
         $stmt = $this->getDbConnexion()->prepare($sql);

@@ -7,13 +7,13 @@ interface IFormRepository
     public function saveForm(Form $form): bool;
 
     // Statistiques :
-    public static function getTauxReponseData(): float;
-    public static function getNombreReponseData(): int;
-    public static function getNombreAdherentsData(): int;
-    public static function getNombreAdherentsDataByRegion(string $region): int;
-    public static function getQualitesVieData(): array;
-    public static function getAgesData(): array;
-    public static function getLieuxVieData(): array;
-    public static function getLieuxVieVoulusData(): array;
+    public function getTauxReponseData(): float;
+    public function getNombreReponseData(): int;
+    public function getNombreAdherentsData(): int;
+    public function getNombreAdherentsDataByRegion(string $region): int;
+    public function getQualitesVieData(): array;
+    public function getAgesData(): array;
+    public function getLieuxVieData(): array;
+    public function getLieuxVieVoulusData(): array;
 
 }
