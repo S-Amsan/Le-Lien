@@ -1,4 +1,4 @@
-import {utilisateurASoumisEnquete, utilisateurEstAdherent} from "./infoUser";
+import {utilisateurASoumisEnquete, utilisateurEstAdherent} from "./infoUser.js";
 
 const pages = document.querySelectorAll('.question-page');
 let currentPage = 0;
