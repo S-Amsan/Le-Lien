@@ -11,6 +11,21 @@ header('Content-Type: application/json');
 
 
 
+
+
+
+
+
+if (isset($_GET['region'])) {
+    $region = htmlspecialchars($_GET['region']); // Sécurisation de l'entrée
+    echo json_encode([
+        'nombreAdherentsRegionSelect' => MariaDBFormRepository::getNombreAdherentsDataByRegion($region)
+    ]);
+    exit;
+}
+
+
+
 echo json_encode([
     'tauxReponse' => MariaDBFormRepository::getTauxReponseData(),
     'nombreAdherents' => MariaDBFormRepository::getNombreAdherentsData(),

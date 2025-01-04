@@ -119,7 +119,7 @@ BEGIN
     FROM QualiteDeVie
     WHERE type = pType;
 
-    -- Si le type n'existe pas, on le crée
+    -- Si le type n'existe pas, on le crée // C'est facultative, mais ça nous permet de voir les erreurs !!
     IF pIdQualiteDeVie IS NULL THEN
         INSERT INTO QualiteDeVie(type)
         VALUES (pType);

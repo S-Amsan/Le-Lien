@@ -66,7 +66,7 @@ class MariaDBFormRepository extends MariaDBRepository implements IFormRepository
     } // TODO requete sql (respecter le format)
     public static function getNombreAdherentsDataByRegion(string $region): int
     {
-        return 40;
+        return 60;
     } // TODO requete sql (respecter le format)
     public static function getQualitesVieData(): array
     {
