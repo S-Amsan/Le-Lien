@@ -261,48 +261,64 @@ BEGIN
     DECLARE n INT;
     DECLARE typesQualiteDeVie TEXT DEFAULT const_typesQualiteDeVie;
 
+    -- les probas :
+    DECLARE pRand FLOAT;
+
     WHILE pIdUser < nbReponses + idDepart
         DO
             -- 1) Choix de la région avec une probabilité plus élevée pour certaines regions
+            SET pRand = RAND();
+
             SET pRegion = CASE
-                              WHEN RAND() <= 0.03 THEN 'auvergne-rhone-alpes'               -- 3% de chance
-                              WHEN RAND() <= 0.06 THEN 'bourgogne-franche-comte'            -- 3% de chance
-                              WHEN RAND() <= 0.21 THEN 'bretagne'                           -- 15% de chance
-                              WHEN RAND() <= 0.22 THEN 'centre-val-de-loire'                -- 1% de chance
-                              WHEN RAND() <= 0.24 THEN 'corse'                              -- 2% de chance
-                              WHEN RAND() <= 0.39 THEN 'grand-est'                          -- 15% de chance
-                              WHEN RAND() <= 0.47 THEN 'hauts-de-france'                    -- 8% de chance
-                              WHEN RAND() <= 0.67 THEN 'ile-de-france'                      -- 20% de chance
-                              WHEN RAND() <= 0.79 THEN 'normandie'                          -- 12.5% de chance
-                              WHEN RAND() <= 0.83 THEN 'nouvelle-aquitaine'                 -- 4% de chance
-                              WHEN RAND() <= 0.86 THEN 'occitanie'                          -- 3% de chance
-                              WHEN RAND() <= 0.92 THEN 'pays-de-la-loire'                   -- 6% de chance
-                              WHEN RAND() <= 0.94 THEN 'provence-alpes-cote-dazur'          -- 2% de chance
-                              WHEN RAND() <= 0.95 THEN 'guadeloupe'                         -- 0.1% de chance
-                              WHEN RAND() <= 0.96 THEN 'guyane'                             -- 0.1% de chance
-                              WHEN RAND() <= 0.97 THEN 'martinique'                         -- 0.1% de chance
-                              WHEN RAND() <= 0.98 THEN 'mayotte'                            -- 0.1% de chance
-                              WHEN RAND() <= 0.99 THEN 'reunion'                            -- 0.1% de chance
-                              ELSE 'etranger'                                               -- 5% de chance
+                              WHEN pRand <= 0.05 THEN 'auvergne-rhone-alpes'           -- 5% de chance
+                              WHEN pRand <= 0.10 THEN 'bourgogne-franche-comte'        -- 5% de chance
+                              WHEN pRand <= 0.25 THEN 'bretagne'                       -- 15% de chance
+                              WHEN pRand <= 0.30 THEN 'centre-val-de-loire'            -- 5% de chance
+                              WHEN pRand <= 0.35 THEN 'corse'                          -- 5% de chance
+                              WHEN pRand <= 0.50 THEN 'grand-est'                      -- 15% de chance
+                              WHEN pRand <= 0.60 THEN 'hauts-de-france'                -- 10% de chance
+                              WHEN pRand <= 0.75 THEN 'ile-de-france'                  -- 15% de chance
+                              WHEN pRand <= 0.85 THEN 'normandie'                      -- 10% de chance
+                              WHEN pRand <= 0.89 THEN 'nouvelle-aquitaine'             -- 4% de chance
+                              WHEN pRand <= 0.92 THEN 'occitanie'                      -- 3% de chance
+                              WHEN pRand <= 0.96 THEN 'pays-de-la-loire'               -- 4% de chance
+                              WHEN pRand <= 0.98 THEN 'provence-alpes-cote-dazur'      -- 2% de chance
+                              WHEN pRand <= 0.982 THEN 'guadeloupe'                    -- 0.2% de chance
+                              WHEN pRand <= 0.984 THEN 'guyane'                        -- 0.2% de chance
+                              WHEN pRand <= 0.986 THEN 'martinique'                    -- 0.2% de chance
+                              WHEN pRand <= 0.988 THEN 'mayotte'                       -- 0.2% de chance
+                              WHEN pRand <= 0.990 THEN 'reunion'                       -- 0.2% de chance
+                              WHEN pRand <= 0.991 THEN 'saint-pierre-et-miquelon'      -- 0.1% de chance
+                              WHEN pRand <= 0.992 THEN 'wallis-et-futuna'              -- 0.1% de chance
+                              WHEN pRand <= 0.993 THEN 'polynesie-francaise'           -- 0.1% de chance
+                              WHEN pRand <= 0.994 THEN 'nouvelle-caledonie'            -- 0.1% de chance
+                              ELSE 'etranger'                                          -- 0.6% de chance
                 END;
 
-            -- 2) âge entre 19 et 72
-            SET pAge = FLOOR(RAND() * (72 - 19 + 1)) + 19;
+
+            -- 2) âge entre 19 et 120 avec une probabilité centrée autour de 40 ans
+            SET pRand = (RAND() + RAND()) / 2;
+            SET pAge = FLOOR(19 + (120 - 19) * POWER(pRand, 1.5));
 
             -- 3) Choix aléatoire du lieu de vie (10% ou 5%)
+            -- Générer une valeur aléatoire une seule fois
+            SET pRand = RAND();
+
+            -- Affecter un lieu de vie en fonction de plages bien définies
             SET pLieuDeVie = CASE
-                                 WHEN RAND() <= 0.1 THEN 'dans-la-famille-en-permanence'
-                                 WHEN RAND() <= 0.2 THEN 'avec-une-solution-d-accueil'
-                                 WHEN RAND() <= 0.3 THEN 'dans-la-famille-principalement'
-                                 WHEN RAND() <= 0.4 THEN 'dans-un-logement-indépendant'
-                                 WHEN RAND() <= 0.5 THEN 'dans-un-habitat-inclusif'
-                                 WHEN RAND() <= 0.6 THEN 'dans-un-foyer-d-accueil-médicalisé'
-                                 WHEN RAND() <= 0.7 THEN 'dans-une-maison-d-accueil-médicalisée'
-                                 WHEN RAND() <= 0.8 THEN 'dans-un-foyer-de-vie-ou-foyer-d-hébergement'
-                                 WHEN RAND() <= 0.85 THEN 'en-IME-avec-internat'            -- 5% de chance
-                                 WHEN RAND() <= 0.9 THEN 'hospitalisation-en-psychiatrie'   -- 5% de chance
-                                 ELSE 'autre'
+                                 WHEN pRand <= 0.1 THEN 'dans-la-famille-en-permanence'                 -- 10% de chance
+                                 WHEN pRand <= 0.2 THEN 'avec-une-solution-d-accueil'                   -- 10% de chance
+                                 WHEN pRand <= 0.3 THEN 'dans-la-famille-principalement'                -- 10% de chance
+                                 WHEN pRand <= 0.4 THEN 'dans-un-logement-indépendant'                  -- 10% de chance
+                                 WHEN pRand <= 0.5 THEN 'dans-un-habitat-inclusif'                      -- 10% de chance
+                                 WHEN pRand <= 0.6 THEN 'dans-un-foyer-d-accueil-médicalisé'            -- 10% de chance
+                                 WHEN pRand <= 0.7 THEN 'dans-une-maison-d-accueil-médicalisée'         -- 10% de chance
+                                 WHEN pRand <= 0.8 THEN 'dans-un-foyer-de-vie-ou-foyer-d-hébergement'   -- 10% de chance
+                                 WHEN pRand <= 0.85 THEN 'en-IME-avec-internat'                         -- 5% de chance
+                                 WHEN pRand <= 0.9 THEN 'hospitalisation-en-psychiatrie'                -- 5% de chance
+                                 ELSE 'autre'                                                           -- 10% de chance
                 END;
+
 
             -- 4) 1 chance sur 6 que le lieu de vie ne corresponde pas
             SET pLieuDeVieVoulue = IF(RAND() <= 1 / 6, FALSE, TRUE);
@@ -376,4 +392,4 @@ VALUES ("Phuong", "Nguyen", "phuong.nguyen@lelien.fr","$2y$10$/CM59zupeFgw2OIOL/
        ("Jean Baptiste", "Ramette", "jeanbaptiste.ramette@lelien.fr","$2y$10$I/RinsGEJrUcjkxOp/bHeumWDcW73l1jILCfWo0.z.rdS4MYGjtO6");
 
 -- Géneration aléatoire de fausses données
-CALL GenererFausseDonnées(800,0.9,0.78);
+CALL GenererFausseDonnées(1000,1,0.9);

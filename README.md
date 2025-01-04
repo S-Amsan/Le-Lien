@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="https://i.imgur.com/C77sFfz.png" alt="Logo" />
+  <p>Association luttant contre les erreurs médicales</p>
+  <p>‎ </p>
+</div>
+
 # SAE S3.01
 ### Par Amsan Sutharsan, Rayan Meri, Abdelhilah Tabti, Lucas Barbier
 #### Groupe 207
