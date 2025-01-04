@@ -3,11 +3,10 @@
 namespace LeLien\Management\user;
 
 use LeLien\Management\MariaDBRepository;
-use PDO;
 
 class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
 {
-    public function __construct(PDO $dbConnexion)
+    public function __construct(\PDO $dbConnexion)
     {
         parent::__construct($dbConnexion);
     }
@@ -42,7 +41,7 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["email" => $email]);
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
         if ($user) {
             return new User(
                 $user['prenom'],
@@ -60,15 +59,15 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         $sql = "SELECT * FROM Cotisation WHERE idUser = :id AND fin IS NULL";
         $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["id" => $id]);
-        return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
+        return (bool) $stmt->fetch(\PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
 
-    public function getUserId(string $email)
+    public function getUserId(string $email): int
     {
         $sql = "SELECT idUser FROM User WHERE email = :email";
         $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["email" => $email]);
-        $id = $stmt->fetch(PDO::FETCH_ASSOC);
+        $id = $stmt->fetch(\PDO::FETCH_ASSOC);
         return (int) $id['idUser'];
     }
 
@@ -88,7 +87,7 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         $sql = "SELECT * FROM formulaire WHERE idUser = :id";
         $stmt = $this->getDbConnexion()->prepare($sql);
         $stmt->execute(["id" => $id]);
-        return (bool) $stmt->fetch(PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
+        return (bool) $stmt->fetch(\PDO::FETCH_ASSOC); // Renvoie false si pas d'id trouvé
     }
 
     public function deleteUserCotisation(int $idUser) : bool

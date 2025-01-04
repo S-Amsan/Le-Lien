@@ -1,7 +1,6 @@
 <?php
 
 namespace LeLien\Management;
-use PDO;
 
 class MariaDBRepository
 {

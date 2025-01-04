@@ -87,7 +87,10 @@ body hr{
     justify-content: center;
     padding-top:-5rem;
 }
-
+.donnee{
+    display: flex;
+    gap: 0.5rem;
+}
 .nomRegion h1, .titreStatistiques h1{
     font-size: 1.5rem;
     font-weight: 600;
@@ -103,6 +106,16 @@ body hr{
     margin: 0;
     text-align: center;
     transition: opacity 0.3s ease;
+}
+
+#regionSelect, #etranger {
+    min-width: 3rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.donnee h2 {
+    white-space: nowrap;
 }
 
 .nomRegion h2:hover {

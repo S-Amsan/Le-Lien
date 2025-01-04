@@ -119,7 +119,7 @@ BEGIN
     FROM QualiteDeVie
     WHERE type = pType;
 
-    -- Si le type n'existe pas, on le crée
+    -- Si le type n'existe pas, on le crée // C'est facultative, mais ça nous permet de voir les erreurs !!
     IF pIdQualiteDeVie IS NULL THEN
         INSERT INTO QualiteDeVie(type)
         VALUES (pType);
@@ -376,4 +376,4 @@ VALUES ("Phuong", "Nguyen", "phuong.nguyen@lelien.fr","$2y$10$/CM59zupeFgw2OIOL/
        ("Jean Baptiste", "Ramette", "jeanbaptiste.ramette@lelien.fr","$2y$10$I/RinsGEJrUcjkxOp/bHeumWDcW73l1jILCfWo0.z.rdS4MYGjtO6");
 
 -- Géneration aléatoire de fausses données
-CALL GenererFausseDonnées(100, 0.9, 0.78);
+CALL GenererFausseDonnées(800,0.9,0.78);

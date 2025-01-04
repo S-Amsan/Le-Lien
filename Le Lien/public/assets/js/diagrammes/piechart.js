@@ -1,5 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
+function getLieuxVieVoulusData() {
+    return fetch("../assets/php/donneesStatistique.php")
+        .then((response) => response.json())
+        .then((data) => {
+            return data.lieuxVieVoulus;
+        })
+        .catch((error) => {
+            console.error("Erreur lors de la vérification de l'authentification :", error);
+            return false;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
     const ctx2 = document.getElementById('myChart2');
+    const agesStatistiques = await getLieuxVieVoulusData();
 
     new Chart(ctx2, {
         type: 'doughnut',
@@ -7,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['Oui', 'Non'],
             datasets: [{
                 label: 'Réponses',
-                data: [70, 30],
+                data: agesStatistiques,
                 backgroundColor: ['#1d9df8', '#f4d508'],
                 borderColor: '#fff',
                 borderWidth: 2
