@@ -38,15 +38,51 @@ body hr{
     width: 90%;
 }
 
+#tauxReponse{
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0060c6;
+}
+
+
+/* Titre du début de page */
+
+.titreStatistiques {
+    padding-top: 2rem;
+    text-align: left;
+    padding-left:4rem;
+    padding-bottom:5rem;
+}
+
+.titreStatistiques p {
+    font-size: 1.3rem;
+    color: #666666;
+    margin: 0.5rem 0;
+}
+
+.progress-container {
+    width: 38.5%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0 15px ;
+}
+
+#progress-bar {
+    height: 100%; /* Remplit la hauteur du conteneur */
+    background-color: #1e90ff; /* Couleur de la barre */
+    width: 0; /* Initialement vide (sera rempli dynamiquement) */
+    transition: width 0.5s ease; /* Animation fluide */
+    border-radius: 10px; /* Coin arrondi */
+}
+
+
+
 
 
 /* Carte de la France */
-
-.titreStatistiques{
-    padding-bottom:3rem;
-    padding-top:2rem;
-    text-align: center;
-}
 
 .section-icon1, .section-icon3{
     width:4rem;

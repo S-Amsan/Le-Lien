@@ -19,16 +19,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         data: {
             labels: [
                 'Dans la famille en permanence',
+                'Autre',
                 'Avec solution d’accueil/activités en journée',
-                'Accueil temporaire en établissement',
+                'Accueil temporaire en établissement', // Correspond à "dans-la-famille-principalement" dans la base
                 'Logement indépendant',
                 'Habitat inclusif',
                 'Foyer d’accueil médicalisé (FAM)',
                 'Maison d’accueil spécialisée (MAS)',
                 'Foyer de vie ou d’hébergement',
                 'IME avec internat',
-                'Hospitalisation en psychiatrie',
-                'Autre'
+                'Hospitalisation en psychiatrie'
             ],
             datasets: [{
                 label: 'Réponses par lieu de vie',
