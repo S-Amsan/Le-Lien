@@ -98,4 +98,11 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
             "idUser" => $idUser
         ]);
     }
+
+    public function deleteUser(int $idUser): bool
+    {
+        $sql = "DELETE FROM user WHERE idUser = :idUser";
+        $stmt = $this->getDbConnexion()->prepare($sql);
+        return $stmt->execute(["idUser" => $idUser]);
+    }
 }
