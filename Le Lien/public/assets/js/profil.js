@@ -36,7 +36,7 @@ function demanderConfirmationSuppression(){ // Affiche un popup (annuler, confir
     const supprPopup = `
         <div class="suppression" id="supprPopup">
             <div class="contenu">
-                <h1>Supprésion de votre compte</h1>
+                <h1>Suppréssion de votre compte</h1>
                 <p>Cette action est irréversible. Êtes-vous certain de vouloir supprimer définitivement votre compte ?</p>
             </div>
             <div class="confirmation">

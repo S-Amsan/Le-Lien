@@ -1,5 +1,5 @@
 import {pagesData as pages} from "./data.js"; // Les pages présents dans la navBar
-import { utilisateurEstConnecte, utilisateurEstAdmin } from "./infoUser.js";
+import { utilisateurEstConnecte } from "./infoUser.js";
 
 const srcImg = "../assets/images/header";
 let pageActuel = pages.accueil;
@@ -61,7 +61,6 @@ window.handleAuthAction = handleAuthAction;
 document.addEventListener("DOMContentLoaded", async () => {
     // Vérifie si l'utilisateur est connecté via une requête Ajax
     const estConnecte = await utilisateurEstConnecte();
-    const estAdmin = await utilisateurEstAdmin();
 
     // On ajoute le contenu HTML dans la balise <header>
     document.querySelector('header').innerHTML = `
@@ -82,8 +81,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 : `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
                             }
                         </div>
-                            ${estAdmin
-                                ? `<button class="bouton-stat" onclick="window.location.href='statistiques.html';"><img src="${srcImg}/graphique.png" alt="Voir stats"></button>`
+                            ${estConnecte
+                                ? `<button class="bouton-profil" onclick="window.location.href='profil.html';"><img src="${srcImg}/../profil/photo-profil-homme.png" alt="Voir stats"></button>`
                                 : ``
                             }
                     </div>

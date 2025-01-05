@@ -89,7 +89,7 @@ header, header * {
     background: linear-gradient(to left, #FF6B6B, #FF4D4D) right;
 }
 
-.bouton-stat {
+.bouton-profil {
     background: none;
     color: white;
     border: none;
@@ -99,11 +99,11 @@ header, header * {
     transition: 0.3s ease;
 }
 
-.bouton-stat img {
+.bouton-profil img {
     height: 2.5em;
 }
 
-.bouton-stat:hover {
+.bouton-profil:hover {
     transform: scale(1.1);
 }
 
