@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $user = $trousseau->findUserByEmail($_SESSION['auth']);
         $idUser = $user->getId();
-        $cotisationEnCours = $user->estAdherent($idUser);
-        $cotiResult = $coti->enregistrer($idUser,$_POST["periodicite"],floatval($_POST["montant"]));
+        $cotisationEnCours = $user->estAdherent($idUser); // On regarde si il a une cotisation en cours
+        $cotiResult = $coti->enregistrer($idUser,"annuelle",10);
 
         if ($cotiResult) {
             if($cotisationEnCours){

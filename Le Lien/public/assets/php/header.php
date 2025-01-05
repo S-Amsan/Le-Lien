@@ -16,7 +16,7 @@ try {
     Messages::goHome(
         $e->getMessage(),
         $e->getType(),
-        "../../pages/authentification.html"
+        "../../pages/accueil.html" // car c'est utilisé par plusieurs fichiers
     );
     die();
 }

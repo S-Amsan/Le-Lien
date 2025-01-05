@@ -32,4 +32,4 @@ echo json_encode([
     'sonNom' => $sonNom,
     'sonPrenom' => $sonPrenom
 ]);
-
+?>

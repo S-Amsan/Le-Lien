@@ -29,7 +29,10 @@
           <p id="rang-user"></p>
         </div>
         <button class="button-modifier">Modifier mon abonnement</button>
-        <button class="button-delete">Supprimer mon compte</button>
+          <form action="../assets/php/supprimerUser.php" method="post" id="supprimer-compte" onsubmit="return false;"> <!-- Ne fait rien par default, c'est mofifier dans profil.js -->
+              <input type="hidden" name="password" id="password-cacher" value="">
+              <button type="submit" class="button-delete" id="supprimer-compte-button">Supprimer mon compte</button> <!-- type="submit" important -->
+          </form>
       </div>
     </div>
 </main>
