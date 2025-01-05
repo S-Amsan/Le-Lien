@@ -5,13 +5,15 @@ const logoRang = document.getElementById("rang-logo")
 const userName = document.getElementById("username-profil")
 const boutonFormAdherent = document.querySelector('.button-modifier')
 
+const versStat = document.getElementById("versStat")
 
 userName.textContent = await getNom() + " " + await getPrenom();
-
+versStat.style.display = "none";
 if(await utilisateurEstAdmin()){
     logoRang.src = "../assets/images/profil/logoRang/couronne.png";
     rangUser.textContent = "Admin";
     rangUser.classList.add("admin");
+    versStat.style.display = "block";
 }
 else if(await utilisateurEstAdherent()){
     logoRang.src = "../assets/images/profil/logoRang/adherent-logo.png";
@@ -44,7 +46,7 @@ function demanderConfirmationSuppression(){ // Affiche un popup (annuler, confir
     const supprPopup = `
         <div class="suppression" id="supprPopup">
             <div class="contenu">
-                <h1>Suppréssion de votre compte</h1>
+                <h1>Suppression de votre compte</h1>
                 <p>Cette action est irréversible. Êtes-vous certain de vouloir supprimer définitivement votre compte ?</p>
             </div>
             <div class="confirmation">
@@ -72,6 +74,7 @@ function handleSupprimerCompte(){ // permet de supprimer le compte
         return;
     }else{
         mdpEnvoye.value = mdpSaisie.value;
+        localStorage.removeItem("popupCacher");
         actionSupprimer.submit();
     }
 
