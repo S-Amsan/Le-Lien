@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+/* Général */
+
+body, h1, h2, h3, p {
+    font-family: 'Poppins', sans-serif;
+}
+
+body hr{
+    padding-right:10rem;
+    margin-right:12rem;
+}
+
+/* Style des sections */
+.section-container {
+    margin-bottom: 4rem;
+}
+
+/* Style des en-têtes de section */
+.section-header {
+    text-align: left;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+    padding-top:1rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.section-header hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin-top: 1rem;
+    width: 90%;
+}
+
+#tauxReponse{
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0060c6;
+}
+
+
+/* Titre du début de page */
+
+.titreStatistiques {
+    padding-top: 2rem;
+    text-align: left;
+    padding-left:4rem;
+    padding-bottom:5rem;
+}
+
+.titreStatistiques p {
+    font-size: 1.3rem;
+    color: #666666;
+    margin: 0.5rem 0;
+}
+
+.progress-container {
+    width: 38.5%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0 15px ;
+}
+
+#progress-bar {
+    height: 100%; /* Remplit la hauteur du conteneur */
+    background-color: #1e90ff; /* Couleur de la barre */
+    width: 0; /* Initialement vide (sera rempli dynamiquement) */
+    transition: width 0.5s ease; /* Animation fluide */
+    border-radius: 10px; /* Coin arrondi */
+}
+
+
+
+
+
+/* Carte de la France */
+
+.section-icon1, .section-icon3{
+    width:4rem;
+    margin-bottom:-1.3rem;
+    margin-right:0.5rem;
+}
+
+.section-icon2{
+    width:4rem;
+    margin-right:0.5rem;
+    margin-bottom:-0.85rem;
+}
+
+.imageCarte {
+    width: 100%;
+    float: left;
+    padding-left:7rem;
+    padding-top:3rem;
+}
+
+.imageCarte .region  {
+    fill: #15d0fd;
+    stroke: white;
+    stroke-width: 1px;
+    transition: fill 0.3s ease;
+}
+
+.imageCarte .region:hover {
+    fill: #3e3e3e;
+}
+
+.nomRegion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:-5rem;
+}
+.donnee{
+    display: flex;
+    gap: 0.5rem;
+}
+.nomRegion h1, .titreStatistiques h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.nomRegion h2 .titreStatistiques h2{
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+#regionSelect, #etranger {
+    min-width: 3rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.donnee h2 {
+    white-space: nowrap;
+}
+
+.nomRegion h2:hover {
+    opacity: 0.8;
+}
+
+
+
+.carte {
+    display: flex;
+    justify-content: center; /* Centre la carte globalement */
+    align-items: center;
+    padding-right:23rem;/* Ajoute un espace entre la carte et les autres divs */
+    gap:6rem;
+}
+
+/* Conteneur général pour les graphiques */
+.charts-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur pour chaque paire de graphiques */
+.chart-pair-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin-bottom:5rem;
+    padding-left:3rem;
+}
+
+/* Conteneur pour chaque graphique */
+.chart-container {
+    flex: 1;
+    max-width: 45%;
+}
+
+#myChart2 {
+    max-width: 70%;
+    height: auto;
+}
+
+#myChart{
+    margin-top:7rem;
+    display: block;
+    width: 125%;
+    height: auto;
+}
+
+#myChart2, #myChart3 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#myChart4{
+    margin-top:3.8rem;
+    display: block;
+    width: 70%;
+    height: auto;
+}

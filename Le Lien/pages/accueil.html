@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Lien - L'association</title>
+    <link rel="icon" href="/assets/images/LeLien-Logo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/accueil.css">
+
+    <!-- CSS pour le header -->
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <!-- CSS pour le footer -->
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <!-- Animation au lancement -->
+    <script src="../assets/js/animationDebut.js" defer></script>
+    <!-- Script pour le header -->
+    <script src="../assets/js/header.js" type="module" defer></script>
+    <!-- Script pour le footer -->
+    <script src="../assets/js/footer.js" type="module" defer></script>
+    <!-- script popup Adhérent + css popup-->
+    <script src="../assets/js/popupEnquete.js" type="module"></script>
+    <link rel="stylesheet" href="../assets/css/popup.css">
+    <!-- Script pour les flèches du slider -->
+    <script src="../assets/js/flechesChiffresCles.js" defer></script>
+    <!-- Script pour l'animation des chiffres clés' -->
+    <script src="../assets/js/chiffreGrandit.js" defer></script>
+</head>
+<body>
+<header></header>
+<main>
+    <div class="Menu">
+        <img src="../assets/images/accueil/fond_hopital.jpg" alt="Fond Hôpital" class="background-image">
+        <div class="ContenuMenu">
+            <h3 class="animate" style="--delay: 0s;">Aidez-nous à réparer les injustices médicales !</h3>
+            <p class="animate" style="--delay: 0.3s;">Rejoignez-nous pour protéger les patients et améliorer la <br>
+                sécurité des soins. Chaque action compte dans la lutte <br>
+                contre les erreurs médicales et leurs conséquences <br>
+                dévastatrices.</p>
+            <a id="btnNousAider" class="animate" style="--delay: 0.6s;" href="nousAider.html">Nous Aider</a>
+
+        </div>
+
+        <div class="ImageMenu">
+            <img src="../assets/images/accueil/hopital%20menu.png" alt="FauteuilRoulant" class="ImageFauteuilRoulant">
+        </div>
+    </div>
+
+    <div class="main-content1">
+
+
+        <div class="Presentation">
+            <div class="FondPresentation"></div>
+
+            <div class="presentation-content">
+                <h3>Présentation de l’association</h3>
+                <p>
+                    Membre du collectif France Assos Santé, Le LIEN vous aide à faire valoir vos droits comme l’accès à
+                    votre dossier médical ou aux commissions régionales amiables d’indemnisation (CCI) pour obtenir
+                    l’indemnisation d’un préjudice de soins.
+                </p>
+                <p>
+                    Depuis 25 ans, l’association le LIEN aide et soutient les personnes victimes d’infections
+                    nosocomiales et d’accidents médicaux.
+                </p>
+                <a href="../pages/presentation.html" id="btnPresentation">En savoir plus</a>
+            </div>
+
+            <div class="presentation-image">
+                <img src="../assets/images/accueil/docteur%20carré.png" alt="docteurPresentation" id="docteurPresentation"/>
+                <img src="../assets/images/accueil/fiche%20medicale.png" alt="fichePresentation" id="fichePresentation"/>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="main-content2">
+
+        <div class="ChiffresCles">
+            <h2 class="titreChiffres">Chiffres clés :</h2>
+            <div class="slider">
+                <button class="nav prev">&lt;</button>
+                <div class="card card-blue">
+                    <div class="data">
+                        <h3 class="big-number" data-target="450000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            accidents médicaux sont recensés en France chaque année
+                            <img src="../assets/images/accueil/drapeau-france.png" alt="France" id="emojiFrance">
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/accueil/Abandon.png" alt="Illustration" class="imageAbandon">
+                    </div>
+                </div>
+                <div class="card card-green" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="1400000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            de personnes dans le monde sont touchées par des infections nosocomiales
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/accueil/immune.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-gray" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="60000">
+                            <span class="number">0</span>
+                        </h3>
+                        <p class="description">
+                            décès par an dans l'Union Européenne suite à des erreurs médicales
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/accueil/grave.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-yellow" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="42" data-unit="Milliards">0</h3>
+                        <p class="description">
+                            Coût annuel estimé des erreurs médicamenteuses dans le monde
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/accueil/audit.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <div class="card card-red" style="display: none;">
+                    <div class="data">
+                        <h3 class="big-number" data-target="22" data-unit="%">0</h3>
+                        <p class="description">
+                            des Français déclarent avoir été victimes, ou connaître une victime,
+                            d'une erreur de diagnostic ou de traitement
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="../assets/images/accueil/injury.png" alt="Illustration" class="illustration">
+                    </div>
+                </div>
+                <button class="nav next">&gt;</button>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+
+        <h2 id="titreEspaceDonAdherer">
+            Votre générosité peut <span>grandement nous aider</span>
+        </h2>
+
+        <div class="espaceDonEtAdherer">
+            <!-- Section "Donner" -->
+            <div class="espaceDon">
+                <div class="icon">
+                    <img src="../assets/images/accueil/imagePartieDonner.png" alt="Illustration Donner">
+                </div>
+                <h3 class="titleDon">DONNER</h3>
+                <p>
+                    Votre soutien aide à prévenir les erreurs médicales et à soutenir ceux qui en ont souffert.
+                </p>
+                <p>
+                    Un petit geste aujourd'hui peut éviter de grandes tragédies demain.
+                </p>
+                <div class="separator"></div>
+                <div class="cta-wrapper">
+                    <a href="faireUnDon.html" class="circle ctaDon">
+                        <img src="../assets/images/accueil/fleche-blanche.png" alt="Flèche" class="arrow-img">
+                    </a>
+                    <span class="cta-text cta-text-don">Faire un don</span>
+                </div>
+            </div>
+
+            <!-- Section "Adhérer" -->
+            <div class="espaceAdherer">
+                <div class="icon">
+                    <img src="../assets/images/accueil/imagePartieAdherer.png" alt="Illustration Adhérer">
+                </div>
+                <h3 class="titleAdherer">ADHERER</h3>
+                <p><em>« Sans nos adhérents nous ne sommes rien. »</em><br>Claude Rembaud</p>
+                <p>
+                    Chaque adhésion permet d'accompagner les victimes et de prévenir de nouvelles erreurs médicales.
+                </p>
+                <div class="separator"></div>
+                <div class="cta-wrapper">
+                    <a href="adherer.html" class="circle ctaAdherer">
+                        <img src="../assets/images/accueil/fleche-blanche.png" alt="Flèche" class="arrow-img">
+                    </a>
+                    <span class="cta-text cta-text-adherer">Nous rejoindre</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="espaceCollaborateur">
+            <p id="texteCollaborateurs">Visitez egalement les sites de nos collaborateurs : </p>
+
+            <div class="imagesCollaborateurs">
+                <a href="https://www.heral-pub.fr" class="imageHeral">
+                    <img src="../assets/images/accueil/logo_heral.png" alt="Heral Pub"/>
+                </a>
+
+                <a href="https://www.france-assos-sante.org/reseau/associations-membres/" class="imageFranceAssos">
+                    <img src="../assets/images/accueil/logo_assos_sante.png" alt="France Assos Santé"/>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+<footer></footer>
+</body>
+</html>
