@@ -21,9 +21,10 @@
 <body>
 <header></header>
 <main>
+  <div id="container-form">
   <div id="container-adherer">
     <form id="form-adherer" action="../assets/php/formulaireAdherer.php" method="post">
-      <h1> Adhérer</h1>
+      <h1 id="titre-adherer"></h1>
       <div id="container-mensualite">
         <input id="button-mensuel" class="button-mensualite" type="radio" name="periodicite" value="mensuelle" checked>
         <label class="form-check-label" for="button-mensuel">
@@ -66,6 +67,15 @@
       </div>
     </form>
   </div>
+
+    <form action="../assets/php/supprimerAdherent.php" method="post" id="supprimer-adhesion" onsubmit="return false;">
+      <div id="container-buttonDeleteAbonnement">
+        <input type="hidden" name="password" id="password-cacher" value="">
+        <button type="submit" id="button-DeleteAbonnement">Se désabonner</button>
+      </div>
+    </form>
+
+</div>
 </main>
 <footer></footer>
 </body>

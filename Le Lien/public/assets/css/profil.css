@@ -103,7 +103,7 @@ main{
     font-family: Roboto, sans-serif;
     font-weight: bolder;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.5s ease;
     background-size: 600%;
 }
 
@@ -111,10 +111,22 @@ main{
     transform: scale(1.05);
 }
 
+
 .button-modifier {
     margin: 0 auto;
-    background-color: #EFC033;
     color: white;
+}
+
+.bouton-adherent{
+    background-color: #EFC033;
+}
+
+.bouton-utilisateur{
+    background-color: #2ed1ab;
+}
+
+.bouton-utilisateur:hover{
+    background-color: #1fe3b7;
 }
 
 .button-delete {

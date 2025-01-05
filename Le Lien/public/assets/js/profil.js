@@ -3,6 +3,7 @@ import {utilisateurEstAdherent, utilisateurEstAdmin, getNom, getPrenom} from "./
 const rangUser = document.getElementById("rang-user")
 const logoRang = document.getElementById("rang-logo")
 const userName = document.getElementById("username-profil")
+const boutonFormAdherent = document.querySelector('.button-modifier')
 
 
 userName.textContent = await getNom() + " " + await getPrenom();
@@ -23,6 +24,13 @@ else{
     rangUser.classList.add("utilisateur");
 }
 
+if(await utilisateurEstAdherent()){
+    boutonFormAdherent.textContent = "Modifier mon abonnement";
+    boutonFormAdherent.classList.add("bouton-adherent");
+} else {
+    boutonFormAdherent.textContent = "Devenir adhérent";
+    boutonFormAdherent.classList.add("bouton-utilisateur");
+}
 
 // --------- Suppression du compte --------- //
 

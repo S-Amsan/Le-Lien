@@ -28,7 +28,9 @@
           <img id="rang-logo" src="" alt="Logo du rang du profil">
           <p id="rang-user"></p>
         </div>
-        <button class="button-modifier">Modifier mon abonnement</button>
+          <a href="./adherer.html" style="text-decoration:none">
+        <button class="button-modifier"></button>
+          </a>
           <form action="../assets/php/supprimerUser.php" method="post" id="supprimer-compte" onsubmit="return false;"> <!-- Ne fait rien par default, c'est mofifier dans profil.js -->
               <input type="hidden" name="password" id="password-cacher" value="">
               <button type="submit" class="button-delete" id="supprimer-compte-button">Supprimer mon compte</button> <!-- type="submit" important -->
