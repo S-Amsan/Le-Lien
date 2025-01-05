@@ -1,0 +1,346 @@
+#container-don{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 25em;
+    background-image: url('../images/nousAider/photo-don.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#container-don h1{
+    padding: 0 0 0 1.5em;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: normal;
+    text-shadow: -5px 4px 5px rgba(0,0,0,0.35);
+    font-family: Bowlby One, sans-serif;
+    margin-bottom: 0;
+}
+
+#container-don p{
+    padding: 0 22em 0 9.5em;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    max-width: 24em;
+}
+
+#container-don button{
+    color: white;
+    box-shadow: -5px 4px 5px rgba(0,0,0,0.35);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 15px;
+    font-weight: bold;
+    padding: 1.1em 1.6em;
+    margin-left: 9em;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #E7B10D, #FFC71D) right;
+    background-size: 300%;
+}
+
+#container-don button:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
+
+#container-texteAdherent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container-texteAdherent h1{
+    font-size: 1.7em;
+    font-family: Bowlby One, sans-serif;
+    font-weight: normal;
+    margin-bottom: 0;
+    color : #4CAFCE;
+}
+
+#container-texteAdherent p{
+    font-size: 1em;
+    font-family: Bowlby One, sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+    margin-left: 38em;
+    color : #4CAFCE;
+}
+
+
+#container-adherer {
+    background-color: #72c8f9;
+    color: #fff;
+    border-radius: 30px;
+    padding: 15px 20px 30px 80px;
+    width: 650px;
+    margin: 20px auto 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#container-adherer h2 {
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 0;
+   text-align: center;
+}
+
+.adherer-jaune {
+    color: #FFC71D;
+}
+
+#container-adherer P{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    margin-left: -17px;
+}
+#container-adherer ul {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    list-style-type: disc;
+    margin: 10px 0;
+    padding: 0;
+    text-align: left;
+}
+
+#container-adherer li {
+    margin: 5px 0;
+}
+
+#container-button-adherer{
+    text-align: center;
+    width: 100%;
+}
+
+#button-adherer {
+    margin: 10px 0 0 -80px;
+    cursor: pointer;
+    background-color: #3EDEB7;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+#button-adherer:hover {
+    background-color: #21eab6;
+    transform: scale(1.1);
+}
+
+
+#titre-benevole{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 58%;
+    padding-left: 1%;
+    color: #1B4570;
+    font-family: Bowlby One, sans-serif;
+    font-weight: lighter;
+    font-size: 1.3em;
+}
+
+
+#container-pourquoiBenevole{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 2em;
+}
+
+#partieBenevole-gauche{
+    height: 20em;
+    width: 40em;
+}
+#partieBenevole-gauche p:first-child{
+    margin-bottom: 3em;
+    width: 33em;
+}
+#partieBenevole-gauche p, #partieBenevole-gauche ul{
+    font-family: Inter,sans-serif;
+    font-size: 1em;
+    color: #1B4570;
+}
+
+#partieBenevole-gauche ul{
+    width: 30em;
+}
+#imageBenevoles{
+    height: 20em;
+    width: 30em;
+    border-radius: 1em;
+
+}
+
+#titreRejoindre{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 2.5em 60% 0.7em 0;
+}
+
+#duo-rectangle-rejoindre{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2%;
+}
+.rectangle-arrondi-etapes {
+    width: 550px;
+    height: 170px;
+    background-color: #7CD5F1;
+    color: black;
+    border-radius:8px;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+.texte-processusRejoindre{
+    display: flex;
+    margin: auto auto auto 0;
+    flex-direction: column;
+    text-align: left;
+}
+
+.timeline-svg{
+}
+
+.pointsRejoindre-svg{
+    margin: 5% 1em auto auto;
+    height: 100px;
+}
+
+#processus-container{
+    margin-left: 10em;
+}
+
+.hexagone{
+    fill: #006EB6;
+}
+
+.rectangle-arrondi-rejoindre{
+    width: 300px;
+    height: 170px;
+    background-color: #6BC6B0;
+    color: black;
+    border-radius:8px;
+    font-family: Inter, sans-serif;
+}
+
+#texte-bouton-benevole{
+    font-size: 1.2em;
+    font-weight: lighter;
+    padding-left: 10%;
+    padding-top: 2%;
+    margin-bottom: 0;
+}
+
+#bouton-rejoindre{
+    width: 13em;
+    height: 2.25em;
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #E7B10D, #FFC71D) right;
+    background-size: 300%;
+    color: white;
+    box-shadow: -5px 4px 1px rgba(0,0,0,0.35);
+    border: none;
+    cursor: pointer;
+    font-size: 1.15em;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 25% 0 0 25%;
+}
+
+#bouton-rejoindre:hover{
+    background-position: left;
+    transform: scale(1.1);
+}
+
+#div-b{
+    width: 40%;
+
+}
+
+#banniere-newsletter{
+    margin-top: 3em;
+    height: 15em;
+    width: 100%;
+    background-image: url('../images/nousAider/banniere-newsletter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.div-newsletter h1{
+    font-family: Bowlby One, sans-serif;
+    color: white;
+    font-weight: lighter;
+    font-size: 2.5em;
+    margin: -1.5em 0 0 0;
+}
+
+.div-newsletter p{
+    margin-bottom: 0.3em;
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newsletter-form input::placeholder{
+    color: white;
+}
+.newsletter-form input{
+    padding: 0.25em;
+    font-size: 1em;
+    border: 0.15em solid white;
+    color: white;
+    background: none;
+    width: 70%;
+    outline: none;
+}
+
+.newsletter-form button{
+    padding: 0.25em;
+    font-size: 1em;
+    border: 0.15em solid white;
+    background: white;
+    width: 30%;
+    font-family: Inter, sans-serif;
+    font-weight: lighter;
+}
+
+.newsletter-form input + button:hover,
+.newsletter-form input +button:focus{
+    border-color: black; /* La bordure de l'input devient noire */
+    background: black;
+    color: white;
+}

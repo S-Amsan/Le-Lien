@@ -1,6 +1,6 @@
 import {utilisateurEstAdherent, utilisateurEstConnecte} from "./infoUser.js";
 
-const buttonAdherer = document.getElementById("bouton-rejoindre");
+const buttonAdherer = document.getElementById("button-adherer");
 
 buttonAdherer.addEventListener("click", async ()=>{
     if(await utilisateurEstConnecte())
