@@ -14,6 +14,7 @@ body hr{
 
 /* Style des sections */
 .section-container {
+    position:relative;
     margin-bottom: 4rem;
 }
 
@@ -114,6 +115,11 @@ body hr{
     fill: #3e3e3e;
 }
 
+.survoler{
+    font-size: 1.75rem !important;
+    color: black !important;
+    padding-bottom: 5rem;
+}
 .nomRegion {
     width: 100%;
     display: flex;
@@ -121,6 +127,7 @@ body hr{
     align-items: center;
     justify-content: center;
     padding-top:-5rem;
+    margin: -1rem 0 0 0;
 }
 .donnee{
     display: flex;

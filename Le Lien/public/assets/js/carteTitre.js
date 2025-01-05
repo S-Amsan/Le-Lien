@@ -34,14 +34,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const donneeRegion = document.getElementById("regionSelect");
     const donneeEtranger = document.getElementById("etranger");
 
-    donneeEtranger.innerHTML=`${await getNombreAdherentsEtrangerData()}`;
+    const adherentsEtranger = await getNombreAdherentsEtrangerData();
+    donneeEtranger.innerHTML=`${adherentsEtranger} Adhérent${adherentsEtranger > 1 ? "s" :""}`;
 
 // Ajoute un événement à chaque région
     regions.forEach(function (region) {
         region.addEventListener("mouseenter", async (e) => {
             titreRegion.textContent = region.getAttribute("title");
             const regionSelect = region.getAttribute("id");
-            donneeRegion.innerHTML=`${await getNombreAdherentsData(regionSelect)}`;
+            const adherentsRegion = await getNombreAdherentsData(regionSelect);
+            donneeRegion.innerHTML=`${await getNombreAdherentsData(regionSelect)} Adhérent${adherentsRegion > 1 ? "s" :""}`;
         });
 
         region.addEventListener("mouseleave", function (e) {
