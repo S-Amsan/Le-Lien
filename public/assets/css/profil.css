@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+main{
+    background-size: cover;
+    background: linear-gradient(to bottom, #015D91, #92B6CA) no-repeat;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-profil {
+    position: relative;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: 0 6px 4px rgba(14,84,130,0.25);
+    text-align: center;
+}
+
+/* Photo de profil */
+#photo-profil{
+    position: absolute;
+    top: -105px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    box-shadow: 0 6px 4px rgba(14,84,130,0.25);
+    overflow: hidden;
+}
+
+#photo-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#contenu-profil h2 {
+    margin: 105px 0 0;
+    color: #EAEBEB;
+    font-size: 2em;
+    font-family: Roboto, sans-serif;
+    font-weight: bolder;
+}
+
+#container-rang {
+    height: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#container-rang img {
+    width: 25px;
+    height: 25px;
+}
+
+#container-rang p {
+    margin-top: 1.25em;
+    font-size: 1.3em;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+}
+
+#container-rang p.admin {
+    color: #FFCD2B;
+}
+
+#container-rang p.adherent {
+    color: #4DECC6;
+
+}
+
+#container-rang p.utilisateur {
+    color: #1b62c5;
+
+}
+
+/* Boutons */
+#contenu-profil button {
+    display: block;
+    width: 70%;
+    padding: 13px 13px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-family: Roboto, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.5s ease;
+    background-size: 600%;
+}
+
+#contenu-profil button:hover {
+    transform: scale(1.05);
+}
+
+
+.button-modifier {
+    margin: 0 auto;
+    color: white;
+}
+.button-stat{
+    margin: 17px auto;
+    background-color: #2751df;
+    color: white;
+}
+.bouton-adherent{
+    background-color: #EFC033;
+}
+
+.bouton-utilisateur{
+    background-color: #2ed1ab;
+}
+
+.bouton-utilisateur:hover{
+    background-color: #1fe3b7;
+}
+
+.button-delete {
+    margin: 17px auto;
+    background-color: #E24B4B;
+    color: white;
+}
+
+/* Le popup pour confirmer la déconnexion */
+.suppression {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre le popup au milieu de la page */
+    z-index: 100;
+    background: #FBFAF9;
+    padding: 1em 1em 0.5em 1em;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    width: 30vw;
+    height: 15.3em;
+    opacity: 0.97;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    animation: animationApparition 0.7s ease-out;
+}
+
+.suppression h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0.5em 0;
+    color: #E56363;
+}
+.suppression p {
+    color: #17171a;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.suppression button {
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.suppression button:hover {
+    background-position: left;
+    transform: scale(1.1);
+}
+
+.suppression #annuler {
+    background: none;
+    border: 2px solid #17171a;
+    margin-right: 0.5em;
+    color: #17171a;
+}
+
+.suppression #suppr {
+    background: linear-gradient(to left, #FF6B6B, #FF4D4D);
+    border: none;
+    margin-left: 0.5em;
+    color: white;
+}
+
+.suppression .actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.confirmation input{
+    border: none;
+    width: 29.5vw;
+    height: 2rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    border-radius: 5px;
+}
+.confirmation .text{
+    padding-bottom: 0.5em;
+    margin: 0;
+    font-size: 0.8em;
+}
+#password-saisie {
+    padding-left: 10px;
+}
+
+/* Animation lorsque le popup apparait */
+
+@keyframes animationApparition {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

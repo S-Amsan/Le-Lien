@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+}
+main {
+    margin: 0;
+    padding: 0;
+    flex : 0;
+    background: linear-gradient(to bottom, #89f7fe 0%, #66a6ff 100%);
+    font-family: 'Poppins', sans-serif;
+}
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.form-container{
+    position: relative;
+    width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 40px;
+        font-weight: 500;
+        color: #333
+    }
+}
+
+.numpage{
+    position: absolute;
+    font-size: 0.8em;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.custom-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.custom-button:hover {
+    background-color: #0056b3;
+}
+#submit-button{
+    background-color: #11a811;
+}
+#submit-button:hover{
+    background-color: #078a11;
+}
+.custom-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#prev-button {
+    background-color: #f0f0f0; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+}
+
+#prev-button:hover {
+    background-color: #e0e0e0; /* Couleur de fond au survol */
+}
+
+#prev-button:active {
+    background-color: #d0d0d0; /* Couleur de fond lors du clic */
+}
+.question-page.active {
+    display: block;
+}
+.question-page {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.question-page label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: lighter;
+}
+.question-page select {
+    width: 850px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #e5e7e8;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+select {
+    color: gray;
+}
+
+select:valid {
+    color: #333;
+}
+.question-page select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+.question-page option {
+    font-size: 1rem;
+    color: #333;
+}
+
+.question-page select option {
+    padding: 5px;
+}
+
+
+.navigation-buttons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+    column-gap: 10px;
+}
+#page-2 input{
+    width: 825px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #e5e7e8;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/*page qualité de vie*/
+#page-5{
+    padding-right: 350px;
+}
+/* Page 4*/
+#page-4{
+    margin: 0;
+    padding: 0;
+    padding-right: 500px;
+
+}
+.form-check-group {
+    padding-right: 100px;
+}
+.form-check {
+    display: flex;
+    align-items: center;
+}
+.form-check label {
+    padding-top: 10px;
+}
+.form-check-label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.form-check-input:hover {
+    border-color: #0056b3;
+    cursor: pointer;
+}
+.form-check-label:hover {
+    color: #0056b3;
+}
+/*page 6*/
+#page-6 textarea{
+    width: 830px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+}
+@media (max-width: 1000px){
+    .form-container{
+        width: 90%;
+    }
+    #region, #lieuVie{
+        width: 84vw;
+    }
+    #page-2{
+        input{
+            width:80vw;
+        }
+
+    }
+    #page-5{
+        padding: 0;
+        margin-left: 15px;
+    }
+    #activite{
+        label{
+            font-size: 17px;
+        }
+    }
+    #page-4{
+        padding: 0;
+    }
+    #page-6{
+        textarea{
+            width: 80vw;
+        }
+    }
+}
+@media (max-width: 630px){
+    #activite{
+        label{
+            font-size: 15px;
+        }
+    }
+    #page-4{
+        label{
+            font-size: 15px;
+        }
+    }
+}
+@media (max-width: 550px){
+    #page-5{
+        label{
+            font-size: 10px;
+        }
+    }
+    #activite{
+        label{
+            font-size: 10px;
+        }
+    }
+}
+

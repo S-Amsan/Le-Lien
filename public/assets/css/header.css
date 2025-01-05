@@ -1,0 +1,362 @@
+header, header * {
+    font-size: inherit; /* Rétablit la taille par défaut pour le header et ses enfants */
+}
+
+.navbar {
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right,
+    rgba(249, 190, 13, 0.25) 10%,
+    rgba(214, 226, 234, 1) 30%,
+    rgba(0, 110, 182, 0.37) 100%); /* pour dégréader*/
+    padding-left: 2.5em;
+}
+
+.navbar-gauche {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0.5em 0;
+}
+
+.navbar-droite {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+
+    a[href]:hover {
+        color: aliceblue;
+    }
+
+    .active {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+}
+
+.logo {
+    height: 3em;
+    width: auto;
+}
+
+.navbar a {
+    color: #0E5482;
+    text-decoration: none;
+    padding: 0 1.3em;
+    font-size: 0.90em;
+    font-family: Inter, sans-serif;
+}
+
+
+.boutons-navbar {
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+    margin-left: 0.5em
+}
+
+.bouton-aider {
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #E7B10D, #FFC71D) right;
+    background-size: 300%;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.70em 1.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.bouton-login {
+    transition: background 0.5s ease, transform 0.3s ease;
+    background: linear-gradient(to left, #6BC6B0, #4DECC6) right;
+    background-size: 300%;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.70em 1.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90em;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.bouton-login.deco {
+    background: linear-gradient(to left, #FF6B6B, #FF4D4D) right;
+}
+
+.bouton-profil {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    margin-left: 0.5em;
+    transition: 0.3s ease;
+}
+
+.bouton-profil img {
+    height: 2.5em;
+}
+
+.bouton-profil:hover {
+    transform: scale(1.1);
+}
+
+.bouton:hover {
+    background-position: left;
+    transform: scale(1.1);
+}
+
+.bouton-recherche {
+
+    background: none;
+    border: 0.25em solid white;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.90em;
+    padding: 0.5em 1.7em 0.5em 1em;
+    border-radius: 1.2em;
+}
+
+#accident {
+    font-weight: bold;
+}
+
+.logo-recherche {
+    height: 1.2em;
+    width: 1.3em;
+    margin-right: 0.15em;
+    vertical-align: middle;
+
+}
+
+.menu-burger, .menu-mobile {
+    display: none;
+}
+
+/* Les messages flash */
+.messageFlash {
+    position: absolute;
+    height: 2.5em;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.messageFlash.warning {
+    color: #ac970c;
+    background-color: #faf298;
+    border-color: #ac970c;
+}
+
+.messageFlash.warning svg {
+    fill: #ac970c;
+}
+
+.messageFlash.danger {
+    color: #a80202;
+    background-color: #fda4a4;
+    border-color: #a80202;
+}
+
+.messageFlash.danger svg {
+    fill: #a80202;
+}
+
+.messageFlash.success {
+    color: #218102;
+    background-color: #a8ffa4;
+    border-color: #218102;
+}
+
+.messageFlash.success svg {
+    fill: #218102;
+}
+
+.messageFlash button svg {
+    height: 2em;
+    width: auto;
+}
+
+.messageFlash button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.messageFlash button:hover {
+    opacity: 0.5;
+}
+
+.messageFlash p {
+    position: absolute;
+    left: 10px;
+}
+
+/* Le popup pour confirmer la déconnexion */
+.deconnexion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre le popup au milieu de la page */
+    z-index: 100;
+    background: linear-gradient(to bottom, #5CAEFF 0%, #5CAEFF 80%, #216BB5 80%, #216BB5 100%);
+    padding: 1em 1em 0.5em 1em;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 30vw;
+    height: 15em;
+    opacity: 0.97;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    animation: animationApparition 0.7s ease-out;
+
+}
+
+.deconnexion h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+
+.deconnexion button {
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.deconnexion button:hover {
+    background-position: left;
+    transform: scale(1.1);
+}
+
+.deconnexion #annuler {
+    background: none;
+    border: 2px solid white;
+    margin-right: 0.5em;
+}
+
+.deconnexion #deco {
+    background: linear-gradient(to left, #FF6B6B, #FF4D4D);
+    border: none;
+    margin-left: 0.5em;
+}
+
+.deconnexion .actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Animation lorsque le popup apparait */
+
+@keyframes animationApparition {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+@media screen and (max-width: 1093px) {
+    .navbar-droite {
+        display: none;
+    }
+
+    /* Afficher le menu burger */
+    .menu-burger {
+        width: 5em;
+        height: 5em;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    /* Styles pour le menu mobile */
+    .menu-mobile {
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 110, 182, 0.37);
+        top: 4em;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-mobile a {
+        color: #0E5482;
+        text-decoration: none;
+        font-size: 2em;
+        font-family: Inter, sans-serif;
+        position: relative;
+    }
+
+    .menu-mobile a, .menu-mobile .bouton {
+        margin: 1em 0;
+    }
+
+    .menu-mobile a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #0E5482;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .menu-mobile a:hover::after {
+        width: 100%;
+    }
+
+    .menu-mobile .bouton-aider, .bouton-recherche {
+        width: 10em;
+        height: 2.5em;
+        font-size: 2.2em;
+    }
+
+    .menu-mobile .bouton-aider {
+        border-radius: 0.9em;
+    }
+
+}
+
+@media screen and (min-width: 1093px) {
+    .menu-mobile a, .menu-mobile button {
+        display: none;
+    }
+}
