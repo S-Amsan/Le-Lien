@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://i.imgur.com/C77sFfz.png" alt="Logo" />
+  <a href="http://lelien-association.fr/asso/index.php" target="_blank">
+    <img src="https://i.imgur.com/C77sFfz.png" alt="Logo" /><br/>
+  </a>
   <p>Association luttant contre les erreurs médicales</p>
   <p>‎ </p>
 </div>
