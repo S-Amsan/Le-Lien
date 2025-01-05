@@ -22,26 +22,34 @@
 <header></header>
 <main>
   <div id="container-adherer">
-    <form id="form-adherer">
+    <form id="form-adherer" action="../assets/php/formulaireAdherer.php" method="post">
       <h1> Adhérer</h1>
       <div id="container-mensualite">
-        <button id="button-mensuel" class="button-mensualite active" type="button">Mensuel</button>
-        <button id="button-annuel" class="button-mensualite" type="button">Annuel</button>
+        <input id="button-mensuel" class="button-mensualite" type="radio" name="periodicite" value="mensuelle" checked>
+        <label class="form-check-label" for="button-mensuel">
+          Mensuel
+        </label>
+
+        <input id="button-annuel" class="button-mensualite" type="radio" name="periodicite" value="annuelle">
+        <label class="form-check-label" for="button-annuel">
+          Annuel
+        </label>
       </div>
 
+
       <div id="container-buttonDon">
-        <button type="button" class="buttons-Don"> 5€ </button>
-        <button type="button" class="buttons-Don"> 10€ </button>
-        <button type="button" class="buttons-Don"> 20€ </button>
-        <button type="button" class="buttons-Don"> 50€ </button>
+        <button type="button" class="buttons-Don" data-value="5"> 5€ </button>
+        <button type="button" class="buttons-Don" data-value="10"> 10€ </button>
+        <button type="button" class="buttons-Don" data-value="20"> 20€ </button>
+        <button type="button" class="buttons-Don" data-value="50"> 50€ </button>
       </div>
 
       <div id="container-input-montant">
-        <input type="text" name="montant" id="input-montant" maxlength="4" placeholder="€ Choisir votre montant">
+        <input type="number" name="montant" id="input-montant" maxlength="4" placeholder="€ Choisir votre montant" required>
       </div>
 
       <div id="container-button-paypal">
-        <button id="button-paypal"> Faire un don avec Paypal </button>
+        <button id="button-paypal"> Adhérer avec Paypal </button>
       </div>
 
       <div id="container-ou-svg">
@@ -54,7 +62,7 @@
       </div>
 
       <div id="container-button-cb">
-        <button id="button-cb"> Faire un don avec carte bancaire </button>
+        <button id="button-cb"> Adhérer avec une carte bancaire </button>
       </div>
     </form>
   </div>
