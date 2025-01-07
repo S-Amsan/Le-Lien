@@ -10,6 +10,25 @@ function getQualitesVieData() {
         });
 }
 
+function getCouleursBleu(data) {
+    const max = Math.max(...data);
+    const min = Math.min(...data);
+
+    return data.map((value) => {
+        const normalise = (value - min) / (max - min); // On normalise
+        const multiplicateur = 1 - normalise;
+
+        // la valeur du RGB
+        const rouge = Math.round(21 * multiplicateur * 0.1);
+        const vert = Math.round(208 - 208 * multiplicateur * 0.4);
+        const bleu = 253;
+
+        return `rgb(${rouge}, ${vert}, ${bleu})`;
+    });
+}
+
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     const ctx = document.getElementById('myChart').getContext('2d');
     const qualitesVie = await getQualitesVieData();
@@ -33,10 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             datasets: [{
                 label: 'Évaluation de la qualité de vie',
                 data: qualitesVie,
-                backgroundColor: [
-                    '#4caf50', '#f44336', '#2196f3', '#ffeb3b', '#9c27b0',
-                    '#ff9800', '#3f51b5', '#009688', '#ff5722', '#607d8b', '#8bc34a'
-                ],
+                backgroundColor: getCouleursBleu(qualitesVie),
                 borderColor: '#000',
                 borderWidth: 1
             }]

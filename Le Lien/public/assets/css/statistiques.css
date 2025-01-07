@@ -114,6 +114,9 @@ body hr{
 .imageCarte .region:hover {
     fill: #3e3e3e;
 }
+.imageCarte .region.select {
+    fill: #3e3e3e;
+}
 
 .survoler{
     font-size: 1.75rem !important;

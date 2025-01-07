@@ -10,9 +10,29 @@ function getAgeStatistiquesData() {
         });
 }
 
+function getCouleursJaune(data) {
+    const max = Math.max(...data);
+    const min = Math.min(...data);
+
+    return data.map((value) => {
+        const normalise = (value - min) / (max - min); // On normalise
+        const multiplicateur = 1 - normalise;
+
+        // la valeur du RGB
+        const rouge = Math.round(255 * (1 - multiplicateur * 0.4));
+        const vert = Math.round(255 * (1 - multiplicateur * 0.6));
+        const bleu = 0;
+
+        return `rgb(${rouge}, ${vert}, ${bleu})`;
+        }
+    )
+}
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     const ctx3 = document.getElementById('myChart3');
     const agesStatistiques = await getAgeStatistiquesData();
+
 
     new Chart(ctx3, {
         type: 'bar',
@@ -32,10 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             datasets: [{
                 label: 'Répartition des âges',
                 data: agesStatistiques,
-                backgroundColor: [
-                    '#1e88e5', '#43a047', '#f4511e', '#ffb300', '#8e24aa',
-                    '#00acc1', '#d81b60', '#3949ab', '#fdd835', '#5e35b1'
-                ],
+                backgroundColor: getCouleursJaune(agesStatistiques),
                 borderColor: '#000',
                 borderWidth: 1
             }]
