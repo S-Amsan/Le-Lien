@@ -9,6 +9,8 @@ const retourButton = document.getElementById('retourAccueil-button');
 
 const ageInput = document.getElementById('age');
 const qualiteDeVieCheckboxes = document.querySelectorAll('#page-5 .form-check-input');
+const conditionCheckboxe = document.getElementById("condition-checkbox");
+const conditionErreur = document.getElementById("erreur")
 const toutVaBienCheckbox = document.getElementById('tout_va_bien');
 
 const AGE_MAX = 120; // la limite d'age maximum est de 120 ans
@@ -55,6 +57,39 @@ qualiteDeVieCheckboxes.forEach((checkbox) => {
     });
 });
 
+function validateCondition() {
+    const isChecked = conditionCheckboxe.checked;
+    if (!isChecked) {
+        conditionErreur.classList.add("afficher")
+        return false;
+    } else {
+
+    }
+    return true;
+}
+
+conditionCheckboxe.addEventListener('change', () => {
+    if (conditionCheckboxe.checked) {
+        conditionErreur.classList.remove("afficher")
+    }
+});
+
+// Car on peut soit coché "Tout va bien" ou soit le reste, mais pas les 2 en même temps, parce que sinon ça n'a pas de sens
+qualiteDeVieCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+        if (checkbox.id === 'tout_va_bien' && checkbox.checked) {
+            // Décoche toutes les autres cases
+            qualiteDeVieCheckboxes.forEach((cb) => {
+                if (cb.id !== 'tout_va_bien') cb.checked = false;
+            });
+        } else if (checkbox.checked) {
+            // Décoche "Tout va bien" si une autre case est cochée
+            toutVaBienCheckbox.checked = false;
+        }
+        validateQualiteDeVie(); // On actualise à chaque changement (l'erreur à afficher), une case coché ou décoché
+    });
+});
+
 function showPage(index) { // On affiche la page
     pages.forEach((page, i) => {
         page.classList.toggle('active', i === index);
@@ -75,8 +110,6 @@ function validatePage() {
     }
     // Valide la qualité de vie si on est sur cette page
     if (pages[currentPage].id === 'page-5') {
-        console.log(pages[currentPage].id)
-        console.log(currentPage)
         return validateQualiteDeVie();
     }
     return true;
@@ -97,8 +130,11 @@ nextButton.addEventListener('click', () => {
     qualiteDeVieCheckboxes[0].reportValidity();
 });
 
-
-
+submitButton.addEventListener('click', (event) => {
+    if (!validateCondition()) {
+        event.preventDefault();
+    }
+});
 
 const estAdherent = await utilisateurEstAdherent();
 const aSoumisEnquete = await utilisateurASoumisEnquete();

@@ -20,3 +20,30 @@ backButton.addEventListener("click", () =>{
     loginContainer.style.display ="flex";
     createAccountButton.style.display = "flex";
 })
+
+const conditionCheckboxe = document.getElementById("condition-checkbox");
+const conditionErreur = document.getElementById("erreur")
+const form = document.getElementById('form-CreateAccount');
+function validateCondition() {
+    const isChecked = conditionCheckboxe.checked;
+    if (!isChecked) {
+        conditionErreur.classList.add("afficher")
+        return false;
+    }
+    return true;
+}
+
+conditionCheckboxe.addEventListener('change', () => {
+    if (conditionCheckboxe.checked) {
+        conditionErreur.classList.remove("afficher")
+    }
+});
+
+form.addEventListener('submit', (event) => {
+    if (!form.checkValidity()) {
+        return;
+    }
+    if (!validateCondition()) {
+        event.preventDefault();
+    }
+});
