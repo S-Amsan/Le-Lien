@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     } catch (Exception $e) {
-        $message = $e->getMessage();
+        $message = $e->getMessage() === "Mot de pass ou email invalide" ? "Mot de passe incorrect" : $e->getMessage(); // On change le message
         $type = "danger";
     }
 } else {

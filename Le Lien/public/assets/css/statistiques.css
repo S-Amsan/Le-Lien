@@ -16,6 +16,7 @@ body hr{
 .section-container {
     position:relative;
     margin-bottom: 4rem;
+    overflow: hidden;
 }
 
 /* Style des en-têtes de section */
@@ -24,6 +25,7 @@ body hr{
     padding-left: 3rem;
     margin-bottom: 2rem;
     padding-top:1rem;
+    overflow: hidden;
 }
 
 .section-header h2 {
@@ -173,7 +175,6 @@ body hr{
     display: flex;
     justify-content: center; /* Centre la carte globalement */
     align-items: center;
-    padding-right:23rem;/* Ajoute un espace entre la carte et les autres divs */
     gap:6rem;
 }
 
@@ -222,4 +223,61 @@ body hr{
     display: block;
     width: 70%;
     height: auto;
+}
+
+
+@media screen and (max-width: 1000px){
+    .chart-pair-container.diagramme{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .chart-container{
+        min-height: 50rem;
+        min-width: 80vw;
+    }
+}
+
+@media screen and (max-width: 400px){
+    html{
+        font-size: 5px;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 550px){
+    html{
+        font-size: 6px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 850px) {
+    html{
+        font-size: 7px;
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1024px) {
+    html{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1330px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1331px) and (max-width: 1440px) {
+    html{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media (min-width: 3000px) {
+    html{
+        font-size: 25px;
+    }
 }

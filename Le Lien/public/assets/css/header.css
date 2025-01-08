@@ -295,13 +295,13 @@ header, header * {
 
     /* Afficher le menu burger */
     .menu-burger {
-        width: 5em;
         height: 5em;
         display: flex;
         align-items: center;
         background-color: transparent;
         border: none;
         cursor: pointer;
+        overflow: hidden;
 
     }
 
@@ -324,7 +324,7 @@ header, header * {
         position: relative;
     }
 
-    .menu-mobile a, .menu-mobile .bouton {
+    .menu-mobile a, .menu-mobile .bouton{
         margin: 1em 0;
     }
 
@@ -343,11 +343,16 @@ header, header * {
         width: 100%;
     }
 
-    .menu-mobile .bouton-aider, .bouton-recherche {
-        width: 10em;
-        height: 2.5em;
+    .menu-mobile .bouton-aider, .bouton-recherche ,.bouton-login{
+        width: 12em;
+        height: auto;
         font-size: 2.2em;
     }
+    .menu-mobile .connecter-container{
+        display: flex;
+        flex-direction: column;
+    }
+
 
     .menu-mobile .bouton-aider {
         border-radius: 0.9em;

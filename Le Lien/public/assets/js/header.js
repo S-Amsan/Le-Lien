@@ -95,11 +95,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <a href="${pages.presentation.href}">Présentation</a>
                     <a href="${pages.nosActions.href}">Nos Actions</a>
                     <a href="${pages.declarerAccident.href}">Déclarez un accident</a>
-                    ${!estConnecte
-        ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
-        : `<button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>`
-    }
                     <button class="bouton bouton-aider" onclick="window.location.href='nousAider.html';">Nous aider</button>
+                    
+                    ${!estConnecte
+                        ? `<button class="bouton bouton-login" onclick="handleAuthAction(false);">Se connecter</button>`
+                        : `<g class="connecter-container">
+                                <button class="bouton bouton-login profil" onclick="window.location.href='profil.html';">Mon profil</button>
+                                <button class="bouton bouton-login deco" onclick="handleAuthAction(true);">Se déconnecter</button>
+                           </g>`
+                    }
                 </div>
             `;
 

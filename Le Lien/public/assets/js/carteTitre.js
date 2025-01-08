@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Lorsque la souris survole
         region.addEventListener("mouseenter", async (e) => {
-            regionSelect.classList.remove("select"); // ne modifier le style de la region cliqué lorsqu'une région est survolé
+            if(regionSelect)
+                regionSelect.classList.remove("select"); // ne modifier le style de la region cliqué lorsqu'une région est survolé
             titreRegion.textContent = region.getAttribute("title"); // afficher le nom de la région
             const regionSurvoler = region.getAttribute("id");
             const adherentsRegion = await getNombreAdherentsData(regionSurvoler); // obtenir les données
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Lorsque la souris ne survole aucune region
         region.addEventListener("mouseleave", async (e) =>{
-            if(regionSelect === null){ // Si aucune région n'est cliqué
+            if(!regionSelect){ // Si aucune région n'est cliqué
                 titreRegion.textContent = `Aucune région`;
                 donneeRegion.innerHTML=`N/A`;
             }else{
