@@ -48,14 +48,10 @@ class Authentification
     {
         // Recherche l'utilisateur par email
         $user = $this->userRepository->findUserByEmail($email);
-        if (!$user) {
-            throw new AuthentificationException("Aucun compte n'est associé à l'email", "warning");
+        if (!$user || !password_verify($motDePasse, $user->getMotDePasse())) {
+            throw new AuthentificationException("Mot de pass et/ou email invalide", "warning");
         }
-
-        // Vérifie le mot de passe avec password_verify()
-        if (!password_verify($motDePasse, $user->getMotDePasse())) {
-            throw new AuthentificationException("Mot de passe incorrect", "warning");
-        }
+        
         $prenom = $user->getPrenom();
         $nom = $user->getNom();
         // Retourne une indication d'authentification réussie
