@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-
+main{
+    display: none; /* On affiche la page seulement après avoir confirmer que l'utilisateur est admin*/
+}
+.contenuBloquer{
+    margin: 2em;
+}
+.contenuBloquer h1{
+    color : #43444c;
+}
+.contenuBloquer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
 /* Général */
 
 body, h1, h2, h3, p {

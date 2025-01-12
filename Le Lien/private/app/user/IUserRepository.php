@@ -8,8 +8,9 @@ interface IUserRepository {
   public function deleteUserCotisation(int $idUser): bool;
   public function deleteUser(int $idUser): bool;
   public function findUserByEmail(string $email): ?User;
-  public function findUserFormById(int $id): bool;
+  public function didUserRespondToTheForm(int $id): bool;
   public function userIsAdherent(string $id): bool;
   public function getUserId(string $email): int;
+  public function getUserCotisation(int $id): ?Cotisation;
 
 }

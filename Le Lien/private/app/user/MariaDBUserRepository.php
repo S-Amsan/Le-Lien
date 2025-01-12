@@ -82,7 +82,7 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         ]);
     }
 
-    public function findUserFormById(int $id): bool
+    public function didUserRespondToTheForm(int $id): bool
     {
         $sql = "SELECT * FROM formulaire WHERE idUser = :id";
         $stmt = $this->getDbConnexion()->prepare($sql);
@@ -104,5 +104,22 @@ class MariaDBUserRepository extends MariaDBRepository implements IUserRepository
         $sql = "DELETE FROM user WHERE idUser = :idUser";
         $stmt = $this->getDbConnexion()->prepare($sql);
         return $stmt->execute(["idUser" => $idUser]);
+    }
+
+    public function getUserCotisation(int $id): ?Cotisation
+    {
+        $sql = "SELECT * FROM Cotisation WHERE idUser = :id AND fin IS NULL";
+        $stmt = $this->getDbConnexion()->prepare($sql);
+        $stmt->execute(["id" => $id]);
+
+        $cotisation = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if ($cotisation) {
+            return new Cotisation(
+                $cotisation['idUser'],
+                $cotisation['type'],
+                $cotisation['montant'],
+            );
+        }
+        return null;
     }
 }

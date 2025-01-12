@@ -66,11 +66,19 @@ class User
         $bdd = new BddConnect();
         $pdo = $bdd->connexion();
         $trousseau = new MariaDBUserRepository($pdo);
-        return $trousseau->findUserFormById($id);
+        return $trousseau->didUserRespondToTheForm($id);
     }
 
-    public function getCotisationInfo(): array
+    public function getCotisationInfo(int $id): array
     {
+        $bdd = new BddConnect();
+        $pdo = $bdd->connexion();
+        $trousseau = new MariaDBUserRepository($pdo);
+        $cotisation = $trousseau->getUserCotisation($id);
+        if($cotisation){
+            return ["type" => $cotisation->getType(),
+                "montant" => $cotisation->getMontant()];
+        }
         return [];
     }
 

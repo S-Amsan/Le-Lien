@@ -24,9 +24,10 @@
   <div id="container-form">
   <div id="container-adherer">
     <form id="form-adherer" action="../assets/php/formulaireAdherer.php" method="post">
+      <input type="hidden" name="password" id="password-cacher-adherer" value="">
       <h1 id="titre-adherer"></h1>
       <div id="container-mensualite">
-        <input id="button-mensuel" class="button-mensualite" type="radio" name="periodicite" value="mensuelle" checked>
+        <input id="button-mensuel" class="button-mensualite" type="radio" name="periodicite" value="mensuelle">
         <label class="form-check-label" for="button-mensuel">
           Mensuel
         </label>
@@ -50,7 +51,7 @@
       </div>
 
       <div id="container-button-paypal">
-        <button id="button-paypal"> Adhérer avec Paypal </button>
+        <button type="button" id="button-paypal"> Adhérer avec Paypal </button>
       </div>
 
       <div id="container-ou-svg">
@@ -63,14 +64,14 @@
       </div>
 
       <div id="container-button-cb">
-        <button id="button-cb"> Adhérer avec une carte bancaire </button>
+        <button type="button" id="button-cb" class="active"> Adhérer avec une carte bancaire </button>
       </div>
     </form>
   </div>
 
     <form action="../assets/php/supprimerAdherent.php" method="post" id="supprimer-adhesion" onsubmit="return false;">
       <div id="container-buttonDeleteAbonnement">
-        <input type="hidden" name="password" id="password-cacher" value="">
+        <input type="hidden" name="password" id="password-cacher-supprimer" value="">
         <button type="submit" id="button-DeleteAbonnement">Se désabonner</button>
       </div>
     </form>

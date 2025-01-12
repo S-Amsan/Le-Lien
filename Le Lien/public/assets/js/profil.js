@@ -1,4 +1,5 @@
 import {utilisateurEstAdherent, utilisateurEstAdmin, getNom, getPrenom} from "./infoUser.js";
+import {demanderConfirmation} from "./data.js";
 
 const rangUser = document.getElementById("rang-user")
 const logoRang = document.getElementById("rang-logo")
@@ -38,7 +39,9 @@ if(await utilisateurEstAdherent()){
 
 const boutonSupprimerCompte = document.getElementById("supprimer-compte-button"); // On récupère le bouton
 const actionSupprimer = document.getElementById("supprimer-compte"); // On récupère le formulaire (On utilise un formulaire, car plus simple pour envoyer une méthode POST à un fichier php).
-boutonSupprimerCompte.addEventListener("click", demanderConfirmationSuppression) // On demande une confirmation
+//boutonSupprimerCompte.addEventListener("click", demanderConfirmationSuppression) // On demande une confirmation
+const containerMdpId = 'password-cacher';
+boutonSupprimerCompte.addEventListener("click", () => demanderConfirmation("Suppression de votre compte","Cette action est irréversible. Êtes-vous certain de vouloir supprimer définitivement votre compte ?",actionSupprimer,containerMdpId)) // On demande une confirmation
 function demanderConfirmationSuppression(){ // Affiche un popup (annuler, confirmer) pour valider la suppréssion
     if (document.getElementById("supprPopup")) {
         return; // Si le popup existe
